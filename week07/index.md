@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: true
+visible: false
 ---
 
 # Week 7 - More Vega-Lite and Maps

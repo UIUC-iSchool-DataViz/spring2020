@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: true
+visible: false
 ---
 
 # Week 12 - Scientific Viz, Big-ish Data, and Some Portfolio Building

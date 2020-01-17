@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: true
+visible: false
 ---
 
 # Week 3 - Types of Viz and Choosing Colors

@@ -1,6 +1,6 @@
 ---
 layout: week
-visible: true
+visible: false
 ---
 
 # Week 10 - Geo Data, Dashboards, Web Dev
