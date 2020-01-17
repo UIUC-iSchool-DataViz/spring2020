@@ -1,0 +1,11 @@
+---
+layout: default
+---
+
+<h1 id="syllabus">{{co.name}} Syllabus</h1>
+{% assign ii = site.data.class.instructor %}
+{% assign co = site.data.class.course %}
+
+{% include class_info.html %}
+
+{{ content }}

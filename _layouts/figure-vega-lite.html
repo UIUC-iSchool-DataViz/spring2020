@@ -1,0 +1,29 @@
+{% assign basename = page.name | replace: ".md", "" %}
+{% assign abs_basename = page.path | replace: ".md", "" %}
+{% assign specname = abs_basename | append: ".json" | absolute_url %}
+{% assign abs_url_path = page.dir | absolute_url %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-lite@3"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vega-embed@4"></script>
+  </head>
+  <body>
+      <div id="vis-{{ basename }}"></div>
+
+    <script type="text/javascript">
+
+        {% if page.content contains "schema" %}
+        var mySpec = {{page.content | replace: "ABSOLUTE", abs_url_path }}
+        vegaEmbed('#vis-{{basename}}', mySpec, {'actions': true});
+        {% else %}
+
+        vegaEmbed('#vis-{{basename}}', {{specname}}, {'actions': true});
+
+        {% endif %}
+
+    </script>
+  </body>
+</html>

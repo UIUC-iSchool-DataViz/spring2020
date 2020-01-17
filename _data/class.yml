@@ -1,0 +1,25 @@
+instructor: 
+  name: Matthew Turk
+  email: mjturk@illinois.edu
+  office: 505 E Green St, No. 108 
+  office_hours: Tu 11-1 or by Appointment
+tas:
+  -
+    name: Naveen Sathiyanathan 
+    email: nms9@illinois.edu
+    office: TBA
+    office_hours: TBA
+course:
+  name: Data Visualization
+  number: IS590DV
+  semester: Fall, 2019
+  location: LIS 126
+  time: Wed 10AM-12:50PM
+  credit_hours: 4
+urls:
+  -
+    name: Slack
+    url: https://is590dv-fall2019.slack.com/
+  - 
+    name: Canvas
+    url: TBA

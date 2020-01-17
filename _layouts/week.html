@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+        {{content}}
+
+        <h3>Materials</h3>
+        <ul>
+        {% for f in site.html_pages %}
+        {% if f.dir contains page.dir and page.url != f.url %}
+        <li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>,
+          <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>)</li>
+        {% endif %}
+        {% endfor %}
+        {% assign pdfs = site.static_files | where: "extname", ".pdf" %}
+        {% for pdf in pdfs %}
+        {% if pdf.path contains page.dir %}
+        <li>PDF {{pdf.basename}}: 
+         (<a href="{{pdf.path | relative_url }}">view</a>
+        </li>
+        {% endif %}
+        {%endfor%}
+        {% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
+        {% for nb in notebooks %}
+        {% if nb.path contains page.dir %}
+        <li>Notebook {{nb.basename}}: 
+         (<a href="../nbv.html?notebook_name={{nb.path | relative_url | url_encode }}">view</a>,
+         <a href="{{nb.path | relative_url}}">download</a>)</li>
+        {% endif %}
+        {%endfor%}
+        </ul>
