@@ -12,7 +12,7 @@ layout: default
 <ul>
 {% assign sorted_pages = site.html_pages | sort:"path" %}
 {% for f in sorted_pages %}
-{% if f.dir contains "week" and f.path contains "index" %}
+{% if f.dir contains "week" and f.path contains "index" and f.visible %}
 <li><a href="{{f.url | relative_url }}">{{f.title}}</a></li>
 {% endif %}
 {% endfor %}
