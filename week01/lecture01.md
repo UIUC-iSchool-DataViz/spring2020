@@ -8,8 +8,8 @@ layout: lecture
 
 <div style="height: 6.0em;"></div>
 
-## Matthew Turk
-## Fall 2019
+## Jill P. Naiman
+## Fall 2020
 
 ---
 
@@ -24,14 +24,14 @@ Website.](https://chancellor.illinois.edu/land_acknowledgement.html)
 <!-- .slide: class="vertical_center" -->
 ## Basics
 
-10AM-12:50PM Wednesdays, 126 LIS at 501 E Daniel
+9AM-11:50PM Wednesdays, TBD
 
-Matthew Turk - `mjturk@illinois.edu`
-Office Hours: Tuesday 11-1, 505 E Green St Room 108
+Jill P. Naiman - `jnaiman@illinois.edu`
+Office Hours: TBD
 
-TA Naveen Sathiyanathan `nms9@illinois.edu`
+TA TBD `TBD@illinois.edu`
 
-https://uiuc-ischool-dataviz.github.io/fall2019/
+https://uiuc-ischool-dataviz.github.io/spring2020/
 
 ---
 
