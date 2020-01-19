@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lecture 11</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+
+
+</style>
+
+  <link rel="stylesheet/less" type="text/css" href="/spring2020/assets/styles.less" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+           data-separator="^\n---\n"
+           data-separator-vertical="^\n----\n">
+          <script type="text/template">
+<!-- .slide: class="titleslide" -->
+
+# Data Visualization
+
+<div style="height: 6.0em;"></div>
+
+## Matthew Turk
+## Fall 2019
+## Lecture 11
+
+---
+
+## ipyleaflet
+
+```
+conda install -c conda-forge ipyleaflet
+jupyter labextension install jupyter-leaflet
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+```
+
+[Documentation](https://ipyleaflet.readthedocs.io/) and [Github Repo](https://github.com/jupyter-widgets/ipyleaflet)
+
+---
+
+## Creating a Map
+
+```python
+import ipyleaflet
+m = ipyleaflet.Map()
+display(m)
+```
+
+Now, zoom waaaaay out.
+
+---
+
+## Layers
+
+We will refer to all of our "data objects" as Layers with ipyleaflet.  These can include:
+
+ * Tiles
+ * Markers
+ * Image / video overlays
+ * Polyline / MultiPolyline / Polygon / MultiPolygon
+ * Rectangle / Circle
+ * Marker Cluster
+ * Heatmap
+
+---
+
+## Add Control
+
+```
+m.add_control(ipyleaflet.LayersControl())
+```
+
+This will let us choose and manipulate individual layers.
+
+---
+
+## Adding some data
+
+```
+import json 
+with open("champaign_trees.geojson") as f:
+    gd = json.load(f)
+
+layer = ipyleaflet.GeoJSON(data = gd)
+m.add_layer(layer)
+```
+
+---
+
+## Experiment 1: Champaign Public Transit
+
+Retrieve either the CUMTD data yourself from [developer.cumtd.com](https://developer.cumtd.com/) or on Whole Tale in "Code Along."
+
+Let's visualize the routes.
+
+---
+
+## Experiment 1: Step 1
+
+This data is in the GTFS format.  It has routes, trips, stops, etc.
+
+Step 1: load the stop and route data files
+
+---
+
+## Experiment 1: Step 2
+
+Place markers for stops on the map.
+
+---
+
+## Experiment 1: Step 3
+
+Add a layer for a heatmap of stop locations.
+
+---
+
+## Kepler
+
+First, try out [kepler.gl](https://kepler.gl)
+
+---
+
+## Kepler in Jupyter
+
+We can display the map in a jupyter notebook.
+
+```python
+import keplergl
+k = keplergl.KeplerGL()
+display(k)
+```
+
+---
+
+## Kepler: Adding Data in Jupyter
+
+```
+gd = pd.read_csv(" ... ")
+k.add_data(data = gd, name = "my data")
+```
+
+---
+
+## Experiment 2: Step 1
+
+Load the tree data
+
+---
+
+## Experiment 2: Step 2
+
+Display heatmap, with varying values
+
+---
+
+## Voila
+
+```
+conda install voila
+```
+
+Now, let's take one of our notebooks and make it a dashboard.
+
+---
+
+## Meeting Time
+
+Time for you to meet with your groups.
+
+          </script>
+        </section>
+      </div>
+    </div>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/math/math.min.js', async: true },
+            { src: 'https://cdn.jsdelivr.net/npm/reveald3/reveald3.js'},
+            { src: '/reveal.js-plugins/chalkboard/chalkboard.js' },
+            { src: '/reveal-paperjs/paper-figures.js', async: true},
+        ],
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+		},
+        center: false,
+        transition: 'none',
+        backgroundTransition: 'none'
+    });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+
+  </body>
+</html>
+

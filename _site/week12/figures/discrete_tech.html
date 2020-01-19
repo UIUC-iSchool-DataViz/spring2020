@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://x3dom.org/release/x3dom.js"></script>
+      <link rel="stylesheet" href="https://x3dom.org/release/x3dom.css" />
+      <script src="https://raw.githack.com/jamesleesaunders/d3-x3d/master/dist/d3-x3d.js"></script>
+  </head>
+  <body>
+      <div id="scatter"></div>
+
+      <script type="text/javascript">
+          // Chart dimensions
+          var width = 500;
+          var height = 500;
+          // Generate some data
+          // Declare the chart component
+          var viewpoint = d3.x3d.component.viewpoint();
+          var component = d3.x3d.component.bubbles().sizeScale(d => 0.50);
+          var surface = d3.x3d.component.surface();
+          //surface.yScale( d => 0.0 );
+          const axis = d3.x3d.component.axisThreePlane();
+          // Create scene
+          var scene = d3.select("#scatter")
+              .append("X3D")
+              .attr("width", width + "px")
+              .attr("height", height + "px")
+              .append("Scene");
+          scene.call(viewpoint);
+          var chart = scene.append("Group")
+              .attr("class", "chart");
+          var gen = d3.randomNormal(5, 2);
+
+          const N = 512;
+          var x = Float64Array.from({length: N}, gen);
+          var y = Float64Array.from({length: N}, gen);
+          var z = Float64Array.from({length: N}, gen);
+
+          var dataSet = {
+              'key': 'Galaxy',
+              'values': d3.range(N)
+              .map( i => ({'x': Math.min(Math.max(x[i], 0.0), 10.0),
+                           'y': Math.min(Math.max(y[i], 0.0), 10.0),
+                           'z': Math.min(Math.max(z[i], 0.0), 10.0),
+                           'key': 'Point' + i,
+                           'value': 'red'}))
+          };
+
+          var surfaceDataset = d3.x3d.randomData.dataset5();
+          d3.range(11).forEach(i => d3.range(11).forEach(j => {
+              surfaceDataset[i].values[j].value = 0;
+          }));
+
+
+          dataSet['values'].forEach( v => {
+              var i = Math.floor(v.x);
+              var j = Math.floor(v.z);
+              surfaceDataset[i].values[j].value += 1;
+          });
+
+          chart.datum(dataSet).call(component);
+
+          axis
+              .xScale(component.xScale())
+              .yScale(component.yScale())
+              .zScale(component.zScale());
+          surface
+              .xScale(component.xScale())
+              .yScale(d => 0)
+              .zScale(component.zScale());
+
+
+
+          chart.datum(surfaceDataset).call(surface);
+
+          chart.append("Group")
+              .call(axis);
+
+      </script>
+  </body>
+</html>

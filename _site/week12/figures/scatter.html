@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <script src="https://d3js.org/d3.v5.min.js"></script>
+      <script src="https://x3dom.org/release/x3dom.js"></script>
+      <link rel="stylesheet" href="https://x3dom.org/release/x3dom.css" />
+      <script src="https://raw.githack.com/jamesleesaunders/d3-x3d/master/dist/d3-x3d.js"></script>
+  </head>
+  <body>
+    <div id="scatter"></div>
+    
+    <script type="text/javascript">
+            // Select chartholder
+        // https://raw.githack.com/jamesleesaunders/d3-x3d/master/examples/X3DOM/chart/ScatterPlot.html
+        var chartHolder = d3.select("#scatter");
+
+            // Declare the chart component
+            var myChart = d3.x3d.chart.scatterPlot()
+                .colors(d3.schemeRdYlGn[8])
+                .sizeRange([0.1, 1.5]);
+
+            var refreshChart = function() {
+                // Generate some data
+                var myData = d3.x3d.randomData.dataset3(200);
+
+                chartHolder.datum(myData).call(myChart);
+            };
+
+            refreshChart();
+
+    </script>
+  </body>
+</html>

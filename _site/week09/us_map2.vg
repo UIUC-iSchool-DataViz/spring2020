@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "datasets": {
+    "fips_ids": {
+      "data": {
+      "url": "https://raw.githubusercontent.com/kjhealy/fips-codes/master/state_fips_master.csv",
+      "format": {"type": "csv"}
+    }}
+  },
+  "data": {
+    "url": "data/us-10m.json",
+    "format": {"type": "topojson", "feature": "states"}
+  },
+  "transform": [
+    {
+      "lookup": "id",
+      "from": {"data": {"name": "fips_ids"}, "key": "fips", "fields": ["state_name", "state_abbr"]}
+    },
+    {
+      "lookup": "state",
+      "from": {"data": {"url": "data/airports.csv"}, "key": "state_abbr"}
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "black"},
+  "encoding": {
+    "color": {"field": "id", "type": "nominal"},
+    "tooltip": {"field": "state_name", "type": "nominal"}
+  },
+  "projection": {"type": "albersUsa"},
+  "height": 768,
+  "width": 1024
+}

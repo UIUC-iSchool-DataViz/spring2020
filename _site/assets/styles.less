@@ -1,0 +1,141 @@
+.reveal {
+    @basefont: 30px;
+
+    font-size: @basefont;
+
+    font-family: 'Questrial', sans-serif;
+
+    section.present {
+      text-align: left;
+    }
+
+    div.mediumtext {
+        font-size: @basefont - 8px;
+    }
+
+    p.smalltext {
+        font-size: @basefont - 16px;
+    }
+
+    .fragment.step-fade-in-then-out {
+        opacity: 0;
+        display: none; 
+    }
+    .fragment.step-fade-in-then-out.current-fragment {
+        opacity: 1;
+        display: inline; 
+    }
+
+    section img {
+      box-shadow: none;
+      border: 0px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    bigtext {
+      font-size: 800%;
+    }
+
+    h1, h2, h3, h4, h5 {
+      text-transform: none;
+    }
+
+    .titleslide {
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: right;
+        }
+    }
+
+    table { 
+        td {
+            text-align: left;
+            padding: 0.2em 0.5em 0.2em 0.5em;
+            border: solid; 
+        }
+
+    tbody tr:last-child {
+        th, td {
+            border-bottom: solid; }
+        }
+    }
+
+    .table-hl {
+      background: #aaa;
+    }
+
+    div.appearing_row {
+        display: block;
+        align: center;
+        width: 90%;
+        div.left_align {
+            float: left;
+            display: inline;
+        }
+        div.right_align {
+            float: right;
+            display: inline;
+        }
+    }
+
+    .left {
+        left:-8.33%;
+        text-align: left;
+        float: left;
+        width:50%;
+        z-index:-10;
+    }
+
+    .right {
+        left:31.25%;
+        top: 75px;
+        float: right;
+        text-align: right;
+        z-index:-10;
+        width:50%;
+    }
+
+	.multiCol {
+		display: table;
+		table-layout: fixed; // don't fudge depending on content
+		width: 100%;
+		text-align: left; // matter of taste, makes imho sense
+		.col {
+			display: table-cell;
+			vertical-align: top;
+			width: 50%;
+			padding: 2% 0 2% 3%; // some vertical, and between columns
+			&:first-of-type { padding-left: 0; } // there's nothing before col1
+		}
+	}
+
+    .fullHeight {
+        height: 100%;
+        width: 100%;
+        vertical-align: middle;
+        >canvas {
+            height: 100vh;
+            width: 100%;
+        }
+    }
+}
+
+.vertical_center section {
+    vertical-align: middle;
+}
+
+.left_abs {
+    left:0%;
+    text-align: left;
+    float: left;
+    width:50%;
+    z-index:-10;
+}
+
+.centered {
+    text-align: center;
+}

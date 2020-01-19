@@ -1,0 +1,58 @@
+<html lang="en">
+
+<head>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css'/>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/prism.min.js' data-manual></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/components/prism-python.min.js' data-manual></script>
+
+  <script src="https://rawgit.com/kokes/nbviewer.js/master/lib/nbv.js"></script>
+  <link rel='stylesheet' src="https://rawgit.com/kokes/nbviewer.js/master/lib/nbv.css">
+</head>
+
+<body>
+
+<div id="notebook"></div>
+
+<script>
+<!-- https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+-->
+var urlParams;
+(window.onpopstate = function () {
+    var match,
+        pl     = /\+/g,  // Regex for replacing addition symbol with a space
+        search = /([^&=]+)=?([^&]*)/g,
+        decode = function (s) { return decodeURIComponent(s.replace(pl, " ")); },
+        query  = window.location.search.substring(1);
+
+    urlParams = {};
+    while (match = search.exec(query))
+       urlParams[decode(match[1])] = decode(match[2]);
+})();
+
+  if(urlParams['notebook_name'] == null) {
+    urlParams['notebook_name'] = "sorry.ipynb"
+  }
+  var request = new XMLHttpRequest();
+  console.log(urlParams['notebook_name']);
+  request.open('GET', urlParams['notebook_name'], true);
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      console.log("notebook loaded");
+      var data = JSON.parse(request.responseText);
+      var target = document.getElementById("notebook");
+      nbv.render(data, target);
+    } else {
+      // We reached our target server, but it returned an error
+      console.log("notebook not found error");
+    }
+  };
+  request.onerror = function() {
+    // There was a connection error of some sort
+    console.log("connection error");
+  };
+  request.send();
+</script>
+</body>
+</html>

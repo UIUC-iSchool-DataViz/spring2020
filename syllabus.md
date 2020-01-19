@@ -48,7 +48,7 @@ wrap-up session at the end.
 Students are expected to have laptops with them, as well as access to Python
 installations, and will be encouraged to participate in class.  Homework will
 be assigned and collected utilizing the Jupyter nbgrader extension or through
-other methods specified at time of submission.
+other methods specified at time of submission like Moodle.
 
 The central themes of the course are:
 
@@ -64,29 +64,20 @@ introduction to Python will be presented during the course.
 
 # Course Materials
 
-There is no textbook for this course.  All course materials will be posted to
-the GitHub repository at https://github.com/UIUC-iSchool-DataViz/fall2019 .
+There is no required textbook for this course.  All course materials will be posted to
+the GitHub repository at https://github.com/UIUC-iSchool-DataViz/spring2020 .
+
+**Optional** textbook [Visualization Analysis and Design by Tamara Munzner](https://www.amazon.com/gp/product/1466508914/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 
 As the course progresses, a list of recommended readings will be generated for
 each class.  These will be included in the course materials repository, and
 students are encouraged to fork that repository and issue pull requests to add
 suggested readings.
 
-Existing readings that may help are available in the file
-[readings.md](readings.md).
-
-You will be expected to be at least basically conversant in several programming
-languages.  You can see more information in the [helpful
-setup](helpful_setup.md) guide.
 
 # About Your Instructor
 
-Matthew Turk is an Assistant Professor at the School of Information Sciences.
-His training was in Astronomy, where he conducted simulations of the formation
-of the first stars in the Universe.  This led him to work on developing
-an analysis and visualization package for volumetric data, 
-[yt](http://yt-project.org/), which has been used for quantitative and
-qualitative visualization of data from several disciplines.
+Jill Naiman's background is in theoretical and computational astrophysics with a current research emphasis on scientific data visualization.  She is currently a Visiting Scholar at the Advanced Visualization Lab at the National Center for Supercomputing Applications.  She is currently involved in projects related to increasing access to industry-standard special effects software for scientists - more info can be found <a href="http://ytini.com">here</a> and <a href="http://astroblend.com">here</a>.  Information about her astrophysical research and outreach efforts can be found <a href="http://astronaiman.com">here</a>.
 
 # Library Resources
 
@@ -223,7 +214,7 @@ is expected.
 
 # Semester Calendar
 
-This is the first semester that this course is being taught.  As such, the
+Below is an outline from the first semester that this course was taught.  This course is always under development and  the
 course outline below is subject to some flexibility; students will be encouraged
 to provide feedback on the topics covered, particularly toward the end.  Topics
 that are of particular interest will be emphasized.
