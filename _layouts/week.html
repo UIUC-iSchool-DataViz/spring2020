@@ -7,9 +7,15 @@ layout: default
         <h3>Materials</h3>
         <ul>
         {% for f in site.html_pages %}
-        {% if f.dir contains page.dir and page.url != f.url %}
+        {% if f.dir contains page.dir and page.url != f.url%}
+	{% if f.layout == "lecture" and f.visible_lec %}
         <li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>,
-          <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>)</li>
+          <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>{% if f.layout == "lecture" %}, <a href="{{f.url | relative_url}}?showNotes=false">present</a>{% endif %})</li>
+	{% endif %}
+	{% if f.layout != "lecture" %}
+        <li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>,
+          <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>{% if f.layout == "lecture" %}, <a href="{{f.url | relative_url}}?showNotes=false">present</a>{% endif %})</li>
+	{% endif %}
         {% endif %}
         {% endfor %}
         {% assign pdfs = site.static_files | where: "extname", ".pdf" %}
@@ -20,7 +26,7 @@ layout: default
         </li>
         {% endif %}
         {%endfor%}
-        {% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
+	{% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
         {% for nb in notebooks %}
         {% if nb.path contains page.dir %}
         <li>Notebook {{nb.basename}}: 
