@@ -133,10 +133,18 @@ disability@illinois.edu.
 
 # Assignments and Evaluation
 
-Students will be graded based on a combination of assignments (70%) and a final
+Students will be graded based on a combination of assignments (70%: 40% standard prose/code assignments and
+30% weekly visualization reports) and a final
 project (30%).  The final project will be a capstone to the course, and will
 have greater flexibility in software packages and data sources.  This project
 will be introduced in Week 8.
+
+**In summary, your grades consist of:**
+
+| 40% | Standard assignments in prose or code form
+| 30% | Weekly visualization reports
+| 30% | Final project
+
 
 Assignments in this course will be a mixture of coding/visualization work and
 written work.  These two may not be distinct assignments; students will be
@@ -170,8 +178,8 @@ before any homeworks are to be submitted.
 Each assignment will be 50% "correctness" and 50% the narrative description of
 the process.  "Correctness" in this case indicates that the code runs without
 issue, results are produced, and each component of the assignment is completed.
-The narrative description of the process will be graded on grammar and
-completeness.
+The narrative description of the process will be graded on grammar (less so) and
+completeness (more so).
 
 ### Grading Policy
 
@@ -180,6 +188,7 @@ not a guarantee of a passing grade.  All work must be completed in order to
 pass this class. Late or incomplete assignments will not be given full credit
 unless the student has contacted the instructor prior to the due date of the
 assignment (or in the case of emergencies, as soon as practicable).
+
 
 **Grading Scale:**
 
