@@ -20,3 +20,4 @@ with our data.
 ## Downloads
 
  * <a href="data/GDP.csv" download>FRED GDP.csv file</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week01/images/stitch_reworked.png" download>Reworked Stitch Image</a>
