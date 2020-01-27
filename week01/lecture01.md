@@ -168,6 +168,27 @@ Count off numbers!
 Don't get used to sitting in the same seat in this room!  We're going to move
 around and try things, starting with hand-crafting some visualizations.
 
+What was easy/hard about visualizing the various datasets?  How did you do it?
+
+---
+
+Break into groups based on your numbers, and visualize the results by whatever
+method you choose: by hand, by computer, or otherwise.
+
+Affix to or inscribe upon your sheet of paper.
+
+What did you come up with?
+
+What was easy/hard about visualizing each dataset in a different way?
+
+notes:
+Count off numbers!
+
+Don't get used to sitting in the same seat in this room!  We're going to move
+around and try things, starting with hand-crafting some visualizations.
+
+What was easy/hard about visualizing the various datasets?  How did you do it?
+
 
 ---
 
@@ -991,7 +1012,7 @@ If we rotate the image so that the red liquid is level, do we get a different im
 ---
 
 <iframe width="1024" height="576"
-src="https://www.youtube.com/embed/D-uBv6jB7r0" frameborder="0"
+src="https://www.youtube.com/embed/D-uBv6jB7r0?rel=0" frameborder="0"
 allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 notes:
