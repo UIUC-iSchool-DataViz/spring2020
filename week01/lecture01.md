@@ -1,15 +1,16 @@
 ---
 title: Lecture 1
 layout: lecture
+visible_lec: true
+visible_n: true
 ---
 <!-- .slide: class="titleslide" -->
 
 # Data Visualization
-
 <div style="height: 6.0em;"></div>
 
 ## Jill P. Naiman
-## Fall 2020
+## Spring 2020
 
 ---
 
@@ -21,28 +22,129 @@ Please see the Land Acknowledgment in the Syllabus.
 Website.](https://chancellor.illinois.edu/land_acknowledgement.html)
 
 ---
+
 <!-- .slide: class="vertical_center" -->
 ## Basics
 
-9AM-11:50PM Wednesdays, TBD
+9AM-11:50PM Wednesdays
 
 Jill P. Naiman - `jnaiman@illinois.edu`
-Office Hours: TBD
+ * Office Hours: Tuesday 3-4pm NCSA 2040 (this OH can go a little longer as needed), Friday 3-4pm in iSchool lounge; other times by request
 
-TA TBD `TBD@illinois.edu`
+TA: Diptendra Bagchi, `dbagchi2@illinois.edu`
+ * Office Hours: iSchool, Room 56, Wednesday & Friday 1-2pm
+
+TA: Qiuyan Guo, `qqguo2@illinois.edu`
+ * Office Hours: iSchool, Room 56, Thursday 8-9am
 
 https://uiuc-ischool-dataviz.github.io/spring2020/
 
+notes: go through website!!
+
 ---
 
-## Timed activity!
+## In summary: where things will be located:
 
-On a piece of paper:
+ * Moodle - where the grades and assignments will be posted
+
+ * Course webpage: https://uiuc-ischool-dataviz.github.io/spring2020/ - where lecture slides, notebooks, data & general course info will live.
+
+ * Slack: https://is590dv-spring2020.slack.com/ - the best place to ask questions
+
+
+---
+
+<img src="https://uiuc-ischool-dataviz.github.io/spring2019online/week01/images/map_to_ncsa.png" alt="drawing" width="700"/>
+
+notes: here is where the iSchool is, NCSA is above
+
+---
+
+## Questions:
+
+* Who are you?
+* What are we doing?
+* How are we going to do it?
+
+---
+
+## Questions:
+
+* <span style="color:red">Who are you?</span>
+* What are we doing?
+* How are we going to do it?
+
+---
+
+### My background
+
+<!--![](images/intro_naiman1.png =0.1x)-->
+<img src="images/intro_naiman1.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman2.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman3.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+
+<img src="images/intro_naiman4.png" alt="drawing" width="800"/>
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman5.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman6.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman7.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+### My background
+#### ytini.com
+
+<img src="images/intro_naiman8.png" alt="drawing" height="400"/>
+
+Naiman et al. 2017, Borkiewicz et al. 2018
+
+---
+
+## Timed activity! (~2 minutes)
+
+On a piece of paper or in notes on your computer:
 
 * What are the most memorable movies you saw over the last year?
 * Do you prefer cats or dogs?
 * How would you quantify your experience in visualization?
-* How many people are in each row in this classroom?
+* How many hours do you spend online in classes each week?
 
 notes:
 We're going to use these pieces of data to explore how we might approach
@@ -61,54 +163,45 @@ method you choose: by hand, by computer, or otherwise.
 Affix to or inscribe upon your sheet of paper.
 
 notes:
+Count off numbers!
+
 Don't get used to sitting in the same seat in this room!  We're going to move
 around and try things, starting with hand-crafting some visualizations.
 
----
-
-## Intake Survey
-
-[forms.gle/ayFAcBrP9yt9rgCA6](https://forms.gle/ayFAcBrP9yt9rgCA6)
 
 ---
 
-## Viz Systems We Will Cover
+<br />
+<br />
+<br />
 
- * [vega-lite](https://vega.github.io/vega-lite)
- * [D3](https://d3js.org/)
- * [bqplot](https://bqplot.readthedocs.io)
- * [matplotlib](https://matplotlib.org)
+# Bureaucracy
 
-There'll be a few more along the way.
-
-notes:
-This class is not meant to teach you a given tool, but instead a way of
-thinking about using visualization tools.  These tools are chosen because of
-what they represent, not because they are the only paths to success.
+We have to do it!
 
 ---
 
-## Tools We Will Use
+## Getting Python Setup
 
- * [GitHub](https://github.com/)
- * [Iodide](https://iodide.io/)
- * [Observable](https://observablehq.com/)
- * [Jupyter](https://jupyter.org/)
- * [Glitch](https://glitch.com/)
- * [Colaboratory](https://colab.research.google.com/)
+ 1. Download Anaconda!
+ 
+[anaconda.com/download](anaconda.com/download)
 
-notes:
-These tools represent many different ways to explore and visualize data.  We'll
-emphasize using services, rather than local installations.
+ 2. Install Week 1 libraries
+
+see: https://uiuc-ischool-dataviz.github.io/spring2020/week01/test_imports_week01.ipynb
 
 ---
-
 
 ## Syllabus
 
- * Weeks 1-5: Basics of visualization
- * Weeks 6-10: Interactivity and Viz Types
- * Weeks 11-15: Platforms and dimensionality
+ * Week 1 (Today): Introduction, syllabus, examples, and some basics
+ * Week 2: Data storage & Operations 
+ * Week 3: Types of Viz and color, colormaps
+ * Week 4: Distributions, Engines
+ * Week 5: Beginning Interactivity
+ * Week 6: Interactivity, continued & Grammar of Graphics
+ * Week 7: Dashboards & Maps
 
 notes:
 This is a rough syllabus!  These are many of the topics we will cover, but
@@ -116,37 +209,22 @@ based on how the course proceeds and how folks respond, we may shorten or
 lengthen different topics.
 
 The organization here is designed to start out slow, dealing with how to
-program python and javascript for visualization, understanding how data is laid
-out, which operations we can apply to that data, and then moving on to
-representing data in different ways.
+program python for visualization, understanding how data is laid out, which
+operations we can apply to that data, and then moving on to representing data
+in different ways.
+
+We might start getting into javascript earlier, depending on how we are doing.
 
 ---
 
-## Weeks 1-5
+## Syllabus, cont
 
- * How are files laid out?
- * What is in our operational palette?
- * Basics of using Javascript, Python, and writing JSON
- * Basic quantitative visualizations
-
----
-
-## Weeks 6-10
-
- * Distributions of values in different dimensions
- * Simple interactivity 
- * Reactive programming
- * Colors, images
- * Comparisons across datasets
-
----
-
-## Weeks 11-15
-
- * Scientific Visualization
- * Alternative visualization platforms
- * Dashboarding
- * Group projects
+ * Week 8: Comparisons between different datasets
+ * Week 9: Maps & Geographic Data 
+ * Week 10: Network Visualization & beginning web dev & Publishing, Javascript
+ * Week 11: Designing for the web with Python & Javascript, Web dev
+ * Week 12: More javascriptScientific visualizationAdvanced topics
+ * Week 14: Group presentations
 
 notes:
 Toward the end of class we are going to have a slightly more free-form set of
@@ -155,10 +233,22 @@ more group work and collaboration than the preceding assignments.
 
 ---
 
+## Syllabus: In summary
+
+ * Weeks 1-5: Basics of visualization (Python)
+ * Weeks 6-10: Interactivity and Viz Types (Python and Javascript)
+ * Weeks 11-15: Platforms and dimensionality (Python, Javascript, Web-dev methods)
+
+notes:
+basically, we'll start with the basics - I'm assuming you are coming in with Python experience
+
+---
+
 # Class Mission
 
-Your role as a _consumer_ of visualizations should change to also include the
-perspective of a _producer_ of visualizations.
+While you are already a _consumer_ of visualizations, your
+perspective should change to that of a _producer_ of visualizations.
+You should be comfortable reading AND writing imagery.
 
 notes:
 We will be discussing this as the semester goes on, but the principal outcome I
@@ -178,8 +268,8 @@ consuming information visually.
    filterings, and other operations.
  * I want you to know _some_ of the packages that are out there to visualize
    data.  These will mostly be Python-based, with a couple in Javascript.
- * You won't learn how to use dashboarding software in detail.  Instead, we
-   will talk about the different operations that go into dashboarding software.
+ * You won't learn how to use dashboarding software (e.g. Tableau) in detail. Instead, we
+   will focus on the different operations that go into dashboarding software.
  * By the end of the course, you will have had the opportunity to look at and
    build visualizations in several different domains and understand how to
    interpret, critique and improve them.
@@ -203,14 +293,11 @@ get in the way of the underlying meaning?
 
 ## Structure of Class
 
- * Topic introduction and lecture (60-90 minutes)
+ * Topic introduction and lecture (~60 minutes)
  * Hands-on, collaborative coding
  * Wrap-up
 
-You will each be assigned to a group to do collective note-taking.  The day
-before class each week, you will be notified that you will be taking notes the
-next day and you will be provided the link to a collaborative document.
-Following the lecture, your notes will be added to the course website.
+(Today will be a little lecture heavy)
 
 notes:
 This structure will likely be deviated from during the course, but in general
@@ -241,22 +328,35 @@ group project that touches on coding as well as visual design.
 
 ---
 
-## Weekly Assignments
+## Weekly Visualization Reports
 
 Every week, you are to turn in a visualization you have found in the media
-(newspapers, magazines, online journalism.)
+(newspapers, magazines, online journalism) and a brief summary of something you like/don't like,
+think is interesting, etc.
 
-Each week, one of you will at random be asked to describe the visualization to the class.
+_These are meant to be easy points:_ No more than 2-3 sentences are needed in your description.
+
+Each week, one of you will at random be asked to describe the visualization you picked to the class.
+
 
 ---
 
-## Assignments
+## Assignments (not necessarily weekly)
 
- * Weekly, assigned in class, collected following class
+ * Weekly-ish, assigned in class, collected following class
  * Prose assignments: deconstruction or analysis of a visualization or a dataset.
  * Coding assignments: Jupyter/JSMD/etc notebooks following step by step
    through collection and processing of data and the visualization of that
    data
+
+---
+
+## _Optional_ reading assignments
+
+See the course syllabus: https://uiuc-ischool-dataviz.github.io/spring2020/syllabus.html
+
+notes:
+These are TOTally optional - more on that in a minute.
 
 ---
 
@@ -280,8 +380,8 @@ your own.  Always cite, and be reasonable in what you utilize.
 
 ## Our tools
 
- * Python, with some R and Javascript along the way
- * Jupyter and Jupyter notebooks on a Jupyterhub, with nbgrader
+ * Python, with some Javascript along the way
+ * Jupyter and Jupyter notebooks 
  * The occasional usage of a shell such as bash
  * Once in a while some git, and GitHub
  * Slack
@@ -293,63 +393,63 @@ Slack for class communication.
 
 ---
 
-![](images/jh_arch.svg)
+## Viz Systems We Will Cover
+
+In approximate order:
+
+ * [matplotlib](https://matplotlib.org)
+ * [bqplot](https://bqplot.readthedocs.io)
+ * [vega-lite](https://vega.github.io/vega-lite)
+ * [D3](https://d3js.org/)
+
+There'll be a few more along the way.
 
 notes:
-Jupyterhub is a software system for launching multiple independent notebooks
-that can share access to data and installed software.  Ours is administered by
-the iSchool.
+This class is not meant to teach you a given tool, but instead a way of
+thinking about using visualization tools.  These tools are chosen because of
+what they represent, not because they are the only paths to success.
 
 ---
 
-## Jupyterhub Guidelines
+## Tools We Will Use
 
- * [jupyterhub.ischool.illinois.edu](https://jupyterhub.ischool.illinois.edu/)
- * Please store your notebooks on- and off-site
- * Submissions will be via `nbgrader`
- * Data will be available at `/home/shared/fall19-is590dv/data/`
- * Previous lectures will be in `/home/shared/fall19-is590dv/fall2019/`
- * You will have access to conda, etc, but I may rebuild images to add packages.
+ * [Jupyter](https://jupyter.org/)
+ * [GitHub](https://github.com/)
+ * [Iodide](https://iodide.io/) and/or [Idyll](https://idyll-lang.org/)
 
-notes:
-It is possible that your JupyterHub instance may be lost -- don't store mission
-critical data there without a backup.  It should be possible to share data
-between people on the system, but I won't pretend to know the right way to do
-that.
-
----
-
-## Assignment Flow
-
-![](images/assignment_flow.png)
-
- 1. Instructor "releases" an assignment
- 1. Assignment appears in student "Assignments" tab
- 1. Students "fetch" assignment, which copies it to their work directory
- 1. When done, students "submit" assignment, which copies it to the
-    instructor’s inbox
- 1. Grades and feedback will be posted on Moodle.
+A few others we may get to:
+ * [Observable](https://observablehq.com/)
+ * [Glitch](https://glitch.com/)
+ * [Colaboratory](https://colab.research.google.com/)
 
 notes:
-We will be using `nbgrader` for notebook grading.  This will in general allow
-you the opportunity to see *most* of the results of your grade prior to
-submission.
+These tools represent many different ways to explore and visualize data.  We'll
+use a mix of local installations & web-services.
 
 ---
 
 ## Slack
 
- * Team is at `is590dv-fall2019.slack.com`
+We will be sharing a slack channel with the in-person class, so feel free to
+converse with them as well!
+
+ * Team channel at `https://is590dv-spring2020.slack.com`
    * `#general` : General announcements
-   * `#classwork` : Help with assignments
-   * `#help` : General help with Python, Javascript, visualization, etc
-   * `#lectures` : During lectures, post links, comments, questions here
+   * `#data-viz` : Help with assignments, general viz questions, Python, Javascript, etc
+   * `#random` : see a cool viz you want to share?  This is the place!
+
+---
+
+## Slack (cont)
+
  * Use the `@` sign appropriately: `@[person]`, `@here`, `@channel`
  * Web client, standalone client and mobile devices can access this team.
  * At the end of the semester, the team will be discontinued.
  * Please think carefully before direct messaging if you could ask in a public
    forum instead.
  * Conduct will be held to same standards as any educational venue.
+
+As always, you can also post questions to the Moodle forum as well.
 
 notes:
 Please use slack as much as you need!  You can use it to share items and
@@ -358,12 +458,17 @@ feedback.  However, please do behave in a professional fashion.
 
 ---
 
+## How do I access Slack?
+
+ * Should have received email
+ * Ask me after class or send me an email with _your_ email
+
+---
+
 ## Github
 
- * Course repo is at [UIUC-iSchool-DataViz/fall2019](https://github.com/UIUC-iSchool-DataViz/fall2019/)
- * Automatically built to [uiuc-ischool-dataviz.github.io/fall2019/](https://uiuc-ischool-dataviz.github.io/fall2019/)
- * Lecture notes will be placed there, and available in your JupyterHub
-   instances in `shared/fall19-is590dv/fall2019`
+ * Course repo is at [UIUC-iSchool-DataViz/spring2020](https://github.com/UIUC-iSchool-DataViz/spring2020/)
+ * Automatically built to [uiuc-ischool-dataviz.github.io/spring2020/](https://uiuc-ischool-dataviz.github.io/spring2020/)
  * Copy the notebooks to your directory before using them.
  * Supplemental materials can be found at [UIUC-iSchool-DataViz/support-files](https://github.com/UIUC-iSchool-DataViz/support-files)
 
@@ -377,16 +482,104 @@ to use any information in it in the future.
 
 ---
 
+## Choose your own adventure
+
+here talk about 3 pathways
+
+---
+
+## Strategies for Success
+
+here talk about stuff
+
+---
+
+<br />
+<br />
+<br />
+
+# We are done with bureaucracy!
+
+---
+
+<br />
+<br />
+<br />
+
+# On to Viz topics!
+
+---
+
+here add in the "why this will be a little weird" with what all goes into viz.
+
+---
+
 ## This week
 
+ * What is a visualization?
  * Why do we visualize?
  * What types of data do we visualize?
  * How do we visualize?
+
+![](images/pie.jpg)
+
 
 notes:
 We're going to start out at a very high-level, discussing why we choose to
 visualize versus other types of representation, what types of data, and how we
 might do it.
+
+---
+
+## What is a visualization anyway?
+
+"Computer-based *visualization* systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+
+   * Visualization Analysis & Design, Tamara Munzner
+
+notes:
+I really like this definition because it gives us a sense of purpose - i.e. that our visualization must help a human with a task that has to do with data.
+
+---
+
+## What is a visualization anyway?
+
+"Computer-based *visualization* systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+
+   * Visualization Analysis & Design, Tamara Munzner
+
+Data Viz is task oriented:
+
+<img src="https://www.savalli.us/BIO370/Anatomy/AnatomyImages/TyrannosaurusSkeletonLabel.jpg">
+
+
+notes:
+here for example, we might want to know the labels of bones or how they fit together
+
+---
+
+## What is a visualization anyway?
+
+"Computer-based *visualization* systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+
+   * Visualization Analysis & Design, Tamara Munzner
+
+... versus artistic representations used to convey emotions:
+
+<img src="https://i.etsystatic.com/5150206/r/il/fe175b/1823842266/il_570xN.1823842266_b9y3.jpg" height='400px'>
+
+---
+
+## What is a visualization anyway?
+
+"Computer-based *visualization* systems provide visual representations of datasets designed to help people carry out tasks more effectively."
+
+   * Visualization Analysis & Design, Tamara Munzner
+
+... versus movies, comics, or other cinematic representations used to tell stories:
+
+<img src="http://www.dinopit.com/wp-content/uploads/2012/08/funny-dinosaur.jpg" height='300px'>
+
 
 ---
 
@@ -400,9 +593,10 @@ is the necessary reductionism that visualization can require.
 
 ---
 
-<iframe width="1024" height="576"
-src="https://www.youtube.com/embed/In72QAQJ1tY?rel=0" frameborder="0"
-allow="encrypted-media" allowfullscreen></iframe>
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
 
 notes:
 "There are lots of thing you can compare on a graph / Like who is the shortest
@@ -410,6 +604,65 @@ or the tallest giraffe / You can chart how much you walk / How much that you
 laugh / There are lots of things you can compare on a graph"
 
 "But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
+
+<img src="images/peg_cat1.png" alt="drawing" height="400"/>
+
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe..."
+
+notes:
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph"
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+Peg + Cat:
+https://www.youtube.com/embed/In72QAQJ1tY?rel=0
+
+<img src="images/peg_cat2.png" alt="drawing" height="400"/>
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+notes:
+"There are lots of thing you can compare on a graph / Like who is the shortest
+or the tallest giraffe / You can chart how much you walk / How much that you
+laugh / There are lots of things you can compare on a graph"
+
+"But the one thing you can't chart / Is how you feel in your heart"
+
+---
+
+# We can't visualize everything
+
+<img src="images/traesApp.png" alt="drawing" height="500"/>
+
+notes:
+for example, here is a haptic, or touch based "visualization" for the blind & visually impaired
+
+---
+
+# We can't visualize everything
+
+<img src="images/traesApp2.png" alt="drawing" height="500"/>
+
+notes:
+you should check it out, because its a thing we are also not going to cover!
+
+---
+
+HERE: is where viz for decisions, etc
 
 ---
 
@@ -438,6 +691,40 @@ Also, fair warning: I'm not a medical doctor.
 This diagram shows the visual acuity of a "standard" human eye, as a function
 of angular distance from the fovea.  We have to think about this in
 *conjunction* with our field of view.
+
+---
+
+# Your brain does interpolation
+
+<img src="images/dotsillusion.jpg_large" alt="drawing" width="500"/>
+
+There are 12 dots, can you count them all at the same time?
+
+---
+
+# Your brain does interpolation
+
+<img src="images/blindspotcross.png" alt="drawing" width="500"/>
+
+Step 1: Look at the cross
+
+Step 2: Close left eye, keep looking at the cross
+
+Step 3: Slowly move your head toward & away from screen until dot disappears
+
+---
+
+# Your brain does interpolation
+
+<img src="images/blindspotcross.png" alt="drawing" width="500"/>
+
+Step 1: Look at the cross
+
+Step 2: Close left eye, keep looking at the cross
+
+Step 3: Slowly move your head toward & away from screen until dot disappears
+
+# ... and sometimes it gets it wrong!
 
 ---
 
@@ -476,6 +763,8 @@ we will talk about as class goes on is that often visualizations can have a
 consistent style.  FRED in particular has a "branding" that is quite obvious,
 even without the logo.
 
+Also, the data we read was in the last sort of gray area of this graph.
+
 ---
 
 # Who are you visualizing for?
@@ -509,6 +798,48 @@ collection, organization and representation of data.
 # Tenet 2:
 
 We tell lies to visualize, but we _must_ be honest.
+
+---
+
+### "The Principle of Proportional Ink" - callingbullshit.org
+![](images/proportionalInk.png)
+
+notes:
+So let's first talk about how misleading visualizations can be. This 3D pie chart violates the "principle of proportional ink" which states that the number of pixels that represent a value should be proportional to the value. With the raised edge on the pie chart, the blue wedge gets way more ink than it deserves and you get a disproportionate sense of value.
+
+---
+
+### "Spurious Correlations" - tylervigen.com
+<img src="images/spurious.png" alt="drawing" width="800"/>
+
+notes:
+you can have a lot of absurd fun with data - but when data is presented in a visualization, people often believe the authority of it even if it's outlandish. 
+Side note: This guy has some good ideas of where to find sample datasets for upcoming homework assignments too!
+
+---
+
+<!-- .slide: data-background-image="images/barCharts.png" data-background-size="contain" -->
+
+notes:
+Each of these bar chart examples are meant to show the same data. But you can see how they're a bit problematic.
+
+---
+
+<!-- .slide: data-background-image="images/gunDeaths.jpg" data-background-size="contain" -->
+
+notes:
+Now here's an example that's more brazen. I'll give you a minute to analyze this and tell me what's wrong with this graph.
+
+Some people will claim the Y-axis should always start from the bottom - at zero - to avoid confusion.
+
+---
+
+<!-- .slide: data-background-image="images/keelingCurve.svg" data-background-size="contain" -->
+
+notes:
+however, the Keeling Curve is an interesting counter-argument. This is the famous graph that was the original evidence for global warming, showing the rate at which atmospheric carbon dioxide was growing. 
+
+Does anyone know why it's generally accepted to show the y-axis like this, without it starting at the zero axis?
 
 ---
 
@@ -552,19 +883,31 @@ We tell lies to visualize, but we _must_ be honest.
 
 <!-- .slide: data-background-image="images/stitch_bg.png" data-background-size="contain"-->
 
+notes:
+This is a screenshot from the movie "Lilo and Stitch" where the little girl Lilo is graphing how much evil is in the alien Stitch. It borrows from a familiar visual - the thermometer. But how could this visualization be misinterpreted? How is it different from a thermometer?
+
 ---
 
 <!-- .slide: data-background-image="images/stitch_nobg.png" data-background-size="contain"-->
 
+notes:
+The angle can be misleading. So can the relative width of the head vs the feet. The surface area is not consistent from top to bottom. Also there are empty areas in the mouth and eyes!
+
 ---
 
 <!-- .slide: data-background-image="images/stitch_nobg_tilted.png" data-background-size="contain"-->
+
+notes:
+If we rotate the image so that the red liquid is level, do we get a different impression for how much bad is in Stitch?
 
 ---
 
 <iframe width="1024" height="576"
 src="https://www.youtube.com/embed/D-uBv6jB7r0" frameborder="0"
 allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+notes:
+How could this visualization be misleading? What about the camera move? What about the colors used? Are there actually several distinct layers of shells or is this a continuous volume?
 
 ---
 
@@ -590,6 +933,25 @@ and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .
  * [Map 3](http://www-personal.umich.edu/~mejn/election/2008/countymapredbluer1024.png)
  * [Map 4](http://www-personal.umich.edu/~mejn/election/2008/countymappurpler1024.png)
  * [Map 5](http://www-personal.umich.edu/~mejn/election/2008/countycartpurple1024.png)
+
+notes:
+These are great, but some criticisms might be that the color red is more apparent to the human eye than the color blue. And in the population-to-area adjusted maps, it's difficult to read for people used to geographic accuracy.
+
+Map1 - this is just a geographical map of red and blue
+
+Map2 - cartogram weighted by population (note, NOT by electoral college population)
+
+Map3 - election results by county
+
+Map4 - percentage of votes by county
+
+Map5 - percentage of votes by county, weighted by population
+
+---
+
+## Getting started in Python
+
+*Open up Python & get started coding!*
 
 ---
 
@@ -618,51 +980,30 @@ and context, see his page http://www-personal.umich.edu/~mejn/election/2008/ .
    * By hand is acceptable
    * Computational methods should include source code
 
----
+PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2
 
-## Let's Get Started with Iodide!
-
- 1. Create a [github](https://github.com/) account if you do not have one
- 1. Visit [iodide.io](https://iodide.io/) to log in to iodide.
- 1. Create a new notebook
+<small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small>
 
 ---
 
-## Basics of jsmd
+## Assignment 1
 
-Iodide uses a system called `jsmd` for describing the code and narrative presented.  It intersperses different types of "cells" in a text entry box.
+ * Identify three visualizations in pop culture -- *not* academic literature.
+   This could be, for instance, from:
+   * Movies / TV / Music videos
+   * Everyday life
+   * Advertisements
+ * Describe each one in detail
+   * Where did the data come from?
+   * Is the data quantitative, qualitative, categorical, etc?
+   * How was the data processed before being displayed?
+   * What method was used to display that data?
+ * <span style="color:red">Replicate the visualization with different, but similarly “shaped,” data</span>
+   * By hand is acceptable
+   * Computational methods should include source code
 
-Each cell is delineated by the prefix `%%` and the type of cell.  For instance, this would be a javascript cell followed by a markdown cell:
+PLUS: an intake survey - https://goo.gl/forms/omTDQFvEpK5CwFIU2
 
-```
-%% js
-var a = [1, 2, 3]
-%% md
-Hi there! *This is markdown*.
-```
-
----
-
-## Types of jsmd cells
-
-These are the types of cells you can use:
-
- * `js` is Javascript code
- * `py` for python code (more on that later)
- * `md` for Markdown
- * `css` for CSS styles
- * `fetch` to retrieve data, files, or javascript libraries
- * `raw` for raw text, ignored by Iodide
+<small>Example: https://uiuc-ischool-dataviz.github.io/spring2019online/week01/example_assignment.html</small>
 
 ---
-
-## Material to Cover
-
-We'll cover a few basics of Javascript and Python.
-
- 1. Javascript types: strings, arrays, functions, and objects
- 1. Python types: arrays, lists, numbers
-
----
-
-Let's go!
