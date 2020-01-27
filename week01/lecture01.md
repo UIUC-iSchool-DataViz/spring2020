@@ -522,6 +522,7 @@ There are 3 pathways (that I can see in this course, could be more!)
  3. "I don't know/I am new to programming and I want to focus on that."
     * Strategy: 
        * look at the code, focus heavily on Python
+       * read the prep notebooks before class!
        * do the Javascript parts
        * if you're new to programming, do Javascript parts in class, and build on them for any HW
        * come back to the optional texts/docs after the course is over
