@@ -74,6 +74,36 @@ each class.  These will be included in the course materials repository, and
 students are encouraged to fork that repository and issue pull requests to add
 suggested readings.
 
+# Topic Calendar & Optional Reading
+
+Below is an approximate outline of the course and **optional** reading for each week.
+This course is always under development and  the
+course outline below is subject to some flexibility; students will be encouraged
+to provide feedback on the topics covered, particularly toward the end.  Topics
+that are of particular interest will be emphasized.
+
+**Optional texts:**
+ * <a href="https://www.amazon.com/Visualization-Analysis-Design-AK-Peters/dp/1466508914/ref=sr_1_2?crid=1WC409BVX1489&keywords=visualization+analysis+and+design&qid=1580082878&sprefix=visualization%2Caps%2C158&sr=8-2">Visualization Analysis & Design, Tamara Munzner</a> (VAD)
+ * Edward Tufte wrote a series of visualization books that are often thought of as foundational to the field.  These include <a href="https://www.amazon.com/Visual-Display-Quantitative-Information/dp/0961392142/ref=sr_1_1?keywords=edward+tufte+books&qid=1580082986&sr=8-1">The Visual Display of Quantitative Information</a>, <a href="https://www.amazon.com/Beautiful-Evidence-Edward-R-Tufte/dp/0961392177/ref=sr_1_2?keywords=edward+tufte+books&qid=1580082986&sr=8-2">Beautiful Evidence</a>, <a href="https://www.amazon.com/Envisioning-Information-Edward-R-Tufte/dp/0961392118/ref=sr_1_3?keywords=edward+tufte+books&qid=1580082986&sr=8-3">Envisioning Information</a>, and <a href="https://www.amazon.com/Visual-Explanations-Quantities-Evidence-Narrative/dp/0961392126/ref=sr_1_4?keywords=edward+tufte+books&qid=1580082986&sr=8-4">Visual Explanations: Images and Quantities, Evidence and Narrative<a>
+ * Additional references will be added as needed.
+
+**Course Outline and *Optional* Reading List**
+
+| Week 1 | Introduction, syllabus, examples, and some basics | VAD, Chapter 1
+| Week 2 | Data storage & Operations | VAD, Chapter 2; <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs</a>; <a href="https://docs.scipy.org/doc/numpy/reference/">NumPy Docs</a>
+| Week 3 | Types of Viz and color, colormaps | VAD, Chapter 10
+| Week 4 | Distributions, Engines | VAD Chapter 7; <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a>
+| Week 5 | Beginning Interactivity | <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://traitlets.readthedocs.io/en/stable/">Traitlets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>
+| Week 6 | Interactivity, continued & Grammar of Graphics | <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>; VAD Chapter 5
+| Week 7 | Dashboards & Maps | VAD Chapter 11; VAD Chapter 8
+| Week 8 | Comparisons between different datasets | TBD
+| Week 9 | Maps & Geographic Data | VAD Chapter 8
+| Week 10 | Network Visualization & beginning web dev & Publishing, Javascript | VAD Chapter 9
+| Week 11 | Designing for the web with Python & Javascript, Web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
+| Week 12 | More javascript & web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
+| Week 13 | Scientific visualization | TBD
+| Week 14 | Group presentations | None
+
 
 # About Your Instructor
 
@@ -221,27 +251,6 @@ must notify the instructor and TA in advance and request an excused absence.
 Participation in class -- in the form of comments, questions, and discussion --
 is expected.
 
-# Semester Calendar
-
-Below is an outline from the first semester that this course was taught.  This course is always under development and  the
-course outline below is subject to some flexibility; students will be encouraged
-to provide feedback on the topics covered, particularly toward the end.  Topics
-that are of particular interest will be emphasized.
-
- * Week 1: Introduction, syllabus, examples, and some basics
- * Week 2: Operational palette, structured python, and files
- * Week 3: Quantitative plots, plot components
- * Week 4: Histograms and distributions
- * Week 5: R and ggplot
- * Week 6: Images: color, colormaps
- * Week 7: Comparisons between datasets
- * Week 8: Comparisons between different datasets
- * Week 9: Network visualization
- * Week 10: Principles of interactive visualization
- * Week 11: Interactive visualization with Python
- * Week 12: Scientific visualization
- * Week 13: Advanced topics
- * Week 14: Group presentations
 
 ## Emergency Response: Run, Hide, Fight
 
