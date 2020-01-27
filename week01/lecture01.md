@@ -484,13 +484,47 @@ to use any information in it in the future.
 
 ## Choose your own adventure
 
-here talk about 3 pathways
+There are 3 pathways (that I can see in this course, could be more!)
+
+ 1. "I am here to get better at programming and play with viz platforms"
+ 1. "I am thinking about a career in data viz."
+ 1. "I don't know/I am new to programming and I want to focus on that."
 
 ---
 
-## Strategies for Success
+## Choose your own adventure
 
-here talk about stuff
+There are 3 pathways (that I can see in this course, could be more!)
+
+ 1. "I am here to get better at programming and play with viz platforms"
+    * Strategy:
+       * look at the code and the extended examples
+       * do the Javascript parts
+
+---
+
+## Choose your own adventure
+
+There are 3 pathways (that I can see in this course, could be more!)
+
+ 2. "I am thinking about a career in data viz."
+    * Strategy: 
+       * look at the code
+       * do the Javascript parts
+       * read the optional texts/docs 
+
+---
+
+## Choose your own adventure
+
+There are 3 pathways (that I can see in this course, could be more!)
+
+ 3. "I don't know/I am new to programming and I want to focus on that."
+    * Strategy: 
+       * look at the code, focus heavily on Python
+       * do the Javascript parts
+       * if you're new to programming, do Javascript parts in class, and build on them for any HW
+       * come back to the optional texts/docs after the course is over
 
 ---
 
@@ -510,7 +544,13 @@ here talk about stuff
 
 ---
 
-here add in the "why this will be a little weird" with what all goes into viz.
+### Why any data viz course will feel a little weird
+
+
+<img src="https://thumbnails-visually.netdna-ssl.com/what-is-data-visualization_50290b9240bd8_w1500.png" width='700px'>
+
+notes:
+there is a *huge* overlay of topics that cover data viz - from the neurology of how your prefrontal cortex process information, to how humans process storytelling, to data analytics, and color theory and the list goes on!
 
 ---
 
