@@ -1,6 +1,8 @@
 ---
 layout: week
-visible: false
+visible: true
+visible_lec: false
+visible_n: true
 ---
 
 # Week 2 - Data Storage and Operations
