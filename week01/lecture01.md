@@ -26,7 +26,7 @@ Website.](https://chancellor.illinois.edu/land_acknowledgement.html)
 <!-- .slide: class="vertical_center" -->
 ## Basics
 
-9AM-11:50PM Wednesdays
+9AM-11:50PM Mondays
 
 Jill P. Naiman - `jnaiman@illinois.edu`
  * Office Hours: Tuesday 3-4pm NCSA 2040 (this OH can go a little longer as needed), Friday 3-4pm in iSchool lounge; other times by request
@@ -244,7 +244,8 @@ We might start getting into javascript earlier, depending on how we are doing.
  * Week 9: Maps & Geographic Data 
  * Week 10: Network Visualization & beginning web dev & Publishing, Javascript
  * Week 11: Designing for the web with Python & Javascript, Web dev
- * Week 12: More javascriptScientific visualizationAdvanced topics
+ * Week 12: More javascript
+ * Week 13: Scientific visualization & Advanced topics
  * Week 14: Group presentations
 
 notes:
