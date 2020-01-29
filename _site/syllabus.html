@@ -19,7 +19,7 @@
 <!-- End Jekyll SEO tag -->
 
     <link href='https://fonts.googleapis.com/css?family=Arvo:400,700,400italic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/spring2020/assets/css/style.css?v=7a34b5b18646bb176e0a4b9b97e233a8c477e51f">
+    <link rel="stylesheet" href="/spring2020/assets/css/style.css?v=b9c4d1a4bf45de28013119feb1cdb0823a0a12d6">
     <script src="/spring2020/assets/js/scale.fix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
@@ -172,9 +172,16 @@ that are of particular interest will be emphasized.</p>
 
 <p><strong>Optional texts:</strong></p>
 <ul>
-  <li><a href="https://www.amazon.com/Visualization-Analysis-Design-AK-Peters/dp/1466508914/ref=sr_1_2?crid=1WC409BVX1489&amp;keywords=visualization+analysis+and+design&amp;qid=1580082878&amp;sprefix=visualization%2Caps%2C158&amp;sr=8-2">Visualization Analysis &amp; Design, Tamara Munzner</a> (VAD)</li>
+  <li><a href="https://www.amazon.com/Visualization-Analysis-Design-AK-Peters/dp/1466508914/ref=sr_1_2?crid=1WC409BVX1489&amp;keywords=visualization+analysis+and+design&amp;qid=1580082878&amp;sprefix=visualization%2Caps%2C158&amp;sr=8-2">Visualization Analysis &amp; Design, Tamara Munzner</a></li>
   <li>Edward Tufte wrote a series of visualization books that are often thought of as foundational to the field.  These include <a href="https://www.amazon.com/Visual-Display-Quantitative-Information/dp/0961392142/ref=sr_1_1?keywords=edward+tufte+books&amp;qid=1580082986&amp;sr=8-1">The Visual Display of Quantitative Information</a>, <a href="https://www.amazon.com/Beautiful-Evidence-Edward-R-Tufte/dp/0961392177/ref=sr_1_2?keywords=edward+tufte+books&amp;qid=1580082986&amp;sr=8-2">Beautiful Evidence</a>, <a href="https://www.amazon.com/Envisioning-Information-Edward-R-Tufte/dp/0961392118/ref=sr_1_3?keywords=edward+tufte+books&amp;qid=1580082986&amp;sr=8-3">Envisioning Information</a>, and <a href="https://www.amazon.com/Visual-Explanations-Quantities-Evidence-Narrative/dp/0961392126/ref=sr_1_4?keywords=edward+tufte+books&amp;qid=1580082986&amp;sr=8-4">Visual Explanations: Images and Quantities, Evidence and Narrative<a></a></a></li>
   <li>Additional references will be added as needed.</li>
+  <li>There is a nice free online book, <a href="https://serialmentor.com/dataviz/">Fundamentals of Data Visualization by Claus O. Wilke</a> that provies a lot of nice examples and serves as a nice intro to Tamara Munzner’s book.  It is built from the linked <a href="https://github.com/clauswilke/dataviz">GitHub repo</a>.</li>
+</ul>
+
+<p>Acronyms for books:</p>
+<ul>
+  <li>VAD: Visualization Analysis &amp; Design</li>
+  <li>FDA: Fundamentals of Data Visualization</li>
 </ul>
 
 <p><strong>Course Outline and <em>Optional</em> Reading List</strong></p>
@@ -184,22 +191,22 @@ that are of particular interest will be emphasized.</p>
     <tr>
       <td>Week 1</td>
       <td>Introduction, syllabus, examples, and some basics</td>
-      <td>VAD, Chapter 1</td>
+      <td>1. VAD, Chapter 1: What’s Viz, and Why Do It? <br /> 2. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Chapter 1: Introduction</a> &amp; <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Chapter 17: The principle of proportional ink</a></td>
     </tr>
     <tr>
       <td>Week 2</td>
       <td>Data storage &amp; Operations</td>
-      <td>VAD, Chapter 2; <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs</a>; <a href="https://docs.scipy.org/doc/numpy/reference/">NumPy Docs</a></td>
+      <td>1. VAD, Chapter 2: What: Data Abstraction <br /> 2. <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">FDA, Chapter 2: Visualizing data: Mapping data onto aesthetics</a> <br /> 3. <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs</a> &amp; <a href="https://docs.scipy.org/doc/numpy/reference/">NumPy Docs</a></td>
     </tr>
     <tr>
       <td>Week 3</td>
       <td>Types of Viz and color, colormaps</td>
-      <td>VAD, Chapter 10</td>
+      <td>1. VAD, Chapter 10: Map Color and Other Channels</td>
     </tr>
     <tr>
       <td>Week 4</td>
       <td>Distributions, Engines</td>
-      <td>VAD Chapter 7; <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a></td>
+      <td>VAD Chapter 7: Arrange Tables <br /> <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a></td>
     </tr>
     <tr>
       <td>Week 5</td>
@@ -209,12 +216,12 @@ that are of particular interest will be emphasized.</p>
     <tr>
       <td>Week 6</td>
       <td>Interactivity, continued &amp; Grammar of Graphics</td>
-      <td><a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>; VAD Chapter 5</td>
+      <td><a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>; VAD Chapter 5: Marks and Channels</td>
     </tr>
     <tr>
       <td>Week 7</td>
       <td>Dashboards &amp; Maps</td>
-      <td>VAD Chapter 11; VAD Chapter 8</td>
+      <td>VAD Chapter 11: Manipulate View; VAD Chapter 8: Arrange Spatial Data</td>
     </tr>
     <tr>
       <td>Week 8</td>
@@ -224,12 +231,12 @@ that are of particular interest will be emphasized.</p>
     <tr>
       <td>Week 9</td>
       <td>Maps &amp; Geographic Data</td>
-      <td>VAD Chapter 8</td>
+      <td>VAD Chapter 8: Arrange Spatial Data</td>
     </tr>
     <tr>
       <td>Week 10</td>
       <td>Network Visualization &amp; beginning web dev &amp; Publishing, Javascript</td>
-      <td>VAD Chapter 9</td>
+      <td>VAD Chapter 9: Arrange Networks and Trees</td>
     </tr>
     <tr>
       <td>Week 11</td>
