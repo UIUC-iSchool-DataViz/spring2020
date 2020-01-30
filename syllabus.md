@@ -85,8 +85,8 @@ that are of particular interest will be emphasized.
 **Optional texts:**
  * <a href="https://www.amazon.com/Visualization-Analysis-Design-AK-Peters/dp/1466508914/ref=sr_1_2?crid=1WC409BVX1489&keywords=visualization+analysis+and+design&qid=1580082878&sprefix=visualization%2Caps%2C158&sr=8-2">Visualization Analysis & Design, Tamara Munzner</a>
  * Edward Tufte wrote a series of visualization books that are often thought of as foundational to the field.  These include <a href="https://www.amazon.com/Visual-Display-Quantitative-Information/dp/0961392142/ref=sr_1_1?keywords=edward+tufte+books&qid=1580082986&sr=8-1">The Visual Display of Quantitative Information</a>, <a href="https://www.amazon.com/Beautiful-Evidence-Edward-R-Tufte/dp/0961392177/ref=sr_1_2?keywords=edward+tufte+books&qid=1580082986&sr=8-2">Beautiful Evidence</a>, <a href="https://www.amazon.com/Envisioning-Information-Edward-R-Tufte/dp/0961392118/ref=sr_1_3?keywords=edward+tufte+books&qid=1580082986&sr=8-3">Envisioning Information</a>, and <a href="https://www.amazon.com/Visual-Explanations-Quantities-Evidence-Narrative/dp/0961392126/ref=sr_1_4?keywords=edward+tufte+books&qid=1580082986&sr=8-4">Visual Explanations: Images and Quantities, Evidence and Narrative<a>
+ * There is a nice free online book, <a href="https://serialmentor.com/dataviz/">Fundamentals of Data Visualization by Claus O. Wilke</a> that provies a lot of nice examples and serves as a nice intro to Tamara Munzner's book.  It has an <a href="https://serialmentor.com/dataviz/bibliography.html">annotated bibliography at the end</a> that gives a few references for books in data viz that include programming. It is built from the linked <a href="https://github.com/clauswilke/dataviz">GitHub repo</a>.  Note that this book is focused on static (not interactive) visualizations.
  * Additional references will be added as needed.
- * There is a nice free online book, <a href="https://serialmentor.com/dataviz/">Fundamentals of Data Visualization by Claus O. Wilke</a> that provies a lot of nice examples and serves as a nice intro to Tamara Munzner's book.  It is built from the linked <a href="https://github.com/clauswilke/dataviz">GitHub repo</a>.
 
 Acronyms for books:
  * VAD: Visualization Analysis & Design
@@ -94,16 +94,16 @@ Acronyms for books:
 
 **Course Outline and *Optional* Reading List**
 
-| Week 1 | Introduction, syllabus, examples, and some basics | 1. VAD, Chapter 1: What's Viz, and Why Do It? <br> 2. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Chapter 1: Introduction</a> & <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Chapter 17: The principle of proportional ink</a>
-| Week 2 | Data storage & Operations | 1. VAD, Chapter 2: What: Data Abstraction <br> 2. <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">FDA, Chapter 2: Visualizing data: Mapping data onto aesthetics</a> <br> 3. <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs</a> & <a href="https://docs.scipy.org/doc/numpy/reference/">NumPy Docs</a>
-| Week 3 | Types of Viz and color, colormaps | 1. VAD, Chapter 10: Map Color and Other Channels
-| Week 4 | Distributions, Engines | VAD Chapter 7: Arrange Tables <br> <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a>
+| Week 1 | Introduction, syllabus, examples, and some basics | 1. VAD, Ch. 1: What's Viz, and Why Do It? <br> 2. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Ch. 1: Introduction</a> & <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Ch. 17: The principle of proportional ink</a>
+| Week 2 | Data storage & Operations | 1. VAD, Ch. 2: What: Data Abstraction <br> 2. <a href="https://serialmentor.com/dataviz/aesthetic-mapping.html">FDA, Ch. 2: Visualizing data: Mapping data onto aesthetics</a> <br> 3. <a href="https://pandas.pydata.org/pandas-docs/stable/">Pandas Docs</a> & <a href="https://docs.scipy.org/doc/numpy/reference/">NumPy Docs</a>
+| Week 3 | Types of Viz and color, colormaps | 1. VAD, Ch. 10: Map Color and Other Channels <br> 2. <a href="https://serialmentor.com/dataviz/color-basics.html">FDA, Ch. 4: Color scales</a> <br> 3. <a href="https://jiffyclub.github.io/palettable/#documentation">Palettable Docs</a>
+| Week 4 | Distributions, Engines | VAD Ch. 7: Arrange Tables <br> <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a>
 | Week 5 | Beginning Interactivity | <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://traitlets.readthedocs.io/en/stable/">Traitlets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>
-| Week 6 | Interactivity, continued & Grammar of Graphics | <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>; VAD Chapter 5: Marks and Channels
-| Week 7 | Dashboards & Maps | VAD Chapter 11: Manipulate View; VAD Chapter 8: Arrange Spatial Data
+| Week 6 | Interactivity, continued & Grammar of Graphics | <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>; VAD Ch. 5: Marks and Channels
+| Week 7 | Dashboards & Maps | VAD Ch. 11: Manipulate View; VAD Ch. 8: Arrange Spatial Data
 | Week 8 | Comparisons between different datasets | TBD
-| Week 9 | Maps & Geographic Data | VAD Chapter 8: Arrange Spatial Data
-| Week 10 | Network Visualization & beginning web dev & Publishing, Javascript | VAD Chapter 9: Arrange Networks and Trees
+| Week 9 | Maps & Geographic Data | VAD Ch. 8: Arrange Spatial Data
+| Week 10 | Network Visualization & beginning web dev & Publishing, Javascript | VAD Ch. 9: Arrange Networks and Trees
 | Week 11 | Designing for the web with Python & Javascript, Web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
 | Week 12 | More javascript & web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
 | Week 13 | Scientific visualization | TBD
