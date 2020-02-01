@@ -14,6 +14,9 @@ palette of operations you can apply to data to visualize it.
 ## Downloads: Data
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week02/building_inventory.csv" download>Building Inventory CSV file - building_inventory.csv</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week01/images/stitch_reworked.png" download>Stitch Image from last week</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png" download>Another practice image</a>
+
 
 ## References
 
