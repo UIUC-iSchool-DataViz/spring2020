@@ -106,6 +106,13 @@ this does not cover interactive stuff, but its still a nice reference and its fr
 
 ---
 
+## Homework grading
+
+ * Homework points will be listed as reference, all HWs will be graded out of 100%, all HWs are worth the same
+ * We do not drop a HW score
+
+---
+
 ## Choose your own adventure
 
 There are 3 pathways (that I can see in this course, could be more!)
