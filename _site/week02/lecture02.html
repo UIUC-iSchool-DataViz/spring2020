@@ -505,54 +505,6 @@ Breaking this further down, we encode each character:
 
 ---
 
-2. Outline of today
- * we have to get data from storage to viz -> have to worry about how stored on disk & how to read it into python/javascript/ect
- * how can data be stored in files
-    * text - csv, ascii, json
-    * binary - hdf5, png/gif/etc
-    * query - json/sql
- * how data is stored on disk as binary? (or skip this...)
- * we also have to think about what different operations & filtering we can apply to different types of data
- * why do we need to think about this (example: buildings vs. image & introduce buildings)
- * what can we do: relationships & filtering slides & (sub)sampling & binning (histograms), also averaging, summing, etc (see last semester)
-
-
-
----
-
-## CSV (Comma-separated values)
-
-| Column 1 | Column 2 | Column 3 | Column 4 | Column 5 |
-|-|-|-|-|-|
-| . | . | . | . | . |
-| . | . | . | . | . |
-| . | . | . | . | . |
-| . | . | . | . | . |
-
-<div style="height: 2.0em;"></div>
-
----
-
-## CSV (Comma-separated values)
-
-![](images/automobilesCSV.png)
-
- * "Lowest-common denominator format" (widest available)
- * Flexible delimiters 
- * Ad hoc comments and headers (data readers need to be adapted)
- * Row-oriented
- * Row-size can vary: no implicit indexing
-
-notes:
-Sometimes called "DSV" or "Delimiter-separated values"
-
-Ad hoc means data readers need to be adapted to format.
-
----
-
-
----
-
 ## JSON
 
 | | | |
@@ -574,9 +526,15 @@ Ad hoc means data readers need to be adapted to format.
  * Format of .ipynb Python Notebooks
 
 notes:
+Another way to store tabular-like data is with JSON files.
+
 XML-like syntax for storing data values. 
 
 All fields for a record are presented at once.
+
+REST = REpresentational State Transfer - web architecture that keeps clients and servers independent and queries using flexible JSON formatting.
+
+**take a look at a jupyter notebook!**
 
 ---
 
@@ -625,7 +583,98 @@ All fields for a record are presented at once.
 
 ---
 
-## Doing Stuff with Data
+<br>
+<br>
+<br>
+
+# Let's revisit image (spatial) data.
+
+notes:
+image data is an excellent example of data where the orientation of each element is important -- i.e. how we display things in space is not a choice that is really up to us, its up to the data!
+
+---
+
+<!-- .slide: data-background-image="../week01/images/stitch_nobg_tilted.png" data-background-size="contain"-->
+
+notes:
+how is this dataset "fundementally" different than a tabular dataset?
+
+---
+
+## Does reordering tables & columns matter?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+
+<img src="../week01/images/stitch_nobg_tilted.png" width="400px">
+
+</div>
+
+<div class="right">
+
+<img src="https://d13ot9o61jdzpp.cloudfront.net/images/tabular_data_1_the_perfect_format.png" width="400px">
+
+</div>
+
+notes: what happens if I re-order the rows of this table?
+
+Or columns?
+
+Is information lost or confused?
+
+---
+
+## Does reordering tables & columns matter?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+
+<img src="images/shuffled_stitch.png" width="400px">
+
+</div>
+
+<div class="right">
+
+<img src="https://d13ot9o61jdzpp.cloudfront.net/images/tabular_data_1_the_perfect_format.png" width="400px">
+
+</div>
+
+notes: 
+with data that is enharently spatial in nature, we see we lose information and can potentially confuse our viewer if we shuffle data location and order.
+
+---
+
+## Does reordering tables & columns matter?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+
+<img src="images/shuffled_stitch.png" width="400px">
+
+</div>
+
+<div class="right">
+
+<img src="https://d13ot9o61jdzpp.cloudfront.net/images/tabular_data_1_the_perfect_format.png" width="400px">
+
+</div>
+
+We'll start with manipulating image data and then move on to geographical data in a few lectures.
+
+notes: 
+with data that is enharently spatial in nature, we see we lose information and can potentially confuse our viewer if we shuffle data location and order.
+
+
+---
+
+<br>
+<br>
+<br>
+
+# Doing Stuff with Data
 
 Now that we understand a few ways that data can be stored, let's do some things
 to it.
@@ -633,7 +682,10 @@ to it.
 ---
 
 <div class="left">
-![](images/palette.jpg)<!-- .element: style="height: 20em;" -->
+
+![](images/palette.jpg)
+
+<!-- .element: style="height: 20em;" -->
 </div>
 
 <div class="right" style="font-size: 150%;">
@@ -745,7 +797,6 @@ You can see that in this higher frequency data, the same sampling rates fall apa
 
 <!-- .slide: data-background-image="images/teapots.png" data-background-size="contain" -->
 
-
 ---
 
 ## 10 Lets try some stuff in Python!
@@ -754,31 +805,7 @@ You can see that in this higher frequency data, the same sampling rates fall apa
 
 ---
 
-## Summary
-
- * Next week, we will cover mutations, histograms, and the elements of a
-visualization.
- * Next week you will receive your first official coding assignment. <span style="color:red">This week please review the code we went over and ask questions as they come up!  We will assume folks are comfortable enough with Python next week to complete the HW assigned next week.</span>
-
----
-
-## Reading CSV
-
-```
-...
-390,1.83970e-003,-4.53930e-004,1.21520e-002
-395,4.61530e-003,-1.04640e-003,3.11100e-002
-400,9.62640e-003,-2.16890e-003,6.23710e-002
-405,1.89790e-002,-4.43040e-003,1.31610e-001
-410,3.08030e-002,-7.20480e-003,2.27500e-001
-415,4.24590e-002,-1.25790e-002,3.58970e-001
-420,5.16620e-002,-1.66510e-002,5.23960e-001
-425,5.28370e-002,-2.12400e-002,6.85860e-001
-...
-```
-
-notes:
-Let's take this sample data and see how it's represented in computer memory.
+## Homework: Two Choices!
 
 ---
 
