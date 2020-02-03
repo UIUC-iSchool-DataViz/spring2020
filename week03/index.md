@@ -29,4 +29,5 @@ Note there are a variety of notebooks from previous iterations of this course li
 
  1. VAD, Ch. 10: Map Color and Other Channels
  1. <a href="https://serialmentor.com/dataviz/color-basics.html">FDA, Ch. 4: Color scales</a>
+ 1. <a href="https://www.csc2.ncsu.edu/faculty/healey/PP/">Perception in Visualization (pay attention to the color parts)</a>
  1. <a href="https://jiffyclub.github.io/palettable/#documentation">Palettable Docs</a>
