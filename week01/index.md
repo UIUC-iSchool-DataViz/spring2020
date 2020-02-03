@@ -21,3 +21,8 @@ with our data.
 
  * <a href="data/GDP.csv" download>FRED GDP.csv file</a>
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week01/images/stitch_reworked.png" download>Reworked Stitch Image</a>
+
+## Optional Reading List (See syllabus for acronyms)
+
+1. VAD, Ch. 1: What’s Viz, and Why Do It?
+2. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Ch. 1: Introduction</a> & <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Ch. 17: The principle of proportional ink</a>

@@ -24,3 +24,9 @@ Note there are a variety of notebooks from previous iterations of this course li
  * <a href="https://github.com/jnaiman/IS-452AO-Fall2019/blob/master/Lectures/Week-09-Dictionaries.ipynb">IS452's Dictionary week</a>
  * Colors: <a href="https://www.rapidtables.com/web/color/RGB_Color.html">RGB color triplets</a>
  * While we won't be using <a href="https://wholetale.org/">Whole Tale</a> for this lecture, it was used for the last iteration of this course and you should feel free to go through the code walk-throughs presented there by Matt Turk - just search for "IS590" under the <a href="https://dashboard.wholetale.org/browse">Browse Tales</a> header.
+
+## Optional Reading List
+
+ 1. VAD, Ch. 10: Map Color and Other Channels
+ 1. <a href="https://serialmentor.com/dataviz/color-basics.html">FDA, Ch. 4: Color scales</a>
+ 1. <a href="https://jiffyclub.github.io/palettable/#documentation">Palettable Docs</a>
