@@ -20,5 +20,7 @@ palette of operations you can apply to data to visualize it.
 
 ## References
 
- * Python: <a href="https://github.com/jnaiman/IS-452AO-Fall2019/blob/master/Lectures/Week-10-JSONandCSV.ipynb">IS452's Intro to Reading & Writing CSV files (scroll down on page)</a>
+ * Python:
+    * <a href="https://github.com/jnaiman/IS-452AO-Fall2019/blob/master/Lectures/Week-10-JSONandCSV.ipynb">IS452's Intro to Reading & Writing CSV files (scroll down on page)</a>
+    * <a href="https://github.com/jnaiman/IS-452AO-Fall2019/blob/master/Lectures/Week-09-Dictionaries.ipynb">IS452's Dictionary week</a>
  * Colors: <a href="https://www.rapidtables.com/web/color/RGB_Color.html">RGB color triplets (we will also cover this extensively next week)</a>
