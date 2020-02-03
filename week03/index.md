@@ -12,6 +12,8 @@ choose colors and transforms to better suit our data.
 
 We also did some basics of Pandas last week and we'll continue this week.
 
+Note there are a variety of notebooks from previous iterations of this course listed under the *Materials* subsection of today's lecture.  The "furtherExamples" notebooks are just there as reference, we will not be going through them by hand.
+
 ## Downloads: Data
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week02/building_inventory.csv" download>Building Inventory CSV file - building_inventory.csv</a>
@@ -21,3 +23,4 @@ We also did some basics of Pandas last week and we'll continue this week.
  * <a href="http://jonathansoma.com/lede/algorithms-2017/classes/fuzziness-matplotlib/understand-df-plot-in-pandas/">Pandas vs. Matplotlib</a>
  * <a href="https://github.com/jnaiman/IS-452AO-Fall2019/blob/master/Lectures/Week-09-Dictionaries.ipynb">IS452's Dictionary week</a>
  * Colors: <a href="https://www.rapidtables.com/web/color/RGB_Color.html">RGB color triplets</a>
+ * While we won't be using <a href="https://wholetale.org/">Whole Tale</a> for this lecture, it was used for the last iteration of this course and you should feel free to go through the code walk-throughs presented there by Matt Turk - just search for "IS590" under the <a href="https://dashboard.wholetale.org/browse">Browse Tales</a> header.
