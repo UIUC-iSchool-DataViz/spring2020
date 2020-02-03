@@ -1340,7 +1340,7 @@ You can see that in this higher frequency data, the same sampling rates fall apa
 
 ---
 
-## 10 Lets try some stuff in Python!
+## Lets try some stuff in Python!
 
 ... opening Jupyter...
 
