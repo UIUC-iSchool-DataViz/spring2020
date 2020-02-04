@@ -17,6 +17,8 @@ Note there are a variety of notebooks from previous iterations of this course li
 ## Downloads: Data
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week02/building_inventory.csv" download>Building Inventory CSV file - building_inventory.csv</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt">Michigan Depth Map (86Mb)</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5">Brain Scan (72Mb)</a>
 
 ## References
 
