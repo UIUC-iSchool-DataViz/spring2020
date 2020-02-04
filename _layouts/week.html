@@ -27,11 +27,29 @@ layout: default
         {% endif %}
         {%endfor%}
 	{% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
+	
         {% for nb in notebooks %}
+	<!-- I am a comment -->
         {% if nb.path contains page.dir %}
-        <li>Notebook {{nb.basename}}: 
+	{% unless nb.basename contains "2019" %}
+        <li>Notebook: {{nb.basename}}: 
+         (<a href="../nbv.html?notebook_name={{nb.path | relative_url | url_encode }}">view</a>,
+          <a href="{{nb.path | relative_url}}">download</a>)</li>
+	{% endunless %}
+        {% endif %}
+        {%endfor%}
+        </ul>
+
+        <h3>Materials from Previous Courses</h3>
+        <ul>
+	{% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
+	
+        {% for nb in notebooks %}
+        {% if nb.path contains page.dir and nb.basename contains "2019" %}
+        <li>Notebook: {{nb.basename}}: 
          (<a href="../nbv.html?notebook_name={{nb.path | relative_url | url_encode }}">view</a>,
          <a href="{{nb.path | relative_url}}">download</a>)</li>
         {% endif %}
         {%endfor%}
         </ul>
+	
