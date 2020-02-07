@@ -21,6 +21,7 @@ baseurl: "/spring2020" # the subpath of your site, e.g. /blog
 url: "https://uiuc-ischool-dataviz.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  jnaiman
 branch: master
+port: 4001
 
 # Build settings
 markdown: kramdown
