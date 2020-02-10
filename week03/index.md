@@ -14,11 +14,20 @@ We also did some basics of Pandas last week and we'll continue this week.
 
 Note there are a variety of notebooks from previous iterations of this course listed under the *Materials* subsection of today's lecture.  The "furtherExamples" notebooks are just there as reference, we will not be going through them by hand.
 
-## Downloads: Data
+## Downloads
+
+### Data:
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week02/building_inventory.csv" download>Building Inventory CSV file - building_inventory.csv</a>
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt" download>Michigan Depth Map (86Mb) - michigan_lld.flt</a>
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/single_dicom.h5" download>Brain Scan (72Mb) - single_dicom.h5</a>
+
+### Python external libraries
+
+Make sure you save these in the same directory as your jupyter notebook is running in!
+
+ * <a href="palette_colors.py" download>Palette Colors - save to notebook folder (or modify your path)</a>
+
 
 ## References
 
