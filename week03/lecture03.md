@@ -745,6 +745,41 @@ http://enchroma.com/test/instructions/
 
 ---
 
+<br />
+<br />
+<br />
+
+# TOPIC 3: Other methods of visual encoding
+
+
+---
+
+## Other methods of visual encoding
+
+<table><tr>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_size.gif"/></br>Size</td>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_den.gif"/></br>Density</td>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_curve.gif"/></br>Curvature</td>
+</tr></table>
+
+Check out [sc2.ncsu.edu/faculty/healey/PP](sc2.ncsu.edu/faculty/healey/PP) for more examples and research.
+
+---
+
+## Other methods of visual encoding
+
+Motion is another channel, but is *very* attention-grabbing.
+
+<table><tr>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_flick.gif"/></br>Flicker</td>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_vel.gif"/></br>Velocity</td>
+<td><img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/tg_dir.gif"/></br>Direction</td>
+</tr></table>
+
+Check out [sc2.ncsu.edu/faculty/healey/PP](sc2.ncsu.edu/faculty/healey/PP) for more examples and research.
+
+---
+
 ## Colormaps: Loading Data
 
 Colormaps in Python - with the Michigan data and the scan data, we'll evaluate:
