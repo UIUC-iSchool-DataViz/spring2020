@@ -1,16 +1,17 @@
 ---
-title: Lecture 5
+title: Lecture 3
 layout: lecture
-visible_lec: false
+visible_lec: true
 visible_n: true
 ---
 <!-- .slide: class="titleslide" -->
 
 # Data Visualization
 <div style="height: 6.0em;"></div>
+
 ## Jill P Naiman
-## Spring 2019 (Online)
-## Lecture 5
+## Spring 2020
+## Lecture 3
 
 ---
 
@@ -31,111 +32,83 @@ just see Hue (H) and the full set of colors
 
 ---
 
-## Review of last week
- * Binning (histograms)
- * Smoothing (moving averages, gaussians in 2D images)
- * When to apply each - _binning_ preserves statistical analysis, _smoothing_ manipulates data but can highlight trends
+<br>
+<br>
+<br>
+
+# Bureaucracy, Part 3: The Final Installment
+
+---
+
+## How to get help
+
+Jill P. Naiman - `jnaiman@illinois.edu`
+ * Office Hours: Tuesday 3-4pm NCSA 2040 (this OH can go a little longer as needed), Friday 3-4pm in iSchool lounge; other times by request
+
+TA: Diptendra Bagchi, `dbagchi2@illinois.edu`
+ * Office Hours: iSchool, Room 56, Wednesday & Friday 1-2pm
+
+TA: Qiuyan Guo, `qqguo2@illinois.edu`
+ * Office Hours: iSchool, Room 56, Thursday 8-9am
+
+---
+
+## Where information is located:
+
+ * Moodle: where the grades and assignments will be posted - https://learn.illinois.edu/course/view.php?id=42777
+
+ * Course webpage: where lecture slides, notebooks, data & general course info will live - https://uiuc-ischool-dataviz.github.io/spring2020/ 
+
+ * Slack: the best place to ask questions - https://is590dv-spring2020.slack.com/
+
+---
+
+## Reminder - Python Library List by Week
+
+See: https://uiuc-ischool-dataviz.github.io/spring2020/week01/test_imports_week01.ipynb
+
+**There is an addition!**
+
+notes:
+this will occasionally be updated, so be sure to check it out frequently!
+
+---
+
+## Weekly Viz Report
+
+And the winner is...
+
+notes:
+run the random number generator!
 
 ---
 
 ## Today's Main Topics
 
- * Transformations - moving objects around the viz
  * Colors - what are they really?
  * Color mapping - mapping data to colors
- * More about: Choosing a Visualization - what decisions do we need to make in constructing our viz?
-
- notes: took out Data Characteristics
-
----
-
-<br />
-<br />
-<br />
-
-# TOPIC 1: Transformations
+ * Visual Encoding in general
+ * More on data transformations (Pandas)
 
 ---
 
-## Transformations
+## Last week
 
-Affine transformations satisfy:
-
-$ \vec{y} = A\vec{x} + \vec{b} $
-
-<!-- .slide: data-background-image="images/affine_1.svg" data-background-size="30% auto" data-background-position="right 20% bottom 50%" -->
+<img src="images/data_viz_diagram_week2.png">
 
 notes:
-"affine" transformations maintain parallel lines. As compared to projection, euclidian, or similar transformations.
+last week we covered the data management and practical programming aspects of data viz
 
 ---
 
-## Transformations
+## Today
 
-Affine transformations satisfy:
+<img src="images/data_viz_diagram_week3.png">
 
-$ \vec{y} = A\vec{x} + \vec{b} $
+notes:
+this week we will talk about how we can encode information about our data into visual ques
 
-We can use these to accomplish:
-
- * Shifts
-
-<!-- .slide: data-background-image="images/affine_2.svg" data-background-size="30% auto" data-background-position="right 20% bottom 50%" -->
-
----
-
-## Transformations
-
-Affine transformations satisfy:
-
-$ \vec{y} = A\vec{x} + \vec{b} $
-
-We can use these to accomplish:
-
- * Shifts
- * Rotations
-
-<!-- .slide: data-background-image="images/affine_3.svg" data-background-size="30% auto" data-background-position="right 20% bottom 50%" -->
-
----
-
-## Transformations
-
-Affine transformations satisfy:
-
-$ \vec{y} = A\vec{x} + \vec{b} $
-
-We can use these to accomplish:
-
- * Shifts
- * Rotations
- * Scaling
-
-<!-- .slide: data-background-image="images/affine_4.svg" data-background-size="30% auto" data-background-position="right 20% bottom 50%" -->
-
----
-
-## Transformations
-
-<img src="images/teapot1.png" width="500"/>
-
----
-
-## Transformations
-
-<img src="images/teapot2.png" width="500"/>
-
----
-
-## Transformations
-
-<img src="images/teapot3.png" width="500"/>
-
----
-
-## Transformations
-
-<img src="images/teapot4.png" width="500"/>
+we'll focus mostly on color for this lecture but we'll briefly touch on a few other things.
 
 ---
 
@@ -143,49 +116,7 @@ We can use these to accomplish:
 <br />
 <br />
 
-# TOPIC 2: More about Choosing a Visualization
-
----
-
-## Choosing a Visualization
-
-When we are examining data, what can we look for?
-
- * Does this data describe a **geometric** object?
- * Are the data points **connected** to each other?
- * Can we describe data points with a fixed set of **categories**?
- * Is there a **quantity** associated with the data?
- * Are the datapoints **continuous** along one or more dimensions?
-
----
-
-## Choosing a Visualization
-
-When we are examining data, what can we look for?
-
- * Does this data describe a **geometric** object?
- * Are the data points **connected** to each other?
- * Can we describe data points with a fixed set of **categories**?
- * Is there a **quantity** associated with the data?
- * Are the datapoints **continuous** along one or more dimensions?
-
-This week we will focus on how to represent different quantities with
-different kinds of color maps - how are categorical or continuous
-variables represented differently with colors?
-
-<!---->
-
-<!--## Categories and Continuity-->
-
-<!--Today we'll talk about representing things based on categories and continue discussing continuities.-->
-
----
-
-<br />
-<br />
-<br />
-
-# TOPIC 3: What is color?
+# TOPIC 1: What is color?
 
 ---
 
@@ -360,6 +291,23 @@ Allow to run first and then comment.
 
 ---
 
+## "Naming" Colors: HSV
+
+<img src="https://miro.medium.com/max/964/1*B2d44wTBqfygLEZ8ZTJXzg.png">
+
+notes:
+You might have actually played around with this system before if you've ever used a "color" picker app.
+
+Here we see we have picked a "H" for Hue as red
+
+We choose 50% saturation - i.e. how much of the color is in there where minimum is none of the color (gray)
+
+We also choose 50% "L" which is sometimes called "V" for Luminiance which controls white-to-black
+
+And here is one more channel = A for opacity.  Note that "A" sort of overlaps with both Saturation and Luminance so its usually not used to encode anything if we are using the others.
+
+---
+
 ## "Naming" Colors: Beyond HTML HEX - Specific Names
 
 <table><tr>
@@ -394,12 +342,98 @@ CIELAB is the color space that covers the average of human vision.
 
 ---
 
+## Importance of Color
+
+HERE: put in the "fun people tricks" stuff - pre-attention (the java applet)
+
+---
+
 <br />
 <br />
 <br />
 
-# TOPIC 4: Color Maps
+# TOPIC 2: Color Maps
 
+
+---
+
+## Color maps = Visual Encoding
+
+Color maps encode a data attribute as a color.
+
+
+---
+
+## Color maps = Visual Encoding
+
+Color maps encode a data attribute as a color.
+
+<img src="images/pbn_pallet_long.png" width="600"/>
+
+<table><tr>
+<td><img src="images/pbn_outline.png" width="400"</td>
+<td><img src="https://wallpaperplay.com/walls/full/b/d/1/58065.jpg" width="400"/></td>
+</tr></table>
+
+notes:
+you can think of it like a paint by numbers
+
+Here I give you outlines of sections of the page that have data values, here the numbers 1-13 and I assign them a "palette" of colors.
+
+---
+
+## Color maps = Visual Encoding
+
+Color maps encode a data attribute as a color.
+
+<img src="images/pbn_pallet_long.png" width="600"/>
+
+<table><tr>
+<td><img src="images/pbn_outline.png" width="400"/></td>
+<td><img src="images/pbn_filled.png" width="400"/></td>
+</tr></table>
+
+notes:
+Then I "paint" these colors on to make an image from my data
+
+---
+
+## Color maps = Visual Encoding
+
+Color maps encode a data attribute as a color.
+
+<table><tr>
+<td>Colormap</br><img src="images/pbn_filled.png" width="400"/></td>
+<td>Photo</br><img src="images/lobsterCorgi_orig.png" width="360"/></td>
+</tr></table>
+
+notes:
+Here I cheated a little bit and used a photo to generate my paint by numbers, so I get something back that looks like its photo
+
+But note that these images are generated in very different ways
+
+The colormap one was generated by a list of color values and instructions
+
+The photo is generated by RGB color combinations at every pixel
+
+---
+
+## Color Palettes
+
+<img src="https://www.personal.psu.edu/cab38/ColorSch/S12-fullstructureClean.gif">
+
+Brewer, 1999
+
+notes:
+different kinds of color palettes can be used to describe different types of data
+
+Here is a nice way of mapping out our options.  For example, binary (T/F or Y/N) is pretty easy to encode with 2 colors or luminance.
+
+If we have 3 categories, we can choose different hues for qualatative data.
+
+If we have sequential data, like height maps we can choose differences in Hues or luminance.
+
+When we start combining them though, it can get a little more confusing.
 
 ---
 
@@ -414,16 +448,53 @@ there are a million websites that allow you to create color palettes
 
 ---
 
-## Sequential Colormaps
+## Ordered Colormaps
+
+<img src="https://lh3.googleusercontent.com/proxy/Mwkhi008aSx6rEdl2_YqW_yCPvsvO_5tI1taFMN8F7Fwn-LCUR5Zdkg6C5HpgoykG9WPA9Bwz31_sYWs5Ft-YsA-vG_uZWE3YirNE94z6tg">
+
+Historically, rainbows have been very popular.
+
+notes:
+which colors jump out at your the most?
+
+---
+
+## Ordered Colormaps
+
+<img src="https://serialmentor.com/dataviz/pitfalls_of_color_use_files/figure-html/rainbow-desaturated-1.png">
+
+Historically, rainbows have been very popular, but they can be misleading.
+
+notes:
+Here is that same colormap converted to gray scale, and our intuition is true - our eyes are drawn to the luminacne values here, not only the hues
+
+---
+
+## Ordered Colormaps
+
+<img src="https://1.bp.blogspot.com/-GlAFnAA8cio/XVWpa0KH74I/AAAAAAAAEeg/nK1qDzNGhYYCjaggKCLiNY-J16IzpSunwCLcBGAs/s1600/Screenshot%2B2019-08-15%2Bat%2B9.41.44%2BAM.png">
+
+Historically, rainbows have been very popular, but they can be misleading.
+
+"Fixes" to the rainbow colormap are only so-so.
+
+notes:
+even if we try to make a perceptually uniform colormap, the results are underwhelming -- the "better" rainbow colormap looks a little muted and drab
+
+---
+
+## Ordered: Sequential Colormaps
 
 ![](images/blues_discrete.png)
 
 ![](images/blues_continuous.png)
 
 notes:
-these are also known as monochromatic
+one thing we can due is choose a hue and change the saturation or luminance -- here luminance
 
-the hue doesn't change, but the value and the saturation do
+these are also known as monochromatic and are a subset of ordered colormaps
+
+Here, the hue doesn't change, but the value (luminance) and the saturation do
 
 ---
 
@@ -437,6 +508,29 @@ notes:
 this shows you that different colors in the rainbow have different perceived brightness.
 
 The outsides of this color map get darker while the center is brighter.
+
+---
+
+## Ordered Colormaps
+
+Combinations of color can pick out different features at different scales.
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+
+<img src="images/rainbow_highlight.png" width="400px">
+
+</div>
+
+<div class="right">
+
+<img src="images/diverge_highlight.png" width="400px">
+
+</div>
+
+notes:
+The differnet colormaps pick out changes at different scales.  The colormap with more hues heighlights the finer details of this simulation, while the colormap with only 2 hues shows off the larger scale structure.
 
 ---
 
@@ -611,18 +705,6 @@ Colormaps in Python - with the Michigan data and the scan data, we'll evaluate:
 ---
 
 # To Python!
-
----
-
-## Assignment 5
-
-Load in a 2D data set with pandas/numpy or Pillow - you may select one of the datasets we have used in class (Lake Michigan, Brain Scan, or an image).
-
-Construct 3 different visualizations of this dataset, each with a different colormap.  The color maps can differ by color pallette, color scale, color limits, etc or some combination there of.
-
-Discuss the pros and cons of each visualization - what does your colormap highlight? Ignore? Will it confuse the viewer in anyway? Anything else you think a viewer should know about your choices?
-
-Each component will be worth 5 points and must be a completely communicative visualization -- including labels and a one paragraph writeup of successes and shortcomings in your approach. Submit a notebook to Moodle. All source code must be in these files.
 
 
 
