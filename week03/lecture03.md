@@ -344,7 +344,58 @@ CIELAB is the color space that covers the average of human vision.
 
 ## Importance of Color
 
-HERE: put in the "fun people tricks" stuff - pre-attention (the java applet)
+Which image has the red dot?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+  <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/colour_P.gif">
+</div>
+
+<div class="right">
+ <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/colour_A.gif">
+</div>
+
+---
+
+## Importance of Color
+
+Which image has the red dot?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+  <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/shape_A.gif">
+</div>
+
+<div class="right">
+ <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/shape_P.gif">
+</div>
+
+---
+
+## Importance of Color
+
+Which image has the red dot?
+
+<!-- .slide: class="two-floating-elements" -->
+
+<div class="left">
+  <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/conjoin_A.gif">
+</div>
+
+<div class="right">
+ <img src="https://www.csc2.ncsu.edu/faculty/healey/PP/figs/conjoin_P.gif">
+</div>
+
+
+---
+
+## Importance of Color
+
+[https://www.csc2.ncsu.edu/faculty/healey/PP/#jscript_search](https://www.csc2.ncsu.edu/faculty/healey/PP/#jscript_search)
+
+Color makes use of our "preattentive" visual cortex processing power -- we are able to detect color *before* our attention focuses.
 
 ---
 
