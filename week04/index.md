@@ -7,13 +7,19 @@ visible_n: true
 
 # Week 4 - Beginning interactivity
 
-This week we will learn about ipywidgets and apply them to visualizations in Python.
+This week we will learn about ipywidgets and traitlets and apply them to visualizations in Python.
+
+## Downloads
+
+### Data:
+
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv" download>The UFO Sitings Dataset (ufo-scrubbed-geocoded-time-standardized-00.csv, 13Mb)</a>
 
 ## Optional Reading List
 
  1. VAD Ch. 7: Arrange Tables
  1. <a href="https://serialmentor.com/dataviz/histograms-density-plots.html">FDA, Visualizing distributions: Histograms and density plots
- 1. <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>
+ 1. <a href="https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html">Intro to ipywidgets</a>
  1. <a href="https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Index.ipynb">Example Widgets Notebooks</a>
 
 
