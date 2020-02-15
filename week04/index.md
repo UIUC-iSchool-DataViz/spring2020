@@ -2,7 +2,7 @@
 layout: week
 visible: true
 visible_lec: false
-visible_n: false
+visible_n: true
 ---
 
 # Week 4 - Beginning interactivity
