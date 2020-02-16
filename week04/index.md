@@ -17,9 +17,9 @@ This week we will learn about ipywidgets and traitlets and apply them to visuali
 
 ## Optional Reading List
 
- 1. VAD Ch. 7: Arrange Tables
- 1. <a href="https://serialmentor.com/dataviz/histograms-density-plots.html">FDA, Visualizing distributions: Histograms and density plots
  1. <a href="https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html">Intro to ipywidgets</a>
  1. <a href="https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Index.ipynb">Example Widgets Notebooks</a>
+ 1. VAD Ch. 7: Arrange Tables
+ 1. <a href="https://serialmentor.com/dataviz/histograms-density-plots.html">FDA, Visualizing distributions: Histograms and density plots
 
 
