@@ -27,4 +27,6 @@ construction.
 
 ## Optional Reading List
 
-
+ 1. <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a>
+ 1. <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>
+ 1. <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://traitlets.readthedocs.io/en/stable/">Traitlets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>
