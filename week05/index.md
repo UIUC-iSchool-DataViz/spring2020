@@ -7,7 +7,7 @@ visible_n: true
 
 # Week 5 - Continuing interactivity with bqplot
 
-Time to start talking about interactivity!
+Time to start talking about interactivity in more detail!
 
 During class today, we will explore creating interactive visualizations using
 bqplot.  For next week, we will discuss the taxonomy of interactive
