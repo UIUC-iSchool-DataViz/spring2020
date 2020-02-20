@@ -1,11 +1,9 @@
 ---
 layout: week
-visible: true
-visible_lec: false
-visible_n: true
+visible: false
 ---
 
-# Week 5 - Continuing interactivity with bqplot
+# Week 5 - Interactivity
 
 Time to start talking about interactivity!
 
@@ -18,13 +16,3 @@ construction.
    Heer
  * [Watch This: A Taxonomy for Dynamic Data Visualization](http://doi.org/10.1109/VAST.2012.6400552) by Cottam et al
  * [FiveThirtyEight Datasets](https://github.com/fivethirtyeight/data)
-## Downloads
-
-### Data:
-
- * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv" download>The UFO Sitings Dataset (13Mb) - ufo-scrubbed-geocoded-time-standardized-00.csv</a>
- * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt" download>Michigan Depth Map (86Mb) - michigan_lld.flt</a>
-
-## Optional Reading List
-
-
