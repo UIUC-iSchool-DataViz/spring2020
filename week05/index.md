@@ -18,12 +18,18 @@ construction.
    Heer
  * [Watch This: A Taxonomy for Dynamic Data Visualization](http://doi.org/10.1109/VAST.2012.6400552) by Cottam et al
  * [FiveThirtyEight Datasets](https://github.com/fivethirtyeight/data)
+ 
 ## Downloads
 
 ### Data:
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv" download>The UFO Sitings Dataset (13Mb) - ufo-scrubbed-geocoded-time-standardized-00.csv</a>
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week05/data/michigan_lld.flt" download>Michigan Depth Map (86Mb) - michigan_lld.flt</a>
+ * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week06/data_and_libs/nations.json" download>Wealth of Nations Data - nations.json</a>
+
+### Resources
+
+ * <a href='wealth_of_nations.py' download>Wealth of Nations Library - wealth_of_nations.py</a>
 
 ## Optional Reading List
 
