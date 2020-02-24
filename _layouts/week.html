@@ -22,7 +22,7 @@ layout: default
         {% for pdf in pdfs %}
         {% if pdf.path contains page.dir %}
         <li>PDF {{pdf.basename}}: 
-         (<a href="{{pdf.path | relative_url }}">view</a>
+         (<a href="{{pdf.path | relative_url }}">view</a>)
         </li>
         {% endif %}
         {%endfor%}
