@@ -1,7 +1,7 @@
 ---
 layout: week
 visible: true
-visible_lec: false
+visible_lec: true
 visible_n: true
 ---
 
@@ -30,6 +30,7 @@ construction.
 ### Resources
 
  * <a href='wealth_of_nations.py' download>Wealth of Nations Library - wealth_of_nations.py</a>
+ * [Github pages: https://pages.github.com/](https://pages.github.com/)
 
 ## Optional Reading List
 
