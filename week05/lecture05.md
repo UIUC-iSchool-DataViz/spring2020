@@ -64,6 +64,8 @@ bqplot!
 
 ## Note on HW for the next two weeks
 
+## Note on OH's next few Fridays
+
 notes:
 go over HW stuff
 
