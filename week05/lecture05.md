@@ -143,10 +143,10 @@ It presents two principal interfaces:
 
 1. `pyplot`-like interface, for making the transition from matplotlib easier
 ```#python
-from bqplot import pyplot as plt
-plt.figure(title='A Figure')
-plt.plot(x_data, y_data)
-plt.show()
+from bqplot import pyplot as bplt
+bplt.figure(title='A Figure')
+bplt.scatter(x_data, y_data)
+bplt.show()
 ```
 1. An object-oriented API for constructing interactive visualizations
 ```#python
