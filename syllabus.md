@@ -102,10 +102,10 @@ Acronyms for books:
 | Week 4 | Beginning Interactivity | 1. <a href="https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20Basics.html">Intro to ipywidgets</a> <br> 2. <a href="https://github.com/jupyter-widgets/ipywidgets/blob/master/docs/source/examples/Index.ipynb">Example Widgets Notebooks</a> <br> 3. VAD Ch. 7: Arrange Tables <br> 4. <a href="https://serialmentor.com/dataviz/histograms-density-plots.html">FDA, Visualizing distributions: Histograms and density plots</a> <br>  
 | Week 5 | Distributions, Engines |  1. <a href="https://www.youtube.com/watch?v=rraXF0EjRC8">Video about bqplot</a> <br> 2. <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a> <br> 3. <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://traitlets.readthedocs.io/en/stable/">Traitlets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>
 | Week 6 | Dashboards & Maps | 1. VAD Ch. 8: Arrange Spatial Data <br> 2. VAD Ch. 11: Manipulate View <br> 3. <a href="https://serialmentor.com/dataviz/geospatial-data.html">FDA, Ch. 15: Visualizing geospatial data</a>
-| Week 7 | Interactivity, continued & Grammar of Graphics | <br> 1. VAD, Ch. 5: Marks and Channels <br> 2. <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>
-| Week 8 | Comparisons between different datasets | TBD
-| Week 9 | Maps & Geographic Data | VAD Ch. 8: Arrange Spatial Data
-| Week 10 | Network Visualization & beginning web dev & Publishing, Javascript | VAD Ch. 9: Arrange Networks and Trees
+| Week 7 | Network Viz & Word cloud Viz & beginning web dev & Publishing | VAD Ch. 9: Arrange Networks and Trees
+| Week 8 | Break | None
+| Week 9 | Interactivity, continued & Grammar of Graphics | <br> 1. VAD, Ch. 5: Marks and Channels <br> 2. <a href="https://ipywidgets.readthedocs.io/en/latest/">ipywidgets Docs</a>; <a href="https://bqplot.readthedocs.io/en/latest/">bqplot Docs</a>; <a href="https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149">An introduction to Grammar of Graphics</a>
+| Week 10 | Comparisons between different datasets | TBD
 | Week 11 | Designing for the web with Python & Javascript, Web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
 | Week 12 | More javascript & web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
 | Week 13 | Scientific visualization | TBD
