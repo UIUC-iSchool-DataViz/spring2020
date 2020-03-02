@@ -14,7 +14,7 @@ We will start thinking about maps & map projection, both in `bqplot` and `matplo
 ### Data:
 
  * <a href="https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/ufo-scrubbed-geocoded-time-standardized-00.csv" download>The UFO Sitings Dataset (13Mb) - ufo-scrubbed-geocoded-time-standardized-00.csv</a>
- * <a href='https://uiuc-ischool-dataviz.github.io/spring2019online/week08/data/total_export.csv' download>State export data (8Kb) - total_export.csv</a>
+ * <a href='total_export.csv' download>State export data (8Kb) - total_export.csv</a>
  * <a href="market_map_data.csv" download>Backup: Surgery Charges Dataset (37Mb) - market_map_data.csv</a>
 
 #### This might not be used until next week:
