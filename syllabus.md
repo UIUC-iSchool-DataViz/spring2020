@@ -104,11 +104,11 @@ Acronyms for books:
 | Week 6 | Dashboards & Maps with bqplot | 1. VAD Ch. 8: Arrange Spatial Data <br> 2. VAD Ch. 11: Manipulate View <br> 3. <a href="https://serialmentor.com/dataviz/geospatial-data.html">FDA, Ch. 15: Visualizing geospatial data</a>
 | Week 7 | More with maps - bqplot, cartopy, ipyleaflet, geopandas | 1. VAD Ch. 8: Arrange Spatial Data <br> 2. <a href="https://serialmentor.com/dataviz/geospatial-data.html">FDA, Ch. 15: Visualizing geospatial data</a> <br> 3. <a href="https://scitools.org.uk/cartopy/docs/latest/">Cartopy docs</a>; <a href="https://ipyleaflet.readthedocs.io/en/latest/">ipyleaflet docs</a>; <a href="https://geopandas.org/">Geopandas Docs</a>
 | Week 8 | Break | None
-| Week 9 | Network Viz & Word cloud Viz & beginning web dev & Publishing | VAD Ch. 9: Arrange Networks and Trees
-| Week 10 | Comparisons between different datasets | TBD
-| Week 11 | Designing for the web with Python & Javascript, Web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
-| Week 12 | More javascript & web dev | <a href="https://idyll-lang.org/docs"> Idyll Docs</a>; <a href="https://alpha.iodide.io/">Iodide Docs</a>
-| Week 13 | Scientific visualization | TBD
+| Week 9 | Network Viz & Word cloud Viz | 1. VAD Ch. 9: Arrange Networks and Trees
+| Week 10 | Designing for the web with Python & JS, Publishing | 1. <a href="https://alpha.iodide.io/">Iodide Docs</a>
+| Week 11 | Designing for the web with Python & Javascript, Web dev | 1. <a href="https://idyll-lang.org/docs"> Idyll Docs</a> <br> 2. <a href="https://alpha.iodide.io/">Iodide Docs</a>
+| Week 12 | More javascript & web dev <br> Guest lecture about scientific & cinematic viz from <a href="http://avl.ncsa.illinois.edu/">AVL</a> | 1. <a href="https://idyll-lang.org/docs"> Idyll Docs</a>
+| Week 13 | Scientific visualization | 1. <a href="https://yt-project.org/">yt docs</a>
 | Week 14 | Group presentations | None
 
 
