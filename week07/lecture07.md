@@ -537,6 +537,40 @@ We will very briefly play with this in Python - could be of use for those that w
 
 ---
 
+## Geopandas
+
+<img src="https://geopandas.org/_images/sphx_glr_create_geopandas_from_pandas_001.png">
+
+notes:
+the calls for geopandas is going to look very similar to pandas calls!
+
+---
+
+## Geopandas
+
+```python
+gdf = geopandas.read_file('mapfile.geojson')
+gdf.head()
+gdf.plot()
+```
+
+---
+
+## Geopandas
+
+```python
+gdf = geopandas.read_file('mapfile.geojson')
+gdf.head()
+gdf.plot()
+```
+
+Map information sources:
+ * [https://datagateway.nrcs.usda.gov/](https://datagateway.nrcs.usda.gov/)
+ * [US Census info](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html)
+ * [City of Champaign](https://gis-cityofchampaign.opendata.arcgis.com/)
+
+---
+
 ## Other Map Viz
 
  * Google Maps & Earth
@@ -544,3 +578,7 @@ We will very briefly play with this in Python - could be of use for those that w
  * CesiumJS
  * bqplot
  * Vega & friends
+
+---
+
+# To Python!
