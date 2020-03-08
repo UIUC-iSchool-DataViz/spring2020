@@ -464,6 +464,113 @@ notes:
 often our issue will be linking the information stored in JSON file formats with that of whatever plotting routine we are using
 
 we'll get some practice with this in the coding portion of class
+
+---
+
+<br>
+<br>
+<br>
+
+# Topic #3: Data & Viz Engines
+
+---
+
+## Access to geometry files
+
+ 1. Cartopy
+ 1. ipyleaflet
+ 1. GeoPandas
+
+---
+
+## Intro to cartopy
+
+CartoPy is a toolkit that builds on matplotlib to create fast, easy map
+representations.
+
+We will be relying on three key concepts:
+
+ * Axes projections (similar to our polar projections)
+ * Coordinate representations
+ * Shapes
+
+Using these, we will be able to build out many visualizations.
+
+---
+
+## CartoPy: Projections
+
+We start out by constructing an axes in CartoPy that uses a given projection:
+
+```python
+import cartopy
+import matplotlib.pyplot as plt
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection=cartopy.crs.Mollweide())
+ax.coastlines()
+```
+
+---
+
+## CartoPy: Coordinate Reference Systems
+
+Transforming from a spherical reference system to a flat reference system is
+the job of the projection; transforming from one discretization of a sphere to
+another is the job of the coordinate system.
+
+We can utilize Coordinate Reference Systems to describe the *input* coordinate
+system and the *rasterization* system are described.
+
+For example, there are several different ways to draw "straight" lines.  We can
+do both `PlateCarree` and `Geodetic`.
+
+```python
+c_lat, c_lon = 40.1164, -88.2434
+a_lat, a_lon = -18.8792, 47.5079
+fig = plt.figure()
+ax = fig.add_subplot(111, projection = cartopy.crs.PlateCarree())
+ax.gridlines()
+ax.coastlines()
+ax.set_global()
+ax.plot([c_lon, a_lon], [c_lat, a_lat], transform = cartopy.crs.PlateCarree())
+ax.plot([c_lon, a_lon], [c_lat, a_lat], transform = cartopy.crs.Geodetic())
+```
+
+---
+
+<!-- .slide: data-background-image="images/map_plot1.png" data-background-size="auto 95%" -->
+
+notes:
+the blue line is Plate Carree, which maintains a straight line on the lat-lon grid
+
+the orange line is Geodetic, which maintains a straight line around the curvature of the Earth
+
+---
+
+<!-- .slide: data-background-image="images/map_plot2.png" data-background-size="auto 95%" -->
+
+notes:
+now even the blue line has some curvature because we are picking a best-of-both-worlds Mollweide projection that doesn't perfectly preserve angle or area.
+
+---
+
+## ipyleaflet
+
+Leaflet is another mechanism of plotting, displaying and interacting with maps.
+
+We will very briefly play with this in Python - could be of use for those that were having issues with cartopy.
+
+---
+
+## Other Map Viz
+
+ * Google Maps & Earth
+ * WorldWide Telescope
+ * CesiumJS
+ * bqplot
+ * Vega & friends
+
           </script>
         </section>
       </div>
