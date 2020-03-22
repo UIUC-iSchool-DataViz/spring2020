@@ -26,6 +26,15 @@ visible_n: true
 
 ---
 
+## This week
+
+<img src="images/this_week.png" width="95%">
+
+notes:
+this week we'll talk a bit about network visualization and also look at a tool to make word clouds in Python
+
+---
+
 ## Networked and Hierarchical Data
 
  1. Node-link diagrams
