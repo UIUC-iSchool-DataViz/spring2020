@@ -1,8 +1,18 @@
 ---
 layout: week
-visible: false
+visible: true
 ---
 
-# Week 10 - Geo Data, Dashboards, Web Dev
+# Week 10 - Iodide and Intro to Javascript
 
-We went over GeoJSON, made a few visualizations using Champaign data, and talked about dashboards and web dev.
+## Downloads
+
+### Data:
+
+## Optional reading list
+
+ 1. <a href="https://alpha.iodide.io/">Iodide Docs</a>
+ 1. <a href="https://www.codecademy.com/learn/introduction-to-javascript">Intro to Javascript</a>
+
+
+## Extra Resources
