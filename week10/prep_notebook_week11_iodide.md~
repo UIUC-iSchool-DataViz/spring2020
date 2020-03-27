@@ -1,0 +1,97 @@
+
+Access this notebook online at: https://alpha.iodide.io/notebooks/4351/
+
+```
+%% md
+Hello there!  I am writing things in Markdown, using similar syntax to how you'd do things in a jupyter notebook.
+
+<!-- I can use HTML comment style to make comments here -->
+
+In general, I can use HTML tags: <font color="magenta">For example, I can change font colors!</font>
+
+<!-- I can also use HTML styles to do things like headers -->
+<h3>This is a Header.</h3>
+<!-- And make links: -->
+<a href="https://google.com/">google</a>
+<!-- Note that in your report, this will show up w/o the Markdown formatting -->
+
+But you can also do this in markdown like so:
+### This is also a Header
+[google](https://google.com/)
+
+I can also do things like _italicize_ something, or **bold** something, and I can do things like  lists!
+
+ * for instance
+ * and things
+ * also this
+
+ I can also make enumerated lists:
+  1. My first thing
+  1. My 2nd thing
+  1. My 3rd thing
+
+Markdown also supports `LaTex` formatting for equations: $x = \frac{5}{3}$, $y = \cos (5)$, $\lambda = 5 \times y$.
+
+You'll note that you get a preview of what you're doing on the right.  You can also click "VIEW AS REPORT" button to see the full page.  Click "EXPLORE" in the top right to get back to this view.
+<!-- actually do this & come back -->
+
+<!-- Let's actually get into some coding with Python here!-->
+
+# Python in Iodide
+
+We need to specify the _environment_ as Python before actually being able to use Python.  We do this with in Iodide with a `%% py` as mentioned in the [Iodide IOMD Docs](https://iodide-project.github.io/docs/iomd/):
+
+%% py
+# load numpy and pyplot per usual
+import numpy as np
+import matplotlib.pyplot as plt
+# make a random plot:
+myPythonArray = np.random.random(100)
+plt.clf() # to clear figure
+plt.plot(myPythonArray)
+plt.title('Random test data')
+plt.show()
+# now: hit shift-return: note if you keep doing this, more plots will show up - include the "clear statement" to help with this
+#. Now: say we are done with Python and want to be back in Markdown!
+
+%% md
+Now, I'm back in Markdown.  Note in your figure that you have access to a lot of useful `widget` type stuff like zoom & pan, and also the ability to save your images.
+
+%% py
+# Right now, printing happens to the console by default
+print('Hi there')
+
+%% md
+
+Python is run via [PyIodide](https://github.com/iodide-project/pyodide) which compiles Python commands into web-assembly (i.e. a basic programming language of webpages).  Note that not all Python libraries are supported -- if we check out the [list of supported packages](https://github.com/iodide-project/pyodide/tree/master/packages) we see that for example, `bqplot` is not supported here (yet), but many analysis tools are like `Pandas` and `SciPy` are.
+
+## Pandas in Iodide
+
+Let's give Pandas a shot!
+
+%% py
+
+import pandas as pd
+#df = pd.read_csv('https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv')
+# The above will give us errors.  This is because we need to deal with the fact that we are actually dealing with JS and Python is being, essentially, translated to JS for us.
+
+# We can instead use pyiodide to help us do this translation for us:
+import pyodide
+URL = 'https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv'
+df = pd.read_csv(pyodide.open_url(URL))
+
+# This will show the dataframe in the console:
+df
+
+# we can also make a quick plot
+df.plot(kind='line',x='DATE',y='GDP',color='red')
+plt.show()
+
+%% md
+Sweet!
+
+So, we've seen how to use Python to make shareable figures, but what about Javascript?  What's neet about the Iodide engine is that we can communicate between Python and Javascript and pass data between the two.  Before getting into that, it will be worth while to go over some basic Javascript programming.
+
+If you really like Javascript, you can look into learning how to use it in more detail on sites like the [codeacademy JavaScript site](https://www.codecademy.com/learn/introduction-to-javascript).
+
+```

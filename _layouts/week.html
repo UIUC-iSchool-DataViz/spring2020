@@ -13,10 +13,15 @@ layout: default
           <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>{% if f.layout == "lecture" %}, <a href="{{f.url | relative_url}}?showNotes=false">present</a>{% endif %})</li>
 	{% endif %}
 	{% if f.layout != "lecture" %}
+	{% unless f.path contains "iodide" %}
         <li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>,
           <a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>{% if f.layout == "lecture" %}, <a href="{{f.url | relative_url}}?showNotes=false">present</a>{% endif %})</li>
-	{% endif %}
-        {% endif %}
+	{% endunless %}
+	{% endif %} <!-- end if not lecture -->
+	{% if f.path contains "iodide" %}
+	<li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>)</li>
+	{% endif %} <!-- end iodide -->
+        {% endif %} <!-- end if contains page.dir and url-->
         {% endfor %}
         {% assign pdfs = site.static_files | where: "extname", ".pdf" %}
         {% for pdf in pdfs %}
