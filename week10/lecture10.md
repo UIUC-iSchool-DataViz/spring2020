@@ -225,71 +225,58 @@ For heirarchical data, you can nest some of these other formats.
 
 ## Engines
 
-This week we'll be looking at two new visualization engines.
+Thus far we have used `bqplot` as our primary imperative method, but we'll start looking at `vega-lite` this week
 
  * `bqplot` - both imperative & declaritive methods
  * `vega-lite` - declaritive
 
 ---
 
-### vega-lite (if we have time)
+## vega-lite
 
 vega-lite is a high-level method for describing visualizations independently of
 their data.
 
-We will be exploring this using the online editor at:
+We will be exploring this using [Iodide](https://alpha.iodide.io/).
+
+You can also use `vega-lite` directly with the online editor at:
 
 https://vega.github.io/editor/
 
 ---
 
-# Interactivity
+## vega-lite in context - Web Viz
 
- * Interactivity -- brief review of terminology
- * Tools and frameworks
+ * Tools and frameworks covered
     * ipywidgets
     * bqplot
- * Web Viz
+ * Intro to Web Viz
     * (Sort of) How the web works
     * (Very, very) Basic javascript
     * vega-lite
 
----
+notes:
+First we'll review a bit about what we've already done using bqplot
 
-## Status Update: Concepts
-
- * Basic Visualizations
-   * Plot components
-   * Aggregation (binning, histograming)
- * Basic interactivity
-   * Traitlets
-   * Reactivity / data-binding
-
----
-
-## Status Update: Tools
-
- * Python
-   * matplotlib -- introduced
-   * bqplot -- introduced
- * Javascript
-   * vega-lite -- introducing today
+Then we'll have a *very* hand-wavy intro to how javascript/web dev works
 
 ---
 
 ## Status Update: What's Left
 
-Today, we are introducing the *final* major tool we will use: [vega-lite](https://vega.github.io/vega-lite/).
+Today, we are introducing the *second to last* major tool we will use: [vega-lite](https://vega.github.io/vega-lite/).
 
-We will likely explore, in brief one-offs, a handful of additional tools.
+After this: [Idyll](https://idyll-lang.org/) and some [React](https://reactjs.org/)/[D3](https://d3js.org/) Javascript dev within
 
 ---
 
 ## bqplot review
 
-Construct `Figure` objects from `Mark` objects.  Relate points to each other with `Scale` objects, display them using `Mark` objects that are keyed to a set of `Scale` objects, and apply interaction using `ipywidgets` and `traitlets`.
+Declarative:
 
-I've received feedback about past lectures, and so we will be moving more slowly today.
+ * Construct `Figure` objects from `Mark` objects.
+ * Relate points to each other with `Scale` objects, display them using `Mark` objects that are keyed to a set of `Scale` objects, and
+ * Apply interaction using `ipywidgets` and `traitlets`.
 
 ---
 
@@ -307,7 +294,7 @@ I've received feedback about past lectures, and so we will be moving more slowly
 
 ## bqplot: Very Simple
 
-Our first example will be a simple lineplot.
+Here is a reminder about that sort of basic setup:
 
 ```#python
 import bqplot
@@ -341,8 +328,7 @@ With bqplot, we construct a set of objects that are related:
 
 ## Scales
 
-We have dealt primarily with quantitative scales.  bqplot provides several
-scales we can utilize:
+`bqplot` provides several scales we can utilize:
 
  * `LogScale`
  * `LinearScale`
@@ -357,8 +343,7 @@ scales we can utilize:
 
 ## Marks
 
-bqplot has several different marks we can explore.  We will utilize a few more
-today:
+bqplot has several different marks we can explore.  We have utilized a few:
 
  * `HeatMap`
  * `GridHeatMap`
@@ -381,7 +366,7 @@ to a figure.
 
 ## bqplot interactors
 
-We will be able to use these different interaction methods:
+We have used several of these different interaction methods:
 
  * `FastIntervalSelector`
  * `IndexSelector`
@@ -394,45 +379,20 @@ We will be able to use these different interaction methods:
 
 ---
 
-## Datasets
+## The Web: A *very* hand-wavy overview
 
-This week we will use a dataset from
-[FiveThirtyEight](https://fivethirtyeight.com/), specifically from their
-[datasets repository](https://github.com/fivethirtyeight/data/).
-
-Please take care to abide by their licensing terms (CC-BY 4.0).
-
-Candidate datasets:
-
- * [librarians](https://github.com/fivethirtyeight/data/tree/master/librarians)
-   (2014)
- * [bachelorette](https://github.com/fivethirtyeight/data/tree/master/bachelorette)
- * [comic-characters](https://github.com/fivethirtyeight/data/tree/master/comic-characters)
- * [bob-ross](https://github.com/fivethirtyeight/data/tree/master/bob-ross)
-
----
-
-## Datasets
-
-I have registered each of these datasets on the Whole Tale website under Week 5.  You may also use them locally.
-
-Reminder:
-
-  * `workspace` is shared, but writeable only by me
-  * `data` is read-only
-  * `home` is your personal home directory, shared across instances
-
----
-
-# The Web
-
- * Content is transmitted from point-to-point
+ * Content is transmitted from point-to-point (PPP)
  * Content can be manipulated locally or remotely
  * Not all servers can manipulate data before sending
 
+notes:
+this will be an EXTREMELY hand wavy overview
+
+PPP just is a fancy way of saying a communcations protocol that supports transmision between two routers w/ or w/o any host - https://en.wikipedia.org/wiki/Point-to-Point_Protocol
+
 ---
 
-# Your Browser
+## Your Browser
 
  * Your browser contains -- essentially -- an entire operating system.  It can
    manage:
@@ -440,36 +400,68 @@ Reminder:
     * Interaction with you, the user
     * Input/output from files and file-like objects
     * Interpreter to execute code
- * Most of its activities are mediated via a document object model (DOM) and
+ * Most of its activities are mediated via a [document object model (DOM)](https://www.w3schools.com/js/js_htmldom.asp) and
    the programming language Javascript
 
 ---
 
-# Things to Note
+## Things to Note
 
  * Javascript is "garbage collected"
- * Javascript is single-threaded
- * Asynchronous programming can be a real noodle-bender
+ * Javascript is [single-threaded](https://dev.to/steelvoltage/if-javascript-is-single-threaded-how-is-it-asynchronous-56gd)
+ * Asynchronous programming can be a real noodle-bender (good news is we already handled this with `bqplot` callbacks!)
+
+notes:
+here "garbage collected" just means JS handles memory management - we don't have to explicitly allocate and deallocate regions in memory for variables
+
+the "garbage collector" is basically the part of JS that goes and figures out what memory to release
+
+"single-threaded" means that code executes in order, except ...
+
+"asynchronous" means that *some* code gets handed off some code to the browser to be excecuted "in the background" - when the browser is finished, the tasks are "returned" -- we essentially already did thsi with some of our "on_change" and "on_click" stuff with bqplot!
 
 ---
 
-# Document Object Model
+## Document Object Model
 
 The Document Object Model (DOM) is how we interact with the collection of HTML
 objects in our document.
 
 For instance, a page can be composed of `<div>` objects, `<p>` objects, etc,
 and we can construct and interact with these.  This includes things like
-modifying style sheets.  See, for example, the
-[jsfiddle](https://jsfiddle.net/) for [jQuery
-boilerplate](https://jsfiddle.net/boilerplate/jquery).
+modifying style sheets.
 
-One alternative, as we will see, is to have rendering tied to data and data
-values, and to have those automatically update as needed.
+![](https://www.w3schools.com/js/pic_htmltree.gif)
+
+(See, for example, the
+[jsfiddle](https://jsfiddle.net/) for [jQuery
+boilerplate](https://jsfiddle.net/boilerplate/jquery) ).
+
+notes:
+
+for example, we can specify the layout of a document in HTML with different components like the header, title, and body
+
+the body will have different elements like `<div>` and `<a>`, etc.
 
 ---
 
-# Synchronous programming
+## Document Object Model
+
+The Document Object Model (DOM) is how we interact with the collection of HTML
+objects in our document.
+
+For instance, a page can be composed of `<div>` objects, `<p>` objects, etc,
+and we can construct and interact with these.  This includes things like
+modifying style sheets.
+
+![](https://www.w3schools.com/js/pic_htmltree.gif)
+
+One alternative is to have rendering tied to data and data
+values, and to have those automatically update as needed -- `vega-lite`.
+
+---
+
+## Synchronous programming
 
 In Python, we would fetch a website and wait for that to finish before we move
 on.
@@ -484,7 +476,7 @@ print("Request completed!")
 
 ---
 
-# Asynchronous programming
+## Asynchronous programming
 
 In Javascript, we would tell the code to fetch, but we would also tell it what
 to do *after* it finished.
@@ -504,10 +496,10 @@ work!
 
 ---
 
-# Async and Event-Driven
+## Async and Event-Driven
 
 Async is how we can think about event driven programming, as well.  We have
-done this using `traitlets` and `ipywidgets` in Python, and we will do it here
+done this using `traitlets` and `ipywidgets` using callbacks in Python, and we will do it here
 as well.
 
 ```
@@ -520,7 +512,7 @@ button.on("click", function() {
 
 ---
 
-# Basic Javascript
+## Basic Javascript
 
 We will go over a few things, and then move on to vega-lite.
 
@@ -535,7 +527,7 @@ var myObject = {'a': 1, 'b': 2, 'c': [1, 2, 3, 4]};
 
 ---
 
-# Updating variables
+## Updating variables
 
 If you have an array of objects, there are three very handy functions you can
 utilize: `slice`, `forEach` and `filter`.  If you have an object, you can
