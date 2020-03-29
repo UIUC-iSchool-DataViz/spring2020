@@ -2,12 +2,9 @@
 title: prep_notebook_week11_iodide
 ---
 
-# Access the most up-to-date version of this notebook online at:
-
-[https://alpha.iodide.io/notebooks/4351/](https://alpha.iodide.io/notebooks/4351/)
+# Access the most up-to-date version of this notebook online at: [https://alpha.iodide.io/notebooks/4351/](https://alpha.iodide.io/notebooks/4351/)
 
 ```
-%% md
 %% md
 Hello there!  I am writing things in Markdown, using similar syntax to how you'd do things in a jupyter notebook.
 

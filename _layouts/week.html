@@ -19,7 +19,7 @@ layout: default
 	{% endunless %}
 	{% endif %} <!-- end if not lecture -->
 	{% if f.path contains "iodide" %}
-	<li>{{f.title}}: (<a href="{{f.url | relative_url}}">view</a>)</li>
+	<li>{{f.title}}: (<a href="{{ site.github.repository_url }}/blob/{{site.branch}}/{{f.path}}">source</a>)</li>
 	{% endif %} <!-- end iodide -->
         {% endif %} <!-- end if contains page.dir and url-->
         {% endfor %}
