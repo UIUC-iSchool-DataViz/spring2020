@@ -40,9 +40,12 @@
       </header>
 
       <section>
-        <p>Access the most up-to-date version of this notebook online at: <a href="https://alpha.iodide.io/notebooks/4351/">https://alpha.iodide.io/notebooks/4351/</a></p>
+        <h1 id="access-the-most-up-to-date-version-of-this-notebook-online-at">Access the most up-to-date version of this notebook online at:</h1>
+
+<p><a href="https://alpha.iodide.io/notebooks/4351/">https://alpha.iodide.io/notebooks/4351/</a></p>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%% md
+%% md
 Hello there!  I am writing things in Markdown, using similar syntax to how you'd do things in a jupyter notebook.
 
 &lt;!-- I can use HTML comment style to make comments here --&gt;
@@ -99,6 +102,8 @@ plt.show()
 
 %% md
 Now, I'm back in Markdown.  Note in your figure that you have access to a lot of useful `widget` type stuff like zoom &amp; pan, and also the ability to save your images.
+
+Also of note is that if you re-run this notebook with this Python cell you will get double figures!  To fix this we would need to make this into its own HTML tag and "wrap" our Python code with some JS.  We'll do a few more Python things now and then just move onto directly plotting with JS and ignoring this oddity for the sake of time.
 
 %% py
 # Right now, printing happens to the console by default
@@ -422,6 +427,134 @@ var myGDPPlot2 = {
 }</p>
 
 <p>var v = vegaEmbed(‘#gdpWithVega2’, myGDPPlot2)</p>
+
+<p>%% md
+We’d probably like to actually select and highlight regions of the graph, but we’ll get into more detail about that next week.  For now, we can just see that we can highlight things with interactions!</p>
+
+<p>Right now, let’s focus on making a map viz here following some of the examples from <a href="https://vega.github.io/vega-lite/examples/geo_text.html">the vega lite docs</a>.  First, a basic map with <code class="language-plaintext highlighter-rouge">vega-lite</code>:</p>
+
+<div id="mySimpleMap"></div>
+
+<p>%% js</p>
+
+<p>var myMapPlot = {
+  “width”: 800,
+  “height”: 500,
+  “projection”: {
+    “type”: “albersUsa”
+  },
+  “layer”: [
+    {
+      “data”: {
+        “url”: “https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json”,
+        “format”: {
+          “type”: “topojson”,
+          “feature”: “states”
+        }
+      },
+      “mark”: {
+        “type”: “geoshape”,
+        “fill”: “lightgray”,
+        “stroke”: “white”
+      }
+    },
+    {
+      “data”: {
+        “url”: “https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-state-capitals.json”
+      },
+      “encoding”: {
+        “longitude”: {
+          “field”: “lon”,
+          “type”: “quantitative”
+        },
+        “latitude”: {
+          “field”: “lat”,
+          “type”: “quantitative”
+        }
+      },
+      “layer”: [{
+        “mark”: {
+          “type”: “circle”,
+          “color”: “orange”
+        }
+      }, {
+        “mark”: {
+          “type”: “text”,
+          “dy”: -10
+        },
+        “encoding”: {
+          “text”: {“field”: “city”, “type”: “nominal”}
+        }
+      }]
+    }
+  ]
+}</p>
+
+<p>var v = vegaEmbed(‘#mySimpleMap’, myMapPlot)</p>
+
+<p>%% md</p>
+
+<p>We can modify this bit of code to point to a new dataset.  In this case, one of the <a href="https://fivethirtyeight.com/">FiveThirtyEight</a> datasets about <a href="https://github.com/fivethirtyeight/data/tree/master/police-killings">police killings in the US</a>.</p>
+
+<div id="testMap"></div>
+
+<p>%% js</p>
+
+<p>var myMapPlot2 = {
+  “width”: 800,
+  “height”: 500,
+  “projection”: {
+    “type”: “albersUsa”
+  },
+  “layer”: [
+    {
+      “data”: {
+        “url”: “https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json”,
+        “format”: {
+          “type”: “topojson”,
+          “feature”: “states”
+        }
+      },
+      “mark”: {
+        “type”: “geoshape”,
+        “fill”: “lightgray”,
+        “stroke”: “white”
+      }
+    },
+    {
+      “data”: { // change our datasource here
+        “url”: “https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv”
+      },
+      “encoding”: {
+        “longitude”: {
+          “field”: “longitude”,
+          “type”: “quantitative”
+        },
+        “latitude”: {
+          “field”: “latitude”,
+          “type”: “quantitative”
+        }
+      },
+      “layer”: [{
+        “mark”: {
+          “type”: “circle”,
+          “color”: “orange”
+        }
+      }, {
+        “mark”: {
+          “type”: “text”,
+          “dy”: -10
+        },
+        “encoding”: {
+          //”text”: {“field”: “city”, “type”: “nominal”}
+        “text”: {“field”: “age”, “type”: “nominal”} // can change different fields here</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    }
+  }]
+}   ] }
+</code></pre></div></div>
+
+<p>var v = vegaEmbed(‘#testMap’, myMapPlot2)</p>
 
 <p>```</p>
 

@@ -2,9 +2,12 @@
 title: prep_notebook_week11_iodide
 ---
 
-Access the most up-to-date version of this notebook online at: [https://alpha.iodide.io/notebooks/4351/](https://alpha.iodide.io/notebooks/4351/)
+# Access the most up-to-date version of this notebook online at:
+
+[https://alpha.iodide.io/notebooks/4351/](https://alpha.iodide.io/notebooks/4351/)
 
 ```
+%% md
 %% md
 Hello there!  I am writing things in Markdown, using similar syntax to how you'd do things in a jupyter notebook.
 
@@ -62,6 +65,8 @@ plt.show()
 
 %% md
 Now, I'm back in Markdown.  Note in your figure that you have access to a lot of useful `widget` type stuff like zoom & pan, and also the ability to save your images.
+
+Also of note is that if you re-run this notebook with this Python cell you will get double figures!  To fix this we would need to make this into its own HTML tag and "wrap" our Python code with some JS.  We'll do a few more Python things now and then just move onto directly plotting with JS and ignoring this oddity for the sake of time.
 
 %% py
 # Right now, printing happens to the console by default
@@ -202,8 +207,6 @@ At this point, you might be asking: How can we get something to print to the rep
 We won't be going into much detail here, but you can check out how to do this [in this post right here](https://stackoverflow.com/questions/56583696/how-to-redirect-render-pyodide-output-in-browser).
 
 ## Plotting using vega-lite
-
-
 
 Because we will want to make more plots than printing out variables to our reports, let's focus now on making plot's with `vega-lite`.  First, we need to understand a bit about how JS is used to modify static HTML tags, and then use `vega-lite` in JS to modify an HTML tag to add a plot.
 
@@ -389,5 +392,135 @@ var myGDPPlot2 = {
 
 var v = vegaEmbed('#gdpWithVega2', myGDPPlot2)
 
+
+%% md
+We'd probably like to actually select and highlight regions of the graph, but we'll get into more detail about that next week.  For now, we can just see that we can highlight things with interactions!
+
+Right now, let's focus on making a map viz here following some of the examples from [the vega lite docs](https://vega.github.io/vega-lite/examples/geo_text.html).  First, a basic map with `vega-lite`:
+
+<div id="mySimpleMap"></div>
+
+%% js 
+
+var myMapPlot = {
+  "width": 800,
+  "height": 500,
+  "projection": {
+    "type": "albersUsa"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-state-capitals.json"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        }
+      },
+      "layer": [{
+        "mark": {
+          "type": "circle",
+          "color": "orange"
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "dy": -10
+        },
+        "encoding": {
+          "text": {"field": "city", "type": "nominal"}
+        }
+      }]
+    }
+  ]
+}
+
+
+var v = vegaEmbed('#mySimpleMap', myMapPlot)
+
+%% md
+
+We can modify this bit of code to point to a new dataset.  In this case, one of the [FiveThirtyEight](https://fivethirtyeight.com/) datasets about [police killings in the US](https://github.com/fivethirtyeight/data/tree/master/police-killings).
+
+<div id='testMap'></div>
+
+%% js
+
+var myMapPlot2 = {
+  "width": 800,
+  "height": 500,
+  "projection": {
+    "type": "albersUsa"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": { // change our datasource here
+        "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [{
+        "mark": {
+          "type": "circle",
+          "color": "orange"
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "dy": -10
+        },
+        "encoding": {
+          //"text": {"field": "city", "type": "nominal"}
+        "text": {"field": "age", "type": "nominal"} // can change different fields here
+
+        }
+      }]
+    }
+  ]
+}
+
+var v = vegaEmbed('#testMap', myMapPlot2)
 
 ```
