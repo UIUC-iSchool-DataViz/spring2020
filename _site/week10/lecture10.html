@@ -561,9 +561,13 @@ utilize: `slice`, `forEach` and `filter`.  If you have an object, you can
 update it either by accessing a property with a period (`obj.something`) or by
 accessing it like you would a dictionary in python (`obj['something']`).
 
+We will use this more next week, but here is the overview...
+
 ---
 
-# Arrays: `filter`
+## Next week
+
+### Arrays: `filter`
 
 ```
 var myArray = [1, 5, 1, 3, 50, 14, 2];
@@ -572,9 +576,14 @@ myArrayFiltered = myArray.filter(val => val > 2);
 
 Note that here I'm using `=>` as shorthand for declaring a function.
 
+notes:
+we will use the filtering especially for data and plots next week!
+
 ---
 
-# Arrays: `forEach`
+## Next week
+
+### Arrays: `forEach`
 
 To execute something on every value in an array, you can call `forEach` with a
 function.
@@ -586,7 +595,9 @@ myArray.forEach(val => console.log(val * 2));
 
 ---
 
-# Arrays: `slice`
+## Next week
+
+### Arrays: `slice`
 
 You can set a start and a stop on an array with a `slice` call:
 
@@ -597,13 +608,16 @@ myArray.slice(3).forEach(word => console.log(word));
 
 ---
 
-# vega-lite editor
+## vega-lite editor
 
-https://vega.github.io/editor/#/custom/vega-lite
+https://vega.github.io/editor/
+
+notes:
+we'll start by making a quick plot in the vega-lite editor
 
 ---
 
-# vega-lite syntax: basics
+## vega-lite syntax: basics
 
 From the vega-lite examples, you can make a bar chart that is an aggregate like so:
 
@@ -626,37 +640,39 @@ From the vega-lite examples, you can make a bar chart that is an aggregate like 
 }
 ```
 
+Data available [list is here](https://github.com/vega/vega-datasets/tree/master/data).
+
+notes:
+here, we just specify what version of vega-lite we are using
+
+then specify where the data is (this is stored on the vega-lite github of this schema)
+
+then say we are making a "mark" of a "barplot"
+
+then say what we are 
+
 ---
 
-# vega-lite syntax
+## vega-lite syntax
 
 There are several mechanisms by which we describe data representations in
-vega-lite, but the overarching principle is that it is declarative.  We define
+`vega-lite`, but the overarching principle is that it is *declarative*.  We define
 what it does based on what we say we want it to look like.
 
 The place where this is no longer true is when we modify `datum` values.
 
 ---
 
-# vega-lite syntax
+## vega-lite syntax
 
 The syntax you will need to be the most familiar with:
 
  * `mark`: how to visually represent something
  * [`encoding`](https://vega.github.io/vega-lite/docs/encoding.html): the translation between data and the mark
  * `aggregate`: operating over a collection of points -- `mean`, `sum`, `median`,
-   `min`, `max`, `count`
+   `min`, `max`, `count` (next week)
+ * `filtering`: for plotting subsets of data (next week)
  * `type`: `quantitative`, `temporal`, `ordinal`, or `nominal`
-
----
-
-# For Next Week
-
- * Install and get working a Jupyter environment on your local machine.  It must have:
-   * bqplot
-   * matplotlib
-   * pandas
- * Set up a development environment using VSCode
 
 ---
 
