@@ -2,7 +2,7 @@
 title: prep_notebook_week11_iodide
 ---
 
-Access this notebook online at: https://alpha.iodide.io/notebooks/4351/
+Access the most up-to-date version of this notebook online at: https://alpha.iodide.io/notebooks/4351/
 
 ```
 %% md
@@ -44,14 +44,17 @@ You'll note that you get a preview of what you're doing on the right.  You can a
 
 We need to specify the _environment_ as Python before actually being able to use Python.  We do this with in Iodide with a `%% py` as mentioned in the [Iodide IOMD Docs](https://iodide-project.github.io/docs/iomd/):
 
+
 %% py
 # load numpy and pyplot per usual
 import numpy as np
 import matplotlib.pyplot as plt
+
 # make a random plot:
 myPythonArray = np.random.random(100)
-plt.clf() # to clear figure
-plt.plot(myPythonArray)
+myPythonInds = np.arange(100)
+plt.figure()
+plt.plot(myPythonInds, myPythonArray)
 plt.title('Random test data')
 plt.show()
 # now: hit shift-return: note if you keep doing this, more plots will show up - include the "clear statement" to help with this
@@ -62,7 +65,7 @@ Now, I'm back in Markdown.  Note in your figure that you have access to a lot of
 
 %% py
 # Right now, printing happens to the console by default
-print('Hi there')
+"Hi there"
 
 %% md
 
@@ -86,15 +89,305 @@ df = pd.read_csv(pyodide.open_url(URL))
 # This will show the dataframe in the console:
 df
 
-# we can also make a quick plot
+# we can also make a quick plot 
 df.plot(kind='line',x='DATE',y='GDP',color='red')
 plt.show()
 
 %% md
-Sweet!
+Sweet!  Note that we can also "re-write" our code in Markdown which can be useful if we want to talk about our code in our document:
+
+```#python
+import pandas as pd
+import pyodide
+URL = 'https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv'
+df = pd.read_csv(pyodide.open_url(URL))
+```
+
+## More about JS
 
 So, we've seen how to use Python to make shareable figures, but what about Javascript?  What's neet about the Iodide engine is that we can communicate between Python and Javascript and pass data between the two.  Before getting into that, it will be worth while to go over some basic Javascript programming.
 
 If you really like Javascript, you can look into learning how to use it in more detail on sites like the [codeacademy JavaScript site](https://www.codecademy.com/learn/introduction-to-javascript).
+
+We'll start with some basics and then get into more fancy stuff with plotting and cross-communication between Python and Javascript.
+
+Code:
+```
+// This is very important - a comment! Note they are highlighted the same color, but start with a different
+//  set of characters
+
+var myString = "Hello there!";
+
+var myArray = [1, 2, 3, 4, 5];
+
+var myObject = {'hello': 1, 'how': 2,
+                'are': {'you': 'me'}
+};
+
+// Let's try making a function!
+function sayHello(toWhom) {
+    return "Hello! " + toWhom;
+}
+
+var sayingHello = sayHello("Jill");
+
+// In Iodide, the "console printing" is sort of the default, so this works:
+sayingHello
+```
+
+%% js
+// This is very important - a comment! Note they are highlighted the same color, but start with a different
+//.  set of characters
+
+// Variables are declared differently than in Python:
+var myString = "Hello there!";
+// Note the "var" in front, as opposed to a "const" which would be something that doesn't change.
+// Also note the ";" at the end of the declaration.
+
+// Arrays are somewhat similar to python, but again called differently:
+var myArray = [1, 2, 3, 4, 5];
+
+var my2dArray = [ [1,2], [3,4], [5, 6] ];
+
+// Dictionaries look much the same as in Python as well, but with the JS calling structure:
+var myObject = {'hello': 1, 'how': 2,
+                'are': {'you': 'me'}
+};
+
+// Let's try making a function!
+function sayHello(toWhom) {
+    return "Hello! " + toWhom;
+}
+
+var sayingHello = sayHello("Jill");
+
+// How can we print out this new variable?
+// This doesn't work now we expect?
+//print(sayingHello);
+
+// In general, we'll have to use JS console:
+// console.log(sayingHello);
+// In Iodide, the "console printing" is sort of the default, so this works:
+sayingHello
+
+%% js
+// we can also print out elements from previous JS cells:
+my2dArray[1]
+%% md
+
+Before getting into Python-JS cross talk, let's look at a few more objects in JS. 
+ 1. For loops
+ 1. Conditionals
+
+```
+var newArray = [];
+for ( i = 0; i < 10 ; i++) {
+    if (i%2 == 0) {
+        newArray.push(i + 1);
+    };
+}
+```
+%% js
+var newArray = []; // start with an empty array
+for ( i = 0; i < 10 ; i++) { // for loop, here we specify the iteration of i increasing by 1 each time as i++
+    if (i%2 == 0) { // if-statement -> look for only even #'s'
+        newArray.push(i + 1); // add to this array
+    };
+}
+newArray // show in console
+%% md
+
+At this point, you might be asking: How can we get something to print to the report instead of the console?  This is a little bit tricky, because this "Report" webpage is HTML, so we need to have our code in HTML.  To have *variable* text that will change based on variables, we use Javascript -- JS can update HTML "on the fly".  But if we want to print out something from Python, we have to first turn it *into* JavaScript!  So you can see, there is a lot to do here. 
+
+We won't be going into much detail here, but you can check out how to do this [in this post right here](https://stackoverflow.com/questions/56583696/how-to-redirect-render-pyodide-output-in-browser).
+
+## Plotting using vega-lite
+
+
+
+Because we will want to make more plots than printing out variables to our reports, let's focus now on making plot's with `vega-lite`.  First, we need to understand a bit about how JS is used to modify static HTML tags, and then use `vega-lite` in JS to modify an HTML tag to add a plot.
+
+Let's break this down bit by bit.  First, let's make a *static* HTML element:
+
+<div id="myDiv">I am some content.</div>  
+
+Now, let's use some JavaScript to change this `myDiv` element using JavaScript: note this won't run until you do `shift+enter`!
+
+%% js
+document.getElementById("myDiv").innerText = "I just changed the content!";
+document.getElementById("myDiv").style.color = 'magenta';
+
+%% md
+
+Note, this won't run the JS update by default if we hit the "View As Report" button, so we have to make sure we run everything beforehand!
+
+Now that we've done some stuff with changing HTML with JS, let's pass data from Python into JS to do JS things with, we'll start with our simple `myArray` variable:
+
+%% js
+
+myJSArray = pyodide.pyimport("myPythonArray");
+myJSInds = pyodide.pyimport("myPythonInds");
+
+myJSArray
+
+%% md
+
+Now that we have this array in a place that JS can use it, we'll import a few functions to make a plot, specifically using the `Vega/Vega-lite` package.  To make use of these functions, we need to `fetch` them from a repository online.  We can check out one useful location for such packages, [the jsdelivr website](https://www.jsdelivr.com) (we can also specifically look for vega stuff with: `https://www.jsdelivr.com/?query=author%3A%20vega`).
+
+Here is the code in a `%% fetch` command:
+```
+js: https://cdn.jsdelivr.net/npm/vega
+js: https://cdn.jsdelivr.net/npm/vega-lite
+js: https://cdn.jsdelivr.net/npm/vega-embed
+```
+
+%% fetch
+js: https://cdn.jsdelivr.net/npm/vega
+js: https://cdn.jsdelivr.net/npm/vega-lite
+js: https://cdn.jsdelivr.net/npm/vega-embed
+
+%% md
+
+Now, we need to make a HTML `div` element to store our plot in, and we'll use JS to update this `div` element by putting a vega-lite plot in there:
+<div id="ourFirstViz">
+</div>
+
+Let's make a simple plot.
+
+%% js
+// vega lite has a familiar excuction to bqplot in that it is declaritive
+// We will see "data", "marks" and "encodings"/scales
+
+// Let's make a plot of how many hours we're spending in PJs over the week:
+var mySpecificationFirst = { // we're gonna write a function that "specifies" our plot
+    data: { // first, we lay out our data
+       values: [
+            {day: "Monday", hoursInPjs: 8},
+            {day: "Tuesday", hoursInPjs: 10},
+            {day: "Wednesday", hoursInPjs: 11.5},
+            {day: "Thursday", hoursInPjs: 12},
+            {day: "Friday", hoursInPjs: 15},
+            {day: "Saturday", hoursInPjs: 20},
+            {day: "Sunday", hoursInPjs: 22}
+        ]
+    },
+    mark: "bar", // we want to make a bar plot
+    encoding: {
+        x: {field: "day", type: "ordinal"}, // this is a categorical data type
+        y: {field: "hoursInPjs", type: "quantitative"} // numerical data
+    }
+};
+var v = vegaEmbed("#ourFirstViz", mySpecificationFirst); // embed a vega lite plot
+
+%% js
+// Since we made a "toy" plot, we can replace our plot by tagging JS on our div element here again.
+// In this case, let's use our data converted from Python:
+var mySpecification = {
+    data: {
+        values: [
+            {"x": myJSInds, "y": myJSArray} // replace data with x/y values
+        ]
+    },
+    transform:[{"flatten": ["x", "y"]}], // here we need to get our data into a "vega"-data-formate - see: https://vega.github.io/vega-lite/docs/flatten.html
+    mark: {"type": "line", "point": true}, // try w/o "point" first
+    encoding: {
+        x: {field: "x", type: "quantitative"}, // note: both are numerical data now
+        y: {field: "y", type: "quantitative"}
+    }
+};
+var v = vegaEmbed("#ourFirstViz", mySpecification);
+
+%% md
+
+We probably want to change the size of this plot:
+<div id="biggerPlot">
+</div>
+
+%% js
+var mySpecificationBig = {
+    data: {
+        values: [
+            {"x": myJSInds, "y": myJSArray}
+        ]
+    },
+    transform:[{"flatten": ["x", "y"]}],
+    width:"600", // specify width and hight
+    height:"300",
+    mark: {"type": "line", "point": true},
+    encoding: {
+        x: {field: "x", type: "quantitative"},
+        y: {field: "y", type: "quantitative"}
+    }
+};
+var v = vegaEmbed("#biggerPlot", mySpecificationBig);
+
+%% md
+
+Note that vega-lite is nice because we can actually grab data directly off the internets:
+
+<div id="gdpWithVega"> </div>
+
+%% js
+
+var myGDPPlot = {
+  data: {"url": "https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv"},
+  mark: "line",
+  width:"600", // specify width and hight
+  height:"300",
+  encoding: {
+    "x": {"field": "DATE", "type": "temporal"},
+    "y": {"field": "GDP", "type": "quantitative"}
+  }
+}
+
+var v = vegaEmbed('#gdpWithVega', myGDPPlot)
+// Note: this also gives you an option to open things up with the Vega editor -> way to mess around with data online
+
+%% md
+Let's make our GDP plot a bit more interesting:
+
+<div id='gdpWithVega2'> </div>
+
+%% js
+var myGDPPlot2 = {
+  data: {"url": "https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv"},
+  selection: {
+    "brush": {
+      "type": "interval"
+    }
+  },
+  mark: {"type": "line", "tooltip":true},
+  width:"600", 
+  height:"300",
+  encoding: {
+    "x": {"field": "DATE", "type": "temporal"},
+    "y": {"field": "GDP", "type": "quantitative"}, 
+    "color": {"value": "red"}
+  }
+}
+
+var v = vegaEmbed('#gdpWithVega2', myGDPPlot2)
+
+%% js
+
+var myGDPPlot2 = {
+  data: {"url": "https://uiuc-ischool-dataviz.github.io/spring2020/week01/data/GDP.csv"},
+  selection: {
+    "brush": {
+      "type": "interval"
+    }
+  },
+  mark: {"type": "line", "tooltip":true},
+  width:"600", 
+  height:"300",
+  encoding: {
+    "x": {"field": "DATE", "type": "temporal"},
+    "y": {"field": "GDP", "type": "quantitative"}, 
+    "color": {"condition": {"selection":"brush"}, "value":"red" }
+  }
+}
+
+var v = vegaEmbed('#gdpWithVega2', myGDPPlot2)
+
 
 ```
