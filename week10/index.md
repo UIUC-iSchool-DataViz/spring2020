@@ -5,9 +5,12 @@ visible: true
 
 # Week 10 - Iodide and Intro to Javascript
 
-## Downloads
+## Downloads & Links
 
-### Data:
+### Iodide Notebooks:
+
+ * <a href="https://alpha.iodide.io/notebooks/4351/">Prep Iodide Notebook</a>
+ * <a href="https://alpha.iodide.io/notebooks/4367/">In Class Iodide Notebook</a>
 
 ## Optional reading list
 
@@ -17,3 +20,8 @@ visible: true
 
 
 ## Extra Resources
+ * [FiveThirtyEight](https://fivethirtyeight.com/)
+ * [FiveThirtyEight datasets](https://github.com/fivethirtyeight/data)
+ * [jsdelivr](https://www.jsdelivr.com/)
+ * [vega-datasets](https://github.com/vega/vega-datasets/tree/master/data)
+ 
