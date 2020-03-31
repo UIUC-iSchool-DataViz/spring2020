@@ -45,8 +45,22 @@ layout: default
         {%endfor%}
         </ul>
 
+	<!-- do we have any previous materials? -->
+	{% assign previousFiles = site.static_files | where: "extname", ".ipynb" %}
+	{% assign materialsPrevious = "NO" %}
+	{% for previousFile in previousFiles %}
+ 	 {% if previousFile.path contains page.dir and previousFile.basename contains "2019" %}
+	  {% assign materialsPrevious = "YES" %}
+	 {% endif %}
+	{% endfor %}
+
+
+	{% if materialsPrevious == "YES" %}
         <h3>Materials from Previous Courses</h3>
+	{% endif %}
+
         <ul>
+	  
 	{% assign notebooks = site.static_files | where: "extname", ".ipynb" %}
 	
         {% for nb in notebooks %}
