@@ -669,3 +669,6 @@ The syntax you will need to be the most familiar with:
 <img src="https://user-images.githubusercontent.com/95735/54166135-08936e00-4421-11e9-9817-aca915831f42.png" width="800px">
 
 To the internet!
+
+notes:
+make sure you go over all these things!
