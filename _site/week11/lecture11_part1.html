@@ -1,0 +1,1045 @@
+<!doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lecture 11, Part 1</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vega"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+
+
+</style>
+
+  <link rel="stylesheet/less" type="text/css" href="/spring2020/assets/styles.less" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+           data-separator="^\n---\n"
+           data-separator-vertical="^\n----\n">
+          <script type="text/template">
+<!-- .slide: class="titleslide" -->
+
+# Data Visualization
+
+<div style="height: 6.0em;"></div>
+
+## Jill P. Naiman
+## Spring 2020
+## Lecture 11
+
+---
+
+## Warm-Up Activity
+
+1. What is the visualization trying to show?
+1. What are its methods?
+1. What are the strengths / weaknesses?
+
+<br/>
+
+https://www.vox.com/policy-and-politics/2018/9/28/17914308/kavanaugh-ford-question-dodge-hearing-chart
+
+---
+
+## Last Week
+
+<img src="../week10/images/this_week.png">
+
+---
+
+## This Week
+
+<img src="images/this_week.png">
+
+notes:
+this week we will discuss how one has to consider the audience of their visualization - is your audience you? your peers? others?
+
+we'll aslo talk about linking views through brushing and selecting - we did this earlier with building dashboards, but we'll formalize it more today and talk about applications in vega-lite
+
+if we have time after doing a few more things with javascript & vega-lite, we'll start in on doing a few things with Idyll
+
+---
+
+## Today
+
+ 1. Viz for Self/Peers/Others
+ 1. Review about final projects
+ 1. Linking & Brushing
+ 1. More `vega-lite` - transformations and calculations
+ 1. More programming in Iodide
+ 1. Intro to Idyll (if time)
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 1: Viz Audience
+
+---
+
+## Three Classes of Visualizations
+
+1. Viz for Self
+1. Viz for Experts
+1. Viz for the Public
+
+---
+
+## Viz for Self
+
+There are no rules!
+
+<img src="images/madscience.gif" width="400"/>
+
+notes:
+Labels don't matter. Colors don't have to look nice. Interactivity doesn't have to be fast. Here we are just trying to get something on screen that represents the data. Often this is challenge enough.
+
+As the designer, you know what choices you have made, so "elegant design" isn't a huge deal - although don't go too crazy or you could make things more confusing for yourself.
+
+---
+
+## Viz for Self
+
+<img src="images/walsh.gif" width="700"/>
+
+notes:
+This is an example from AJ (the in-person instructor). He uses 3D software like Houdini in his "everyday" life and so this is his software of choice.  Here, he used 3D software to make a 2D plot, and arranged points to look like a bar chart even though they were rendered as individual points - aka a scatter plot.
+
+It just had to work, and we used the most convenient software.
+
+---
+
+## Viz for Self
+
+<img src="images/L25n128TNG_tmp_gas_metallicity_history.png" width="700"/>
+
+notes:
+Here are some examples from my work
+
+There are plots of data from a large scale simulation of the universe.  Here, I'm curious about how the average number of elements heavier than helium in our simulation changes over time.
+
+---
+
+## Viz for Self
+
+name of: L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png
+
+<img src="images/L25n512TNG_shenplot_STARS_ylimn0p5_bins_largeEu_1e2_nx050_ny050_sn099.png" width="500"/>
+
+notes:
+You can even tell from the name of the file (which runs off the page here) that I'm playing with a bunch of things.  For example I'm plotting here stars, but there is no way you'd really get that from the actual plot itself.
+
+These are plots that show an example of how one might "explore" the data - look for relationships.
+
+---
+
+## Viz for Self
+
+Later this became (viz for peers)
+
+<img src="images/L75n1820TNG_eufef07065_allMstar_eucut_massweighted_bigrange_rfracAll_histo.png" width="600"/>
+
+[Paper if you're really curious](https://arxiv.org/pdf/1707.03401.pdf)
+
+notes:
+later, that plot became this plot right here which can be thought of as viz-for peers
+
+While its probably not something that you all understand (unless there are some astronomers in our midst) - you can see I'm more careful here about fonts, presentatin, color schemes and actually labeling things
+
+
+---
+
+## Viz for Self
+
+Let's talk about exploration.
+
+ * What are characteristics of data that would influence how you visualize it?
+ * What information do you have that would be visually interesting?
+ * What information do you not have that you need to understand the importance of the data?
+
+Example: A banking database where each record is a bank transaction and the fields include date, deposit or withdrawal amount, customer id, and the interest rate of the account.
+
+---
+
+## Viz for Self
+
+Let's talk about exploration.
+
+ * What are characteristics of data that would influence how you visualize it?
+ * What information do you have that would be visually interesting?
+ * What information do you not have that you need to understand the importance of the data?
+
+Example: A spreadsheet of experimental crop growth measurements where each record is a measurement, and the fields include date, plant species, plant id number, number of leaves, plant height, number of internodes, and average leaf length.
+
+notes:
+internodes = the number of "generations" of a plant, aka how many branches come off the main stem. 
+
+---
+
+## Viz for Self
+
+Let's talk about exploration.
+
+ * What are characteristics of data that would influence how you visualize it?
+ * What information do you have that would be visually interesting?
+ * What information do you not have that you need to understand the importance of the data?
+
+Example: A computational simulation of a galaxy where each record is a timestep in the evolution of the 3D grid, and the fields include time, X position, Y position, Z position, gas density, gas temperature, gas metallicity, and number of stars.
+
+---
+
+## Viz for Self
+
+What do you want to get out of visualization for yourself?
+
+ * Do you want to find meaning?
+ * Do you want to understand how to guide further visualizations?
+ * Is the story you want to tell already known to you?
+ * What __shortcuts__ can you take?
+
+notes:
+shortcut ideas ... subsampling, delete unused fields, use a simpler tool, manually select outliers by hand instead of doing it procedurally
+
+forget labels that others have to figure out
+
+don't worry about color schemee
+
+---
+
+## Viz for Experts
+
+To design a visualization for experts, you need to analyze how they process information.
+
+ * What do they know?
+ * What conventions will they assume?
+ * Are they able to fill in the blanks of information?
+
+---
+
+## Viz for Experts
+
+<img src="images/sci_tornado.png" width="700"/>
+
+notes:
+Here's a series of visualizations made by or for domain experts that AJ just had lying around on his laptop.
+
+What are some things you notice they have in common?
+
+---
+
+## Viz for Experts
+
+<img src="images/sci_canup.png" width="350"/>
+
+notes:
+Here's a series of visualizations made by or for domain experts that I just had lying around on my laptop.
+
+What are some things you notice they have in common?
+
+---
+
+## Viz for Experts
+
+<img src="images/sci_convection.png" width="700"/>
+
+notes:
+Here's a series of visualizations made by or for domain experts that I just had lying around on my laptop.
+
+What are some things you notice they have in common?
+
+---
+
+## Viz for Experts
+
+<img src="images/sci_flu.png" width="700"/>
+
+notes:
+Here's a series of visualizations made by or for domain experts that I just had lying around on my laptop.
+
+What are some things you notice they have in common?
+
+---
+
+## Viz for Experts
+
+<img src="images/sci_genes.png" width="700"/>
+
+notes:
+Here's a series of visualizations made by or for domain experts that I just had lying around on my laptop.
+
+What are some things you notice they have in common?
+
+---
+
+## Viz for Experts
+
+Experts often want to interrogate the data themselves.
+
+How can they do that?
+ * Linked Dashboards
+ * Side-by-side comparison plots
+ * Text annotation with specific values listed
+ * Color bar annotation
+
+notes:
+ask students - other ideas? what about interactivity? (Interactivity needs to be decent)
+
+---
+
+## Viz for Experts
+
+Experts are looking to isolate variables to make scientific conclusions.
+
+How can we make visualizations more analytical?
+ * Reduce the dimensionality of the image (slices)
+ * Viewpoint from "outside the box"
+ * Extremely high contrast color choices (or highlight different features)
+
+notes:
+ask students - other ideas? What about animated data?
+
+---
+
+## Viz for the Public
+
+This is what you're most accustomed to, because usually YOU are the public.
+
+<img src="images/basedonatruestory.jpg" width="700"/>
+
+notes:
+Who here is an expert on the historical accuracy of movies? Do you think this visualization was created for those experts? Or was it created for you? How can you tell?
+
+---
+
+## Jargon
+
+<iframe src="https://player.vimeo.com/video/206139648" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/206139648">Jaret before and after</a> from <a href="https://vimeo.com/aldacenter">Alan Alda Center</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+notes:
+so here is an example of a scientist and, in a typical scientist fashion, using a  lot of jargon
+
+but then after taking some improv he's able to communicate more effectively to the public
+
+---
+
+## Jargon
+
+Definition: Special words or expressions that are used by a particular profession or group and are difficult for others to understand.
+
+<img src="images/hurricane.jpg" width="400"/>
+
+notes:
+When working with experts on their data, they will often try to use words that are specific to their field. As a data communicator, it's your job to decipher that jargon and make it more approachable to the public.
+
+---
+
+## Jargon
+
+<img src="images/upgoerfive.png" width="600"/>
+
+[xkcd.com/1133](https://xkcd.com/1133/)
+
+notes:
+This XKCD webcomic makes fun of how much jargon scientists use. He tries to explain NASA's Saturn V rocket using only the 1000 most common words in the English language. 
+
+He actually wrote a whole book about science this way called "Thing Explainer."
+
+---
+
+## Jargon
+
+[Simple Writer](https://xkcd.com/simplewriter/)
+
+notes:
+And here's a neat tool he created to help you write your own!
+
+Before:
+"The Advanced Visualization Lab creates cinematic treatments of supercomputer data for immersive displays."
+
+After:
+"The very good picture making team creates movies of huge computer information for screens you can be inside of."
+
+---
+
+## Storytelling
+
+Let's just get it out there: humans don't respond to data. They respond to stories.
+
+Which of these do you care about more?
+ * Global average atmospheric carbon dioxide is 405 ppm.
+ * Polar bears are dying because the ice they use to hunt is melting.
+
+notes:
+In visualization, we really want to tell a story, not just a list of facts.
+
+---
+
+## Storytelling
+
+Why is that?
+
+<img src="images/storytelling.jpg" width="700"/>
+
+notes:
+Emotional response to storytelling is an evolutionary trait humans developed to form stronger social bonds and learn from each other's experience.
+
+---
+
+## Storytelling
+
+Freytag's Pyramid
+
+<img src="images/freytag.png" width="700"/>
+
+notes:
+A story needs setup, conflict, and resolution. One thing many novice storytellers forget is to have a resolution or ending. You need to wrap it up in a neat package!
+
+aside - "denouement" is one of my favorite words
+
+---
+
+## Storytelling
+
+Characters and Conflict
+ * People as subjects: Two political candidates are battling for office
+ * People as researchers: Dr. Smith is trying to cure cancer
+ * Objects as characters: The photons are trying to push their way to the sun's surface
+
+notes:
+each story is going to have different sorts of characters and different kinds of conflicts
+
+here are a few examples - you can even make scientific data into a story!  Don't you really want to root for the photons to make it out of the sun?
+
+---
+
+## Know your Audience
+
+<iframe width="853" height="480" src="https://www.youtube.com/embed/opqIa5Jiwuw?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+notes:
+so, we won't watch this whole thing, but it is worth checking out how the jargon/language changes when he's talking to different groups of folks
+
+---
+
+## Know your Audience
+
+What do you know about them?
+ * Age
+ * Nationality
+ * Occupation
+ * Affiliation with a Special Interest / Organization
+ * Or is it literally EVERYBODY (web publishing)
+
+notes:
+You can hone your narrative for certain audiences. If it's the broadest audience, like for journalism shared online, you need to keep in mind that there will be children, grandparents, experts, politicians, people with money, etc all in the audience.
+
+---
+
+## Visualization for the Public
+
+Images can be more powerful than words, text, and numbers. Images can tell stories.
+
+<img src="images/mlkjr.jpg" width="700"/>
+
+notes:
+What can you say about this event given the picture? How is this different from an average day on the National Mall in DC?
+
+What is the story of this photograph?
+
+---
+
+## Visualization for the Public
+
+Context is vital for the public.
+ * Embed multiple datasets
+ * Place something familiar to relate to the unfamiliar
+ * Smooth transitions so you can see where you've come from and where you're going to
+
+notes:
+This is different from a visualization for Experts where you usually want to isolate the dataset.
+
+With experts, you can asssume some background of understanding.  You might start a presentation or paper with a background summary, but based on the field you don't have to explain as much.  For example, if I'm giving a astronomy talk, I can assume folks know the difference between newtonian gravity and general relativistc treatments and roughly when each apply (GR for going fast, or near big things).
+
+---
+
+## Visualization for the Public
+
+Context is vital for the public.
+
+<img src="images/canup.gif" width="600"/>
+
+notes:
+The AVL created this sequence for a movie, which originally moved much slower on a large screen, and had a narrator explaining the sequence. Someone recaptured it and made it into a gif, sharing it on reddit with the caption "A simulation of the Earth's moon being formed."
+
+What context might have been lost?
+
+How well does the imagery speak for itself?
+
+---
+
+## Visualization for the Public
+
+Identifying the narrative
+ * Do you first find data, or first find a story?
+ * What is the difference between the data narrative and a narrative for the public?
+
+notes:
+In visualization for the public, typically we will start with a dataset, and then build a narrative around it, and seek out more data to build context.
+
+Data narrative = what the data collector is researching
+
+Public narrative = what makes an interesting story and provides context
+
+This is different than viz for experts where you are typically talking about the dataset you have been working with specifically.
+
+---
+
+## Visualization for the Public
+
+ 1. Aesthetics Matter
+ 1. Interactivity should not have any lag or latency
+ 1. Relative values are often more important than specific values
+ 1. Limit the amount of text/reading
+ 1. Limit the amount of information being packed in
+
+---
+
+## Visualization for the Public
+
+ * [Election Forecast - fivethirtyeight](https://projects.fivethirtyeight.com/2018-midterm-election-forecast/senate/)
+ * [Online Dating - okCupid](https://theblog.okcupid.com/exactly-what-to-say-in-a-first-message-2bf680806c72)
+ * [DiCaprio Love Life - reddit](https://www.reddit.com/r/dataisbeautiful/comments/azjti7/leonardo_dicaprio_refuses_to_date_a_woman_over_25/)
+
+notes:
+What are the narratives of these visualizations? How are they different than just a list of facts?
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 2: Final Projects
+
+---
+
+## Final Project
+
+There are three components, turned in the last three weeks of class.
+
+You will have three components:
+
+1. Viz for Self (Due April 13)
+1. Viz for Peers (Due April 20)
+1. Viz for Others (Due April 27)
+
+---
+
+## Final Project: Part 1
+
+Submit in a Jupyter notebook.
+
+ * Identify a dataset to explore.
+   * This will be iterative!  You probably won't get one you like on the first
+     try.
+   * Check out sources like [data.world](https://data.world/),
+     [data.illinois.gov](https://data.illinois.gov/),
+     [data.gov](https://data.gov/),
+     [developer.marvel.com](https://developer.marvel.com/),
+     [IDB](https://databank.illinois.edu/), etc.
+   * or the dataset doc that [lives right here](https://docs.google.com/document/d/15UJinT5XokAHXd9fQAYD8f6d3vEkR6kJMq8kswmkOhY/edit?usp=sharing)
+ * Explore the dataset in a Jupyter notebook.  Make sure you include things that did and did not work.
+ * Summarize the characteristics of the dataset in words: what does it
+   represent, what are the fields/columns/rows, what data types are they, etc
+
+---
+
+## Final Project: Part 1 (cont)
+
+Your datasets need to be submitted as well.  To do this, include this
+information in your Jupyter notebook:
+
+ * What is the "name" of the dataset?
+ * Where did you obtain it?
+ * Where can we obtain it?  (i.e., URL)
+ * What is the license of the dataset?  What are we allowed to do with it?
+ * How big is it in file size and in items?
+ * Make a simple plot showing a relationship of interest.  You can use matplotlib or pandas (or other). Don't worry about colors, labels or anything else of that nature!
+
+---
+
+## Final Project: Part 1 (cont, cont)
+
+Per usual, there will be a class google doc for this assignment.
+
+You can share raw data sets and sources, ask questions about reading/modifying the dataset and post code to do so **that isn't working**.
+
+Please do not share processed or cleaned datasets.
+
+---
+
+## Final Project: Part 2
+
+Submit in a Jupyter notebook.  
+
+ * Using your dataset, generate visualizations that explore the data in a
+   guided way.
+ * Your first component was focused on exploring the data in an unguided way.
+   This component is about visualizing the data in a guided way.
+ * Construct visualizations that explore each aspect you identified, with
+   discussion and descriptions.
+ * If you can identify improvements to the visualizations that come from
+   interactivity, implement that.
+
+---
+
+## Final Project: Part 2 (cont)
+
+ * The visualizations should utilize visual language relevant for "Viz for
+   Peers."
+    * Each and every plot should contain all relevant information: appropriate
+      units, labeling, etc
+    * Annotate and narrate particular pieces of interest (if there are any)
+    * Use standard visual representations and augment these if necessary
+
+---
+
+## Final Project: Part 3
+
+You will submit this as your final project in week 14 and get some feedback.
+
+### In flux:
+
+For week 15, everbody will share their viz for a few minutes in class
+(tech willing).  This doesn't have to be a formal presentation, just a quick screen-share and a few
+comments about what you have been working on.
+
+---
+
+## Final Project: Part 3 (cont)
+
+You may submit one or more of the following items: Idyll webpage repository, narrative Jupyter notebook.
+
+This component will include a "for others" visualization that is deeply
+narrative with appropriate interactive (or static) content and, ideally, sharable on a
+website.
+
+Some possible ways to approach this:
+
+ * Infographic
+ * Idyll
+ * Jupyter notebook
+ * Raw HTML
+
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 3: Linking & Brushing
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+note: here we are plotting a set of data that is a function of 4 variables.
+
+For example, this could be the amount you are late to class as a function of (1) how much sleep you got, (2) how excited you are about the topic that day (3) how nervous you are about the topic that day and (4) how much of your homework the dog ate.
+
+here we are plotting 2 2d plots of this dataset - were we know intuatively each point is represented both as a dot on the first graph *and* as a dot on the 2nd graph
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: now we are going to think about applying a simple filter, based around the first plot
+
+we'll only show data where variable2 > variable1
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_03.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: lets draw a line where the demarkation of our filter would be
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_04.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: ... and lets take out all the data of both plots that has variable2 <= variable1
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_05.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: we can also select regions in our linked view
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_06.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: here are how these points are linked in the plot of variable3 vs variable4
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_07.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: so when we select with our brush in the first plot we can show what is selected in the second plot
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationAllPoints.png)
+
+note: as a "practical" example, we can for example make cuts in things like the
+duration of UFO sitings for all years
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationAllPoints_p2.png)
+
+note: we can select only the longest sitings
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationLongPoints.png)
+
+note: this is how this plot would now look
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/mapAllPoints.png)
+
+note: and then we can see how the map changes
+
+this is our original
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/mapLongPoints.png)
+
+note: this is how this dataset looks now w/o the shortest duration ufo sitings
+
+---
+
+<iframe width="1024" height="576"
+src="https://www.youtube.com/embed/B7XoW2qiFUA?rel=0" frameborder="0"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+[Link to video](https://www.youtube.com/embed/B7XoW2qiFUA)
+
+note: here is one of the first examples of a "linked view" visualization machine.  We won't watch this whole video, but
+if you are interested, they talk about how they can "interact" with different views
+
+this was developed by SLAC (stanford linear accelerator)
+
+prim9 = picturing, rotation, isolation & masking in up to 9 dimensions - for looking at multidimensional datasets
+this was developed for particle data (so, like x,y,z and vx,vy,vz might be of interest)
+
+---
+
+## Implementing This
+
+Two main approaches to the selection process:
+
+ * Concurrent filtering
+ * Index-based selection
+
+What are the pros and cons of each?
+
+What are methods of showing "linked" and "brushed" data if you have:
+
+ * Scatter plot
+ * Histogram
+ * Field / image plot
+
+---
+
+<br />
+<br />
+<br />
+
+# TOPIC 4: More `vega-lite`
+
+---
+
+## Today
+
+Vega-lite - II
+   * Marks - more
+   * Selections
+   * Transformations
+   * Computations
+
+---
+
+## Vega-Lite - I
+
+Recall that vega-lite is defined in a JSON specification.  This specification will typically take a form similar to this:
+
+```json
+{
+  "data": .. ,
+  "transform": [ .. ],
+  "mark": .. ,
+  "selection": .. ,
+  "encoding": .. ,
+  "config": ..
+}
+```
+
+---
+
+## Vega-Lite - I: Embedded
+
+We principally used a vega-lite "embed" mechanism:
+
+```javascript
+var embedded = vegaEmbed('#vis', yourVlSpec);
+```
+
+We are also able to specify a configuration variable to this at the config
+option.  ([Details](https://github.com/vega/vega-embed))  You may find it
+useful to update the `actions` option in `opt`, which controls which items are
+available in the menu:
+
+```javascript
+var embedded = vegaEmbed('#vis', yourVlSpec, {'actions': false});
+```
+
+---
+
+## Vega-Lite - I: Embedded
+
+The object returned by `vegaEmbed` is a
+[`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+This means that when you access it, it may not *yet* be available -- so instead
+of actually calling on it, we supply a function to be called *at some point*
+when it is ready -- when the promise has been __resolved__.  This function will
+be called with that object.
+
+```javascript
+somePromiseObject.then( function(resolvedObject) {
+  resolvedObject.doSomething();
+});
+```
+
+(This type of syntax, for deferring actions to the future, is very common in
+Javascript.)
+
+---
+
+## Vega-Lite - II
+
+Last week we discussed marks and encodings.
+
+This week we will continue with marks, adding on transformations and selections.
+
+---
+
+## Marks - I
+
+vega-lite has numerous different `mark` types.  We can break these down by the type of data they can represent.  We will only consider "primitive" marks today.
+
+ * `area` & `line`
+ * `bar` & `rect`
+ * `point` & `circle` & `square`
+ * `rule` & `text`
+ * `tick`
+ * `geoshape`
+
+We will demonstrate several of these using our datasets, but first we need to learn how to transform data.
+
+---
+
+## Transformations - I
+
+At the `view`-level of your definition, you can specify transformations that modify, filter, or reshape the data.
+
+At the top level, we specify a transformation.  We can transform data within a given dataset (by specifying a new attribute of each data point) or by reshaping the data.
+
+The types of transformations we will cover today are `filter` and `calculate`.
+
+---
+
+## Transformations - II
+
+We apply a `filter` transform by specifying the field to filter on and the filtering characteristic.  This can be a selection, an expression, or a logical definition.  We will address selection and expression filtering later.
+
+---
+
+## Transformations - III
+
+A logical filtering operation might look like one of these:
+
+```json
+"transform": [
+  {"filter": {
+      "field": "eye_color", "oneOf": ["blue", "brown"]
+      }
+  },
+  {"filter": {"field": "age", "lte": 100 }
+  }
+]
+```
+
+We can use `lt`, `gt`, `lte`, `gte`, `eq`, `oneOf`, `range` and `valid`.
+
+---
+
+## Transformations - IV
+
+We can also compute a new field using the `calculate` transform.  This is an expression that is evaluated on every data point, which is supplied as the variable `datum` to the expression.
+
+```json
+"transform": [
+  {"calculate": "datum.age / 7", "as": "dog_years"}
+]
+```
+
+---
+
+## Selections - I
+
+Selections are defined with *names* -- this seems to be the most common stumbling block.  You get to choose the name!
+
+We use selections in one of a few ways.
+
+ * We can conditionally encode data -- for instance, change visibility, or alpha, or color.
+ * We can use selections as input for filtering data.  Typically this is done with one plot showing unfiltered data and another using a filter from that selection.
+ * Scale a domain based on a selection
+
+---
+
+## Selections - II
+
+There are three types of selections:
+
+ * `single` -- selecting a single point, 
+ * `multi` -- multiple points
+ * `interval` -- collections of values along encoding axes
+
+We will focus on the `interval` selection.
+
+---
+
+## Selections - III
+
+We can define a box-based selector that operates along the x axis by specifying which encoding it is linked to.  Here, we name it `valrange`, but we can choose whatever name we like.
+
+```json
+"selection": {
+    "valrange": {"type": "interval",
+                 "encodings": ["x"]
+                 }
+    }
+```
+
+Let's try this.
+
+---
+
+# Back to Iodide!
+
+
+          </script>
+        </section>
+      </div>
+    </div>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/math/math.min.js', async: true },
+            { src: 'https://cdn.jsdelivr.net/npm/reveald3/reveald3.js'},
+            { src: '/reveal.js-plugins/chalkboard/chalkboard.js' },
+            { src: '/reveal-paperjs/paper-figures.js', async: true},
+        ],
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+		},
+        center: false,
+        transition: 'none',
+        backgroundTransition: 'none',
+	slideNumber: true
+
+    });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+<script src="setup_script.js"></script>
+
+
+  </body>
+</html>
+
