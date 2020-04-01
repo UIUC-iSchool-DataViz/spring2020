@@ -531,6 +531,165 @@ What are the narratives of these visualizations? How are they different than jus
 
 ---
 
+<br />
+<br />
+<br />
+
+# TOPIC 2: Linking & Brushing
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+note: here we are plotting a set of data that is a function of 4 variables.
+
+For example, this could be the amount you are late to class as a function of (1) how much sleep you got, (2) how excited you are about the topic that day (3) how nervous you are about the topic that day and (4) how much of your homework the dog ate.
+
+here we are plotting 2 2d plots of this dataset - were we know intuatively each point is represented both as a dot on the first graph *and* as a dot on the 2nd graph
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_02.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: now we are going to think about applying a simple filter, based around the first plot
+
+we'll only show data where variable2 > variable1
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_03.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: lets draw a line where the demarkation of our filter would be
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_04.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+`data(variable1, variable2, variable3, variable4)`
+
+`filter( variable2 > variable1 )`
+
+note: ... and lets take out all the data of both plots that has variable2 <= variable1
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_05.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: we can also select regions in our linked view
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_06.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: here are how these points are linked in the plot of variable3 vs variable4
+
+---
+
+## Interactivity: Linking & Brushing
+
+<!-- .slide: data-background-image="images/brushlink_07.svg" data-background-size="80% auto" data-background-position="right 50% bottom 50%" -->
+
+note: so when we select with our brush in the first plot we can show what is selected in the second plot
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationAllPoints.png)
+
+note: as a "practical" example, we can for example make cuts in things like the
+duration of UFO sitings for all years
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationAllPoints_p2.png)
+
+note: we can select only the longest sitings
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/durationLongPoints.png)
+
+note: this is how this plot would now look
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/mapAllPoints.png)
+
+note: and then we can see how the map changes
+
+this is our original
+
+---
+
+## Interactivity: Linking & Brushing with UFO data
+
+![](images/mapLongPoints.png)
+
+note: this is how this dataset looks now w/o the shortest duration ufo sitings
+
+---
+
+<iframe width="1024" height="576"
+src="https://www.youtube.com/embed/B7XoW2qiFUA?rel=0" frameborder="0"
+allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+[Link to video](https://www.youtube.com/embed/B7XoW2qiFUA)
+
+note: here is one of the first examples of a "linked view" visualization machine.  We won't watch this whole video, but
+if you are interested, they talk about how they can "interact" with different views
+
+this was developed by SLAC (stanford linear accelerator)
+
+prim9 = picturing, rotation, isolation & masking in up to 9 dimensions - for looking at multidimensional datasets
+this was developed for particle data (so, like x,y,z and vx,vy,vz might be of interest)
+
+---
+
+## Implementing This
+
+Two main approaches to the selection process:
+
+ * Concurrent filtering
+ * Index-based selection
+
+What are the pros and cons of each?
+
+What are methods of showing "linked" and "brushed" data if you have:
+
+ * Scatter plot
+ * Histogram
+ * Field / image plot
+
+
           </script>
         </section>
       </div>
