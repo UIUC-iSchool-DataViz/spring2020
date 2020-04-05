@@ -108,7 +108,7 @@ js: https://cdn.jsdelivr.net/npm/vega-embed
 
 %% md
 
-Let's go back to making some visualizations using the police killings we used last week.
+Let's go back to making some visualizations using the police killings we used last week using [examples with vega-lite](https://vega.github.io/vega-lite/examples/).
 
 We are using one of the [FiveThirtyEight](https://fivethirtyeight.com/) datasets about [police killings in the US](https://github.com/fivethirtyeight/data/tree/master/police-killings).
 
@@ -239,7 +239,7 @@ var v = vegaEmbed('#thirdHist', myHist3)
 
 %% md
 
-One thing we probably want to do is make some linked views so we can have interactive plots.  Let's make a stacked bar plot of `raceethnicity` by `gender` and then add some interactivity for looking at age distributions.  First things first - the stacked bar plot:
+Let's combine these fields and make a stacked bar plot of `raceethnicity` by `gender`:
 
 <div id='stackedBar1'></div>
 
@@ -289,7 +289,38 @@ var v = vegaEmbed('#stackedBar1', myStack1)
 
 %% md
 
-Now, also make a distribution of ages in this dataset.  To start we won't link them, so we'll use the full range of data for the "age" category.  We can create this plot using [vega-lite's binning capabilities](https://vega.github.io/vega-lite/docs/bin.html).
+Looking ahead, we will want to plot the distribution of `raceethnicity` and `age` and link these two visualizations.  Selections are not always supported with binning and aggregation (its in development), so we can use the [rect](https://vega.github.io/vega-lite/docs/rect.html) vega-lite plot to help us out.
+
+<div id='rectPlot'></div>
+
+%% js
+
+var myRect = 
+{   
+    data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"},
+    description: "Gender and Race/Ethnicity.",
+    height:"300",
+    width:"300",
+    // here we don't need any fancy transforms just yet -- we are going to just bin the data!
+    "mark": "rect",
+    "encoding": {
+        // can also show age. withrect plot
+        //"x":{"field":"age", "type":"ordinal"}, // binned: true does not work, qualitative does not work => see vega-lite limitations
+        "x":{"field":"gender", "type":"ordinal"}, 
+        "y":{"field":"raceethnicity", "type":"nominal"},
+        "color": {
+                    "aggregate": "count", "type": "quantitative", 
+                    "scale":{"type":"log"} // toggle on and off to see how plotting changes
+                        // scales info: https://vega.github.io/vega-lite/docs/scale.html
+                }
+    } // end encoding
+}
+
+var v = vegaEmbed('#rectPlot', myRect)
+
+%% md
+
+Now, let's try another binning plot: a distribution of ages in this dataset.  We can do this "in line" by specifying that our x-axis will be binned using [vega-lite's binning capabilities](https://vega.github.io/vega-lite/docs/bin.html).
 
 <div id='agePlot1'></div>
 
@@ -318,55 +349,37 @@ var myAge1 =
 var v = vegaEmbed('#agePlot1', myAge1)
 
 %% md
-First things first: let's put these two plots side by side using [vega-lite's concatenation capabilities](https://vega.github.io/vega-lite/docs/concat.html):
+Let's put these two plots side by side using [vega-lite's concatenation capabilities](https://vega.github.io/vega-lite/docs/concat.html):
 
 <div id='sidebyside'></div>
 
 %% js
 
 var mySidebySide1 = 
-{
+{   // NOTE: we can actually move the data out here!
+    data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"},
+
     "hconcat": [
         {// Plot 1: raceethnicity & gender plot
-            description: "Percentages of Race in Dataset, colored by gender.",
-            data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"},
+            description: "Gender and Race/Ethnicity.",
             height:"300",
             width:"300",
-            "transform": [
-            // #1: aggregate
-            { // think of aggregations much like panda's group bys
-                "aggregate": [{"op": "count", "as": "races"}], // we are creating a new count in each gender 
-                "groupby": ["raceethnicity", "gender"],
-            },
-            // #2: window
-            {
-                "window":[{ // now we'll calculate the total number of entries in each gender bin
-                    "op": "sum",
-                    "field": "races",
-                    "as":"Total"
-                }], 
-                "frame":[null,null]
-            },
-            // #3: calculate
-            {
-                "calculate": "datum.races/datum.Total*100",
-                "as": "PercentOfTotal"
-            }], 
-            // end transformations
-            "mark": "bar",
+            "mark": "rect",
             "encoding": {
-                "x": {"field": "raceethnicity", "type": "nominal", "title":"Race-Ethnicity"},
-                "y": {
-                    "field": "PercentOfTotal",
-                    "type": "quantitative",
-                    "axis": {"title": "% of total"}
-                },
-            "color": {"field":"gender", "type":"nominal"}
-            } // end encoding 
+                // can also show age. withrect plot
+                //"x":{"field":"age", "type":"ordinal"}, // binned: true does not work, qualitative does not work => see vega-lite limitations
+                "x":{"field":"gender", "type":"ordinal"}, 
+                "y":{"field":"raceethnicity", "type":"nominal"},
+                "color": {
+                    "aggregate": "count", "type": "quantitative", 
+                    "scale":{"type":"log"} // toggle on and off to see how plotting changes
+                        // scales info: https://vega.github.io/vega-lite/docs/scale.html
+                }
+            } // end encoding
         }, // end plot 1
         { // Plot 2: the age distribution plot
             description: "Distribution of ages.",
-            data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"},
+            //data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"},
             height:"300",
             width:"300",
             // here we don't need any fancy transforms just yet -- we are going to just bin the data!
@@ -388,72 +401,65 @@ var v = vegaEmbed('#sidebyside', mySidebySide1)
 
 %% md
 
-Finally, we will use [vega-lite's selection properties](https://vega.github.io/vega-lite/docs/selection.html) to connect these two plots.
+Another thing we might want to do is make linked views.  We can do this with [vega-lite's selection properties](https://vega.github.io/vega-lite/docs/selection.html).  There are some caveats, namely that not all plots will work -- in particular [binned and aggreated data has limited selections](https://vega.github.io/vega-lite/docs/project.html#current-limitations).
 
-%% md
+We can hack this a bit to show the `gender` and `raceethnicity` variables in a [rect](https://vega.github.io/vega-lite/docs/rect.html) plot.
 
-<div id='testMap'></div>
+<div id="connectedSidebySide"></div>
 
 %% js
 
-var myMapPlot2 = {
-  "width": 800,
-  "height": 500,
-  "projection": {
-    "type": "albersUsa"
-  },
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json",
-        "format": {
-          "type": "topojson",
-          "feature": "states"
-        }
-      },
-      "mark": {
-        "type": "geoshape",
-        "fill": "lightgray",
-        "stroke": "white"
-      }
-    },
-    {
-      "data": { // change our datasource here
-        "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
-      },
-      "encoding": {
-        "longitude": {
-          "field": "longitude",
-          "type": "quantitative"
-        },
-        "latitude": {
-          "field": "latitude",
-          "type": "quantitative"
-        }
-      },
-      "layer": [{
-        "mark": {
-          "type": "circle",
-          "color": "orange"
-        }
-      }, {
-        "mark": {
-          "type": "text",
-          "dy": -10
-        },
-        "encoding": {
-          //"text": {"field": "city", "type": "nominal"}
-        "text": {"field": "age", "type": "nominal"} // can change different fields here
+var myConnSidebySide1 = 
+{
+    data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"}, // NOTE: we are using the same data source, so I have moved it up here!
 
-        }
-      }]
-    }
-  ]
-}
+    "hconcat": [
+         { // Plot 1: raceethnicity & gender
+            "selection": {"brush": {"type": "interval"}},
+            //"selection": {"pts": {"type": "multi"}}, // this is not supported!
+            description: "Gender and Race/Ethnicity.",
+            height:"300",
+            width:"300",
+            // here we don't need any fancy transforms just yet -- we are going to just bin the data!
+            "mark": "rect",
+            "encoding": {
+                // can also show age. withrect plot
+                //"x":{"field":"age", "type":"ordinal"}, // binned: true does not work, qualitative does not work => see vega-lite limitations
+                "x":{"field":"gender", "type":"ordinal"}, 
+                "y":{"field":"raceethnicity", "type":"nominal"},
+                "color": {
+                    "condition": {
+                        "selection": "brush",
+                        "aggregate": "count", "type": "quantitative", 
+                        "scale":{"type":"log"} // toggle on and off to see how plotting changes
+                        // scales info: https://vega.github.io/vega-lite/docs/scale.html
+                    },
+                    "value": "grey"
+                }
+            } // end encoding
+        }, // end plot 1
+        {// Plot 2: Age distribution plot
+            description: "Age distribution.",
+            height:"300",
+            width:"300",
+            "transform": [{"filter":{"selection":"brush"}}], // only use selected data for plot
+            "mark": "bar",
+            "encoding": {
+                "x": {"bin": true, "field": "age", "type": "nominal", "title":"Age"},
+                "y": {
+                    "aggregate":"count", // we are specifiying we are aggregating here and y will be this histogram
+                    "type": "quantitative",
+                    "axis": {"title": "Distribution"}
+                }//, // end y
+                //"color": {"field":"gender", "type":"nominal"} // can also include this if we wanna
+            } // end encoding 
+        } // end plot 2
 
-var v = vegaEmbed('#testMap', myMapPlot2)
+    ] // end list of plots to concatinate
+} // end specification
+
+var v = vegaEmbed('#connectedSidebySide', myConnSidebySide1)
 
 %% md
 
-This is essentially where we got last week.  This week, we will talk about making these sorts of visualizations more interactive.
-
+Cool stuff with maps & buttons [links on GitHub Issues](https://github.com/vega/vega/issues/1094).

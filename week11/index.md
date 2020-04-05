@@ -5,6 +5,14 @@ visible: true
 
 # Week 11 - More Iodide, Javascript & Vega-lite (and maybe Idyll)
 
+## Downloads & Links
+
+### Iodide Notebooks:
+
+ * <a href="https://alpha.iodide.io/notebooks/4399/">Prep Iodide Notebook</a>
+<!-- * <a href="https://alpha.iodide.io/notebooks/4367/">In Class Iodide Notebook</a> -->
+
+
 
 ## Optional reading list
 
