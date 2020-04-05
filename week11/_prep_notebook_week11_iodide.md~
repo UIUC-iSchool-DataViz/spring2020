@@ -1,0 +1,311 @@
+%% md
+
+Starting from last week, we'll continue on with last week's activities.  Just a few reminders!
+
+<!-- I am an HTML/Markdown comment -->
+
+
+%% py
+# I can do stuff in Python using the `%% py` 
+import numpy as np
+
+# make a random array:
+myPythonArray = np.random.random(100)
+myPythonArray
+
+%% md
+
+# Linking data in Javascript with vega-lite
+
+Let's get a quick reminder of some Javascript syntax:
+
+```
+var myString = "Hello there!";
+
+var myArray = [1, 2, 3, 4, 5];
+
+var my2dArray = [ [1,2], [3,4], [5, 6] ];
+
+var myObject = {'hello': 1, 'how': 2,
+                'are': {'you': 'me'}
+};
+
+function sayHello(toWhom) {
+    return "Hello! " + toWhom;
+}
+
+var sayingHello = sayHello("Jill");
+
+// In Iodide, the "console printing" is sort of the default, so this works:
+sayingHello
+```
+
+%% js
+// This is very important - a comment! Note they are highlighted the same color, but start with a different
+//.  set of characters
+
+// Variables are declared differently than in Python:
+var myString = "Hello there!";
+// Note the "var" in front, as opposed to a "const" which would be something that doesn't change.
+// Also note the ";" at the end of the declaration.
+
+// Arrays are somewhat similar to python, but again called differently:
+var myArray = [1, 2, 3, 4, 5];
+
+var my2dArray = [ [1,2], [3,4], [5, 6] ];
+
+// Dictionaries look much the same as in Python as well, but with the JS calling structure:
+var myObject = {'hello': 1, 'how': 2,
+                'are': {'you': 'me'}
+};
+
+// Let's try making a function!
+function sayHello(toWhom) {
+    return "Hello! " + toWhom;
+}
+
+var sayingHello = sayHello("Jill");
+
+// How can we print out this new variable?
+// This doesn't work now we expect?
+//print(sayingHello);
+
+// In general, we'll have to use JS console:
+// console.log(sayingHello);
+// In Iodide, the "console printing" is sort of the default, so this works:
+sayingHello
+
+%% md
+
+Recall that to do things with Javascript, we had to make a static HTML element to modify with Javascript:
+
+<div id="myDiv">I am an HTML div.</div>  
+
+Now, let's use some JavaScript to change this `myDiv` element using JavaScript: note this won't run until you do `shift+enter`!
+
+%% js
+document.getElementById("myDiv").innerText = "I am so pretty in pink!";
+document.getElementById("myDiv").style.color = 'magenta';
+
+
+%% md
+
+We have to make sure we use `%% fetch` to grab the  `vega/vega-lite` package.  To make use of these functions, we need to `fetch` them from a repository online.  We can check out one useful location for such packages, [the jsdelivr website](https://www.jsdelivr.com) (we can also specifically look for vega stuff with: `https://www.jsdelivr.com/?query=author%3A%20vega`).
+
+Here is the code in a `%% fetch` command:
+```
+js: https://cdn.jsdelivr.net/npm/vega
+js: https://cdn.jsdelivr.net/npm/vega-lite
+js: https://cdn.jsdelivr.net/npm/vega-embed
+```
+
+Note: this has to do with the asynchronous nature of Javascript. 
+
+%% fetch
+js: https://cdn.jsdelivr.net/npm/vega
+js: https://cdn.jsdelivr.net/npm/vega-lite
+js: https://cdn.jsdelivr.net/npm/vega-embed
+
+%% md
+
+Let's go back to making some visualizations using the police killings we used last week.
+
+We are using one of the [FiveThirtyEight](https://fivethirtyeight.com/) datasets about [police killings in the US](https://github.com/fivethirtyeight/data/tree/master/police-killings).
+
+Let's start with a [calculation and transformation using vega-lite](https://vega.github.io/vega-lite/docs/calculate.html) and types of [aggregation in vega-lite](https://vega.github.io/vega-lite/docs/aggregate.html).  We'll plot a histogram of men and women who are killed by police.  We start with creating a new div element like we did last time and using Javascript to update this div.
+
+<div id='firstHist'></div>
+
+%% js
+// Recall: I am a comment!
+
+var myHist1 = 
+{
+  data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
+  },
+  mark: "bar",
+  height: "300",
+  width: "600",
+  encoding: {
+    "x": {"field": "gender", "type": "nominal"},
+    // NOTE: this won't work because "sum" assumes numerical data
+    //"y": {"aggregate": "sum", "field": "gender", "type": "nominal"} 
+    "y": {"aggregate": "count", "field": "gender", "type": "nominal"}
+  }
+}
+
+var v = vegaEmbed('#firstHist', myHist1)
+
+%% md
+
+What if we want to do this as a percentage instead?  We can do some [more complex data operations](https://vega.github.io/vega-lite/examples/window_percent_of_total.html) using the [window](https://vega.github.io/vega-lite/docs/window.html) and [aggregation](https://vega.github.io/vega-lite/docs/aggregate.html) operations to make this happen.  This can take a bit of trial-and-error to get just right.
+
+%% md 
+
+<div id='secondHist'></div>
+
+%% js
+
+var myHist2 = 
+{
+  description: "Percentages of Gender in Dataset.",
+  data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
+  },
+  height:"300",
+  width:"600",
+  "transform": [
+    { // think of aggregations much like panda's group bys
+      "aggregate": [{"op": "count", "as": "genders"}], // we are creating a new count in each gender 
+      "groupby": ["gender"],
+    },
+    {
+     "window":[{ // now we'll calculate the total number of entries in each gender bin
+          "op": "sum",
+          "field": "genders",
+          "as":"Total"
+          }], 
+          "frame":[null,null]
+    },
+    
+   {
+    "calculate": "datum.genders/datum.Total*100",
+    //"calculate": "datum.genders/sum(datum.genders)",
+    "as": "PercentOfTotal"
+  }],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "gender", "type": "nominal"},
+    "y": {
+      "field": "PercentOfTotal",
+      "type": "quantitative",
+      "axis": {
+        "title": "% of total"
+      }
+    }
+  }
+}
+
+
+var v = vegaEmbed('#secondHist', myHist2)
+
+%% md
+
+Let's try another grouping, by the `raceethnicity` entry:
+
+<div id='thirdHist'></div>
+
+%% js
+
+var myHist3 = 
+{
+  description: "Percentages of Race in Dataset.",
+  data: {"url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
+  },
+  height:"300",
+  width:"600",
+  "transform": [
+    { // think of aggregations much like panda's group bys
+      "aggregate": [{"op": "count", "as": "races"}], // we are creating a new count in each gender 
+      "groupby": ["raceethnicity"],
+    },
+    {
+     "window":[{ // now we'll calculate the total number of entries in each gender bin
+          "op": "sum",
+          "field": "races",
+          "as":"Total"
+          }], 
+          "frame":[null,null]
+    },
+    
+   {
+    "calculate": "datum.races/datum.Total*100",
+    "as": "PercentOfTotal"
+  }],
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "raceethnicity", "type": "nominal", "title":"Race-Ethnicity"},
+    "y": {
+      "field": "PercentOfTotal",
+      "type": "quantitative",
+      "axis": {
+        "title": "% of total"
+      }
+    }
+  }
+}
+
+var v = vegaEmbed('#thirdHist', myHist3)
+
+%% md
+
+One thing we probably want to do is make some linked views so we can have interactive plots.  Let's make a stacked bar plot of `raceethnicity` by `gender` and then add some interactivity for looking at age distributions.  First things first - the stacked bar plot:
+
+<div id='stackedBar'></div>
+
+%% md
+
+<div id='testMap'></div>
+
+%% js
+
+var myMapPlot2 = {
+  "width": 800,
+  "height": 500,
+  "projection": {
+    "type": "albersUsa"
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/vega/vega-datasets/master/data/us-10m.json",
+        "format": {
+          "type": "topojson",
+          "feature": "states"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "lightgray",
+        "stroke": "white"
+      }
+    },
+    {
+      "data": { // change our datasource here
+        "url": "https://raw.githubusercontent.com/fivethirtyeight/data/master/police-killings/police_killings.csv"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "latitude",
+          "type": "quantitative"
+        }
+      },
+      "layer": [{
+        "mark": {
+          "type": "circle",
+          "color": "orange"
+        }
+      }, {
+        "mark": {
+          "type": "text",
+          "dy": -10
+        },
+        "encoding": {
+          //"text": {"field": "city", "type": "nominal"}
+        "text": {"field": "age", "type": "nominal"} // can change different fields here
+
+        }
+      }]
+    }
+  ]
+}
+
+var v = vegaEmbed('#testMap', myMapPlot2)
+
+%% md
+
+This is essentially where we got last week.  This week, we will talk about making these sorts of visualizations more interactive.
+
