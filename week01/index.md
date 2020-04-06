@@ -24,5 +24,6 @@ with our data.
 
 ## Optional Reading List (See syllabus for acronyms)
 
-1. VAD, Ch. 1: What’s Viz, and Why Do It?
-2. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Ch. 1: Introduction</a> & <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Ch. 17: The principle of proportional ink</a>
+ 1. VAD, Ch. 1: What’s Viz, and Why Do It?
+ 1. <a href="https://serialmentor.com/dataviz/introduction.html">FDA, Ch. 1: Introduction</a> & <a href="https://serialmentor.com/dataviz/proportional-ink.html">FDA, Ch. 17: The principle of proportional ink</a>
+ 1. <a href="https://medium.com/multiple-views-visualization-research-explained/same-data-multiple-perspectives-curse-of-knowledge-in-visual-data-communication-d827c381f936">Same Data, Multiple Perspectives</a>
