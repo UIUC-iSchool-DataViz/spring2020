@@ -3,7 +3,7 @@ layout: week
 visible: true
 ---
 
-# Week 11 - More Iodide, Javascript & Vega-lite (and maybe Idyll)
+# Week 11 - Viz Audience; More Iodide, Javascript & Vega-lite (and maybe Idyll)
 
 ## Downloads & Links
 
@@ -16,6 +16,7 @@ visible: true
 
 ## Optional reading list
 
+ 1. <a href="https://medium.com/multiple-views-visualization-research-explained/same-data-multiple-perspectives-curse-of-knowledge-in-visual-data-communication-d827c381f936">Same Data, Multiple Perspectives</a>
  1. <a href="https://alpha.iodide.io/">Iodide Docs</a>
  1. <a href="https://vega.github.io/vega-lite/docs/transform.html">Vega-lite transformations</a>
  1. <a href="https://vega.github.io/vega-lite/docs/selection.html">Vega-lite selections</a>
