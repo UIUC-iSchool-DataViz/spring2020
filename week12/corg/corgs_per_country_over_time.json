@@ -1,6 +1,6 @@
 [
   {
-    "year": 1917,
+    "year": "1917",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -244,7 +244,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1918,
+    "year": "1918",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -488,7 +488,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1919,
+    "year": "1919",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -732,7 +732,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1920,
+    "year": "1920",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -976,7 +976,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1921,
+    "year": "1921",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -1220,7 +1220,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1922,
+    "year": "1922",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -1464,7 +1464,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1923,
+    "year": "1923",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -1708,7 +1708,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1924,
+    "year": "1924",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -1952,7 +1952,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1925,
+    "year": "1925",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -2196,7 +2196,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1926,
+    "year": "1926",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -2440,7 +2440,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1927,
+    "year": "1927",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -2684,7 +2684,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1928,
+    "year": "1928",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -2928,7 +2928,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1929,
+    "year": "1929",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -3172,7 +3172,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1930,
+    "year": "1930",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -3416,7 +3416,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1931,
+    "year": "1931",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -3660,7 +3660,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1932,
+    "year": "1932",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -3904,7 +3904,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1933,
+    "year": "1933",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -4148,7 +4148,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1934,
+    "year": "1934",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -4392,7 +4392,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1935,
+    "year": "1935",
     "China": 0.0,
     "India": 0.0,
     "United States": 2.0,
@@ -4636,7 +4636,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1936,
+    "year": "1936",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -4880,7 +4880,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1937,
+    "year": "1937",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -5124,7 +5124,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1938,
+    "year": "1938",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -5368,7 +5368,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1939,
+    "year": "1939",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -5612,7 +5612,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1940,
+    "year": "1940",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -5856,7 +5856,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1941,
+    "year": "1941",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -6100,7 +6100,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1942,
+    "year": "1942",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -6344,7 +6344,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1943,
+    "year": "1943",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -6588,7 +6588,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1944,
+    "year": "1944",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -6832,7 +6832,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1945,
+    "year": "1945",
     "China": 0.0,
     "India": 0.0,
     "United States": 2.0,
@@ -7076,7 +7076,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1946,
+    "year": "1946",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -7320,7 +7320,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1947,
+    "year": "1947",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
@@ -7564,7 +7564,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1948,
+    "year": "1948",
     "China": 0.0,
     "India": 0.0,
     "United States": 7.0,
@@ -7808,7 +7808,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1949,
+    "year": "1949",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -8052,7 +8052,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1950,
+    "year": "1950",
     "China": 0.0,
     "India": 0.0,
     "United States": 3.0,
@@ -8296,7 +8296,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1951,
+    "year": "1951",
     "China": 0.0,
     "India": 0.0,
     "United States": 8.0,
@@ -8540,7 +8540,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1952,
+    "year": "1952",
     "China": 0.0,
     "India": 0.0,
     "United States": 15.0,
@@ -8784,7 +8784,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1953,
+    "year": "1953",
     "China": 0.0,
     "India": 0.0,
     "United States": 13.0,
@@ -9028,7 +9028,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1954,
+    "year": "1954",
     "China": 0.0,
     "India": 0.0,
     "United States": 15.0,
@@ -9272,7 +9272,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1955,
+    "year": "1955",
     "China": 0.0,
     "India": 0.0,
     "United States": 10.0,
@@ -9516,7 +9516,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1956,
+    "year": "1956",
     "China": 0.0,
     "India": 0.0,
     "United States": 19.0,
@@ -9760,7 +9760,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1957,
+    "year": "1957",
     "China": 0.0,
     "India": 0.0,
     "United States": 12.0,
@@ -10004,7 +10004,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1958,
+    "year": "1958",
     "China": 0.0,
     "India": 0.0,
     "United States": 4.0,
@@ -10248,7 +10248,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1959,
+    "year": "1959",
     "China": 0.0,
     "India": 0.0,
     "United States": 2.0,
@@ -10492,7 +10492,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1960,
+    "year": "1960",
     "China": 0.0,
     "India": 0.0,
     "United States": 2.0,
@@ -10736,7 +10736,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1961,
+    "year": "1961",
     "China": 0.0,
     "India": 0.0,
     "United States": 2.0,
@@ -10980,7 +10980,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1962,
+    "year": "1962",
     "China": 0.0,
     "India": 0.0,
     "United States": 5.0,
@@ -11224,7 +11224,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1963,
+    "year": "1963",
     "China": 0.0,
     "India": 0.0,
     "United States": 13.0,
@@ -11468,7 +11468,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1964,
+    "year": "1964",
     "China": 0.0,
     "India": 0.0,
     "United States": 0.0,
@@ -11712,7 +11712,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1965,
+    "year": "1965",
     "China": 0.0,
     "India": 0.0,
     "United States": 17.0,
@@ -11956,7 +11956,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1966,
+    "year": "1966",
     "China": 0.0,
     "India": 0.0,
     "United States": 21.0,
@@ -12200,7 +12200,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1967,
+    "year": "1967",
     "China": 0.0,
     "India": 0.0,
     "United States": 33.0,
@@ -12444,7 +12444,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1968,
+    "year": "1968",
     "China": 0.0,
     "India": 0.0,
     "United States": 49.0,
@@ -12688,7 +12688,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1969,
+    "year": "1969",
     "China": 0.0,
     "India": 0.0,
     "United States": 56.0,
@@ -12932,7 +12932,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1970,
+    "year": "1970",
     "China": 0.0,
     "India": 0.0,
     "United States": 98.0,
@@ -13176,7 +13176,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1971,
+    "year": "1971",
     "China": 0.0,
     "India": 0.0,
     "United States": 100.0,
@@ -13420,7 +13420,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1972,
+    "year": "1972",
     "China": 0.0,
     "India": 0.0,
     "United States": 102.0,
@@ -13664,7 +13664,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1973,
+    "year": "1973",
     "China": 0.0,
     "India": 0.0,
     "United States": 75.0,
@@ -13908,7 +13908,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1974,
+    "year": "1974",
     "China": 0.0,
     "India": 0.0,
     "United States": 104.0,
@@ -14152,7 +14152,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1975,
+    "year": "1975",
     "China": 0.0,
     "India": 0.0,
     "United States": 151.0,
@@ -14396,7 +14396,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1976,
+    "year": "1976",
     "China": 0.0,
     "India": 0.0,
     "United States": 147.0,
@@ -14640,7 +14640,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1977,
+    "year": "1977",
     "China": 0.0,
     "India": 0.0,
     "United States": 131.0,
@@ -14884,7 +14884,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1978,
+    "year": "1978",
     "China": 0.0,
     "India": 0.0,
     "United States": 144.0,
@@ -15128,7 +15128,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1979,
+    "year": "1979",
     "China": 0.0,
     "India": 0.0,
     "United States": 148.0,
@@ -15372,7 +15372,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1980,
+    "year": "1980",
     "China": 0.0,
     "India": 0.0,
     "United States": 157.0,
@@ -15616,7 +15616,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1981,
+    "year": "1981",
     "China": 0.0,
     "India": 0.0,
     "United States": 157.0,
@@ -15860,7 +15860,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1982,
+    "year": "1982",
     "China": 0.0,
     "India": 0.0,
     "United States": 146.0,
@@ -16104,7 +16104,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1983,
+    "year": "1983",
     "China": 0.0,
     "India": 0.0,
     "United States": 165.0,
@@ -16348,7 +16348,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1984,
+    "year": "1984",
     "China": 0.0,
     "India": 0.0,
     "United States": 105.0,
@@ -16592,7 +16592,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1985,
+    "year": "1985",
     "China": 0.0,
     "India": 0.0,
     "United States": 154.0,
@@ -16836,7 +16836,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1986,
+    "year": "1986",
     "China": 0.0,
     "India": 0.0,
     "United States": 198.0,
@@ -17080,7 +17080,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1987,
+    "year": "1987",
     "China": 0.0,
     "India": 0.0,
     "United States": 218.0,
@@ -17324,7 +17324,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1988,
+    "year": "1988",
     "China": 0.0,
     "India": 0.0,
     "United States": 200.0,
@@ -17568,7 +17568,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1989,
+    "year": "1989",
     "China": 0.0,
     "India": 0.0,
     "United States": 270.0,
@@ -17812,7 +17812,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1990,
+    "year": "1990",
     "China": 0.0,
     "India": 0.0,
     "United States": 262.0,
@@ -18056,7 +18056,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1991,
+    "year": "1991",
     "China": 0.0,
     "India": 0.0,
     "United States": 450.0,
@@ -18300,7 +18300,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1992,
+    "year": "1992",
     "China": 0.0,
     "India": 0.0,
     "United States": 384.0,
@@ -18544,7 +18544,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1993,
+    "year": "1993",
     "China": 0.0,
     "India": 0.0,
     "United States": 415.0,
@@ -18788,7 +18788,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1994,
+    "year": "1994",
     "China": 0.0,
     "India": 0.0,
     "United States": 423.0,
@@ -19032,7 +19032,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1995,
+    "year": "1995",
     "China": 0.0,
     "India": 0.0,
     "United States": 428.0,
@@ -19276,7 +19276,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1996,
+    "year": "1996",
     "China": 0.0,
     "India": 0.0,
     "United States": 557.0,
@@ -19520,7 +19520,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1997,
+    "year": "1997",
     "China": 0.0,
     "India": 0.0,
     "United States": 539.0,
@@ -19764,7 +19764,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1998,
+    "year": "1998",
     "China": 0.0,
     "India": 0.0,
     "United States": 485.0,
@@ -20008,7 +20008,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 1999,
+    "year": "1999",
     "China": 0.0,
     "India": 0.0,
     "United States": 621.0,
@@ -20252,7 +20252,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2000,
+    "year": "2000",
     "China": 0.0,
     "India": 0.0,
     "United States": 588.0,
@@ -20496,7 +20496,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2001,
+    "year": "2001",
     "China": 0.0,
     "India": 0.0,
     "United States": 527.0,
@@ -20740,7 +20740,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2002,
+    "year": "2002",
     "China": 0.0,
     "India": 0.0,
     "United States": 523.0,
@@ -20984,7 +20984,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2003,
+    "year": "2003",
     "China": 0.0,
     "India": 0.0,
     "United States": 579.0,
@@ -21228,7 +21228,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2004,
+    "year": "2004",
     "China": 0.0,
     "India": 0.0,
     "United States": 596.0,
@@ -21472,7 +21472,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2005,
+    "year": "2005",
     "China": 0.0,
     "India": 0.0,
     "United States": 525.0,
@@ -21716,7 +21716,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2006,
+    "year": "2006",
     "China": 0.0,
     "India": 0.0,
     "United States": 455.0,
@@ -21960,7 +21960,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2007,
+    "year": "2007",
     "China": 0.0,
     "India": 0.0,
     "United States": 565.0,
@@ -22204,7 +22204,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2008,
+    "year": "2008",
     "China": 0.0,
     "India": 0.0,
     "United States": 467.0,
@@ -22448,7 +22448,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2009,
+    "year": "2009",
     "China": 0.0,
     "India": 0.0,
     "United States": 452.0,
@@ -22692,7 +22692,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2010,
+    "year": "2010",
     "China": 0.0,
     "India": 0.0,
     "United States": 436.0,
@@ -22936,7 +22936,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2011,
+    "year": "2011",
     "China": 0.0,
     "India": 0.0,
     "United States": 408.0,
@@ -23180,7 +23180,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2012,
+    "year": "2012",
     "China": 0.0,
     "India": 0.0,
     "United States": 427.0,
@@ -23424,7 +23424,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2013,
+    "year": "2013",
     "China": 0.0,
     "India": 0.0,
     "United States": 375.0,
@@ -23668,7 +23668,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2014,
+    "year": "2014",
     "China": 0.0,
     "India": 0.0,
     "United States": 273.0,
@@ -23912,7 +23912,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2015,
+    "year": "2015",
     "China": 0.0,
     "India": 0.0,
     "United States": 288.0,
@@ -24156,7 +24156,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2016,
+    "year": "2016",
     "China": 0.0,
     "India": 0.0,
     "United States": 207.0,
@@ -24400,7 +24400,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2017,
+    "year": "2017",
     "China": 0.0,
     "India": 0.0,
     "United States": 183.0,
@@ -24644,7 +24644,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2018,
+    "year": "2018",
     "China": 0.0,
     "India": 0.0,
     "United States": 148.0,
@@ -24888,7 +24888,7 @@
     "Somaliland": 0.0
   },
   {
-    "year": 2019,
+    "year": "2019",
     "China": 0.0,
     "India": 0.0,
     "United States": 1.0,
