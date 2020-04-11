@@ -18,6 +18,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
 
 
+<script src="https://cdn.jsdelivr.net/npm/vega"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+
 
 </style>
 
@@ -37,346 +41,134 @@
 
 <div style="height: 6.0em;"></div>
 
-## Matthew Turk
-## Fall 2019
+## Jill P. Naiman
+## Spring 2020
 ## Lecture 12
 
 ---
 
-# Housekeeping
+## Warm-Up Activity
 
- * Your lowest coding assignment will be dropped.
- * This is your final weekly visualization assignment.
- * You will be presenting in groups, and I will announce the order in advance.
-   Send your group name to me and Naveen.
+1. What is the visualization trying to show?
+1. What are its methods?
+1. What are the strengths / weaknesses?
+
+<br/>
+
+https://mathisonian.github.io/diy-data-fugazi/
 
 ---
 
-# Assignment Highlights
+## This Week/Last Week
 
- * [How Migration is Changing Our World](https://www.bloomberg.com/graphics/2019-how-migration-is-changing-our-world/)
- * [15 Visualizations](https://blog.udacity.com/2015/01/15-data-visualizations-will-blow-mind.html), especially:
-   * Shooting stars, satellites, workday, music timeline
- * [Citibike Data](https://twitter.com/CraigTaylorGIS/status/1191282070380789760)
- * [Opiod Overdoes](https://medium.com/@chaitupramod/redesigning-a-bad-graph-spaghetti-to-micromaps-374d68b5df6c)
- * [Letter Frequency](https://public.tableau.com/en-us/gallery/frequency-letters)
+<img src='../week11/images/this_week.png'>
+
+notes:
+
+today we'll be continuing on with some of what we did last week -- moving into more Markdown-based viz and viz "reports" along with more javascript
 
 ---
 
 ## Today
 
- 1. Scientific Visualization
- 2. Big-ish Data
- 3. Portfolio Building
+ * Publishing
+   * D3.js
+   * Idyll
+   * Github Pages
+ * Guest Lecture: AVL
 
 ---
 
-## Scientific Visualization
+## Idyll
 
-What characterizes "scientific" visualization?
+A web-based toolkit for storytelling with data visualizations!
 
- * Spatial organization - distance metrics
- * Dimensionality reduction or mapping
- * Multiple overlapping quantities with implicit or explicit extent
-
----
-
-## Scientific Visualization - Data Representations
-
-<div class="multiCol">
-<div class="col">
-<div class="fig-container" data-style="height: 600px;" data-file="figures/blank_axes.html" data-markdown=true>
-</div>
-</div>
-<div class="col" data-markdown=true>
-
-Commonly, data will be represented in "scientific visualization" through one of a few mechanisms:
-
- * Discrete points
- * Volume-filling information
- * Meshed values
-
-</div>
-</div>
+ * Reduce manual coding for interactive articles
+ * Integration with D3.js
 
 ---
 
-## Discrete Points: Data
+## [D3.js](https://github.com/d3/d3/wiki/Gallery)
 
-<div class="multiCol">
-<div class="col">
-<div class="fig-container" data-style="height: 600px;" data-file="figures/scatter.html" data-markdown=true>
-</div>
-</div>
-<div class="col" data-markdown=true>
+A JavaScript library for web-based data visualization
 
- * Associated field values
- * May have extent
- * Values can be either
-   * Locally defined
-   * Integrated over neighbors
-</div>
-</div> 
+ * Declarative, not imperative (this is better for web coding)
+ * Dynamic and interactive
+ * Smooth transitions
 
 ---
 
-## Discrete Points: Techniques
+## D3.js
 
+<img src="images/words.png" width="700"/>
 
-<div class="multiCol">
-<div class="col">
-<div class="fig-container" data-style="height: 600px;" data-file="figures/discrete_tech.html" data-markdown=true>
-</div>
-</div>
-<div class="col" data-markdown=true>
-
- * Associated field values
- * May have extent
- * Values can be either
-   * Locally defined
-   * Integrated over neighbors
-</div>
-</div> 
+notes:
+D3 is meant to be well-integrated into the existing infrastructure of the internet. The worldwide web is a real patchwork of different languages with different syntaxes meant to do different things. Don't let it overwhelm you. They tend to be pretty simple to start, and only get more complicated when you need them to.
 
 ---
 
-## Discrete Points: Density Estimates
+## D3.js
 
- * Searching
-   * Quadtree
-   * kD-tree
- * Integration
-   * Kernels
-   * Nearest-neighbor
+<img src="images/html.png" width="700"/>
 
----
+notes:
+HTML or Hypertext Markup Language is the default syntax for websites. It's meant to be structured with tags like "head", "body", "paragraph", and "division". 
 
-## Volume-filling: Data
+It's essentially a skeleton for other functionality to hang off of.
 
-For this, we will be using Python to collaboratively explore what volume-filling data is.
-
-Install yt and ipyvolume.
-
-```
-conda install -c conda-forge yt ipyvolume
-```
+You may see the term DOM or Document Object Model. This is just another name for this skeleton/framework.
 
 ---
 
-## data for yt
+## D3.js
 
-We will acquire a bit of data.
+<img src="images/css.png" width="700"/>
 
-Go to https://yt-project.org/data/ and download "[IsolatedGalaxy](http://yt-project.org/data/IsolatedGalaxy.tar.gz)" and uncompress it.
+notes:
+CSS or cascading style sheets are how you define how websites are formatted. They do color, indentation, drop shadows, etc. Each CSS call is attached to an HTML tag.
 
-```python
-import yt
-ds = yt.load("IsolatedGalaxy/galaxy0030/galaxy0030")
-
-ds.r[:].max("density", axis="z")
-
-```
+CSS can be called in-line, or from an external file dedicated exclusively to CSS code.
 
 ---
 
-## Volume data: strategies
+## D3.js
 
-To analyze volume data, typically we conduct one or more of these operations:
+<img src="images/svg.png" width="700"/>
 
- * Select data based on spatial or non-spatial criteria
- * Reduce the dimensionality of that data either along spatial or other axes
- * Aggregate data
-
-This can include operations such as volume rendering, axial projection, histogramming/binning and resampling.
-
-Let's try some of this out.
+notes:
+SVG or Scalable Vector Graphics is an XML-based implementation of vector shape drawing that's natively understood by website compilers. It's an easy way to include dynamically rendered, animated, or interactive imagery in a webpage.
 
 ---
 
-## Big-ish Data
+## D3.js
 
-How do we deal with data that is too large to fit into memory?
+<img src="images/javascript.png" width="700"/>
 
- * Can we cycle our operations?
- * Can we use tools to cycle operations?
-
----
-
-## Operations
-
-Some operations we can manually cycle through, storing only reductions in
-memory rather than the full dataset.
-
-Clear candidates:
-
- * Mean
- * Extrema
- * Histograms and "binning"
-
-Is this the same as incremental updates to a dataset?
-
-(What about the median?)
+notes:
+JavaScript is a dynamic programming language that runs natively on webpages that we've been using the past few weeks in Iodide. If you want to run programming logic in a webpage, you use javascript. If you see interactivity or animated effects on a website, you can generally expect they were written in javascript. 
 
 ---
 
-## Portfolio Building
+## Idyll
 
-GitHub pages is a simple, straightforward way to publish websites.
+Most of this is hidden from you when writing in Idyll! But it helps to understand the underlying mechanisms.
 
- * Static-site generation using Jekyll
- * Manual HTML building
- * Integration with other systems (Idyll)
+D3.js and Idyll are another set of tools that can be used for the Final Project to share interactive visualizations connected in a narrative.
 
----
+Vega-lite and Idyll may or may not be working as of this writing.
 
-## Publishing Notebooks
-
-Jupyter Notebooks can be published online.  The simplest way:
-
- * Commit them to a github repository
- * View them using nbviewer.jupyter.org
-
-Widget state can be saved in many cases.
-
-http://ipywidgets.readthedocs.io/en/latest/embedding.html
+notes:
+what are the limits to data size in Idyll and the web browser?
 
 ---
 
-## Your First Github Page
+## Onto Idyll!
 
- * We will use Jekyll to build a github page
- * Create the repository `[username].github.io`
- * Clone this repository.
- * Let's talk about the branches `gh-pages` and `master`
+Idyll is a reactive markup language for visualization and narrative documents.
 
----
+[idyll-lang.org](idyll-lang.org)
 
-## A Little Tiny Bit of D3
-
-We're going to learn a very small bit of [d3.js](https://d3js.org/).
-
-The easiest way to utilize D3 is through [observablehq.com](https://observablehq.com):
-
-```
-d3 = require("d3@5");
-```
-
-although it is straightforward to include the necessary code in an HTML page:
-
-<code>
-&lt;script src="https://d3js.org/d3.v5.min.js"&gt;&lt;/script&gt;
-</code>
-
----
-
-## Concepts in d3: outline
-
-The basic concepts here we will convey, focusing on *static* visualizations:
-
- * `.select()` and `.selectAll()`
- * `.enter()`
- * `.attr()` and `.style()`
- * `d3.scaleLinear()`
-
----
-
-## Concepts in d3: data and elements
-
-When we manipulate items in d3, we connect the concept of a data item to an
-element in a document.
-
-Typically, this will be an element in an SVG -- for instance, a `line`,
-`circle`, `rect` or `text` element.
-
-Our typical workflow:
-
- 1. Select all items of a specific criteria
- 2. Bind these items to a set of data
- 3. Update, append or remove items based on their corresponding item.
-
----
-
-## Concepts in d3: accessors and setters
-
-We will very frequently run into the case where we call something, and supply a
-*function* to it, rather than supplying a value.  For instance, *both* of these
-calls to `attr` are valid in a typical d3 workflow:
-
-```javascript
-.attr("cx", 1.0)
-
-// or
-
-.attr("cx", d => d.x)
-```
-
-In one, we are setting the value static; in the other, we base the value on the datapoint supplied.
-
----
-
-## Concepts in d3: Let's make circles
-
-For our first exploration, let's just make some circles.  I will demonstrate this in observable, but here is the key snippet of code:
-
-```
-var dataset = [ {'x': 100, 'y': 200, 'radius': 15},
-                {'x': 150, 'y': 300, 'radius': 30} ];
-svg.selectAll("circle").data(dataset).enter()
-   .append("circle")
-   .attr("cx", d => d.x)
-   .attr("cy", d => d.y)
-   .attr("r", d => d.radius)
-   .style("fill", "black");
-```
-
-What does this do?
-
----
-
-## Concepts in d3: Objects
-
-We will mostly use the objects
-
- * [`rect`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/rect) -- which has `x`, `y`, `width` and `height` 
- * [`circle`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle) -- which has `cx`, `cy`, and `r`
- * [`line`](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/line) -- which has `x1`, `x2`, `y1` and `y2`.
-
-Each of these objects can be controlled in style, appearance, position, etc, according to standard SVG and CSS rules.
-
-Let's experiment!
-
----
-
-## Concepts in d3: Scaling
-
-To map from a given range to a different range in a linear fashion, we can construct a linear scale:
-
-```javascript
-var xScale = d3.scaleLinear().range([0, 100]).domain([0.0, 1.0]);
-```
-
-This is now an object we can use to map the values 0 .. 1 to 0 .. 100.  This is useful for, among other things, computing the position of a given value:
-
-```javascript
-.attr("cx", d => xScale(d.x))
-```
-
----
-
-## Additional Basic Topics
-
-`d3.axisBottom(xScale)` can be used to create ticks and axes; however, it
-requires manual translation using the `transform` attribute, using something
-like `.attr("transform", "translate(0, 30)")`.  This then brings up our concept
-of margins, width, height, and the like!  How can we manage these?
-
-Let's try it out!
-
----
-
-## Next Time: Final lecture!
-
-We'll cover more d3, as well as some additional fun topics.
+... and a quick detour into sci viz topics!
 
           </script>
         </section>
