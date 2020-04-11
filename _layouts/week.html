@@ -43,6 +43,18 @@ layout: default
 	{% endunless %}
         {% endif %}
         {%endfor%}
+
+	<!-- Also for plain py files -->
+	{% assign pyfiles = site.static_files | where: "extname", ".py" %}
+        {% for nb in pyfiles %}
+        {% if nb.path contains page.dir %}
+	{% unless nb.basename contains "2019" %}
+        <li>Python Script: {{nb.basename}}: 
+         (<a href="{{nb.path | relative_url}}">download</a>)</li>
+	{% endunless %}
+        {% endif %}
+        {%endfor%}
+	
         </ul>
 
 	<!-- do we have any previous materials? -->
