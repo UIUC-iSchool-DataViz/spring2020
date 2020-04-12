@@ -1,0 +1,372 @@
+// INTRO:
+
+// (1) we will be using a text editor to modify this index.idyll file.  I use emacs a lot for work, so that is what I'm using here.  Its also setup to have some nice markdown preferences and colorings which your editor may or may not have if you are using emacs.  I've linked more info in the notes doc.
+
+// Emacs preferences: 
+
+// Vanilla Emacs: You can use ` CTRL-x CTRL-+ ' and 'CTRL-x CTRL--' ( 'text-scale-adjust' ) to increase or decrease 
+
+// Markdown styling following: https://jblevins.org/projects/markdown-mode/
+
+// But also including special styling for Idyll: spring2020/week12/markdown-mode.el, AND make sure you delete markdown-mode.elc in .emacs.d
+
+// NOTE: gotta have a return after the lines
+
+
+// We want to have this same outline for our page, but we'll change a few things here.
+
+// First, the metadata that goes along with this webpage -- this is the stuff that shows up in the tab
+[meta title:"IS590DV Idyll Website" description:"Corgs corgs corgs!" /]
+
+// You'll note that once we save our browser is re-loaded and our locally hosted webpage is re-generated.
+
+// We also want to update the header that appears on our post:
+[Header
+  fullWidth:true
+  title:"IS590DV Idyll Website"
+  subtitle:"Super cool viz for super cool people."
+  author:"Jill P. Naiman"
+  authorLink:"https://uiuc-ischool-dataviz.github.io/spring2020/"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+
+# Introduction
+
+// We'll delete all the things that were previously here and start from scratch.
+
+Today we are going to go through some of Idyll's [built-in components](https://idyll-lang.org/docs/components).  We'll talk about including other external and custom built components in the next few weeks.
+
+## Markdown
+
+We can use all of the Markdown type syntax we've used before to create **bold** and *italic* styles.
+
+We can do lists of items:
+
+* a thing
+* another thing
+* yet another thing
+
+We can also do numbered lists:
+
+1. My first thing
+1. My 2nd thing
+1. My 3rd thing
+
+We can also specify bits of code like `I am code` or blocks like:
+
+```
+I am
+a big
+piece of code
+```
+
+Hyperlinks are the same like [linking to the course webpage](https://uiuc-ischool-dataviz.github.io/spring2020/).
+
+## Images
+
+We can include images in the typical markdown style:
+
+![corgo1](https://i.redd.it/5f0snjdbzr121.jpg)
+
+This is pretty big, so we can include some parameters to rescale things.  We can do this by some Idyll-Markdown specificy styling for images:
+
+```
+[img 
+  src:'https://i.redd.it/5f0snjdbzr121.jpg' 
+  style:`{height:'300px'}` 
+/]
+```
+
+[img src:'https://i.redd.it/5f0snjdbzr121.jpg' style:`{height:'300px'}` /]
+
+You can note that this uses HTML-ish stylings if you are used to that already.  For example:
+
+
+```
+[div className:"myDiv" ]
+[p]
+  My paragraph.
+[/p]
+[/div]
+```
+
+[div className:"myDiv" ]
+[p]
+  My paragraph.
+[/p]
+[/div]
+
+
+## Layouts
+
+There are also ways to use HTML float styling by using [Idyll's layout parameters](https://idyll-lang.org/docs/components/default/float).
+
+This also allows us to do some nice, placements of images:
+
+```
+[Float position:"right"]
+[img
+  src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png'
+  style:`{height:300, padding: '10px'}`
+/]
+[/Float]
+
+[Float position:"left"]
+[img
+  src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg'
+  style:`{height:300, padding: '10px'}`
+/]
+[/Float]
+```
+
+[Float position:"left"]
+[img
+  src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png'
+  style:`{height:300, padding: '10px'}`
+/]
+[/Float]
+
+[Float position:"right"]
+[img
+  src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg'
+  style:`{height:300, padding: '10px'}`
+/]
+[/Float]
+
+## Scrolling Overlays
+
+We can also make our figures interactive.  Lists of corgi facts might be boring, but we 
+can spice them up by doing scrolling overlays with this little bit of code:
+
+```
+[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 5}`]
+      [img
+        src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg'
+        style:`{height:700, float:"left"}` 
+       /]
+  [/Graphic]
+
+  [Step]## Welsh Corgis are a small type of herding dog that originated in Wales, UK.[/Step]
+  [Step]## "Corgi" is Welsh for "dwarf dog"   [/Step]
+  [Step]## Queen Elizabeth II has owned more than 30 corgis in her lifetime.[/Step]
+  [Step]## Corgi-Dachshund mixes are called dorgis.[/Step]
+
+[/Scroller]
+```
+
+// more info here: https://idyll.pub/post/stack-scroll-0c3da7fb8e45f3ecb720bcf8/ 
+[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 5}`]
+      [img
+        src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg'
+        style:`{height:700}` // (2) lets say we want it on the left to make room 
+       /]
+  [/Graphic]
+
+  [Step]## Welsh Corgis are a small type of herding dog that originated in Wales, UK.[/Step]
+  [Step]## "Corgi" is Welsh for "dwarf dog"   [/Step]
+  [Step]## Queen Elizabeth II has owned more than 30 corgis in her lifetime.[/Step]
+  [Step]## Corgi-Dachshund mixes are called dorgis.[/Step]
+
+[/Scroller]
+// can also try floating with:
+        // style:`{height:700, float:"left"}` // (2) lets say we want it on the left to make room 
+
+
+We can do even more complex stepping following tutorials like the [stacking scrollers tutorial](https://idyll.pub/post/stack-scroll-0c3da7fb8e45f3ecb720bcf8/).  Here, we can actually change an element on our page in line with the scrolling of the user's mouse.
+
+// we store a set of images in a variable that is a JS array
+
+// NOTE: the ` --> this is specific to Idyll style
+
+[var name:"imageLoc" 
+  value:`["https://i.pinimg.com/originals/d5/fa/0b/d5fa0b05e00505717d21c532b043f586.jpg","https://66.media.tumblr.com/ce3a52328ebb8c89e1a5cd7649468216/tumblr_inline_pmof1giIRI1ud0rrx_540.jpg", "https://i.imgur.com/3d1etBA.jpg"]` /]
+
+
+[var name:"myScroller" value:0 /]
+
+[Scroller currentStep:myScroller]
+	[Graphic]
+		[Float position:"right"] // build up: float right!
+		    // here we are "slicing" our array using the JS "slice" routine to grab array names
+			[img src:`imageLoc.slice(myScroller, myScroller+1)` style:`{height:300}` /] // making all the same height
+		[/Float]
+	[/Graphic]
+	
+   [Step style:`{width:"50%"}`] // in style we can also specify how large to make our scroller text
+	   This is a derpy corgi.
+   [/Step]
+   
+   [Step style:`{width:"50%"}`]
+	   This is a derpy corgi #2.
+   [/Step]
+
+   [Step style:`{width:"50%"}`]
+	   This our final derpy dog.
+   [/Step]
+
+[/Scroller]
+
+## Flow Control & Conditionals
+
+Idyll also allows for some of the flow control and conditional components that we've used before in Python and Javascript.  
+
+### For-loops
+
+For example, we can use [for-loops](https://idyll-lang.org/docs/components/default/loop) to iterate over things, like displaying images using an image array like we used for scrolling:
+
+```
+[var name:"imgs2" 
+  value:`["https://i.pinimg.com/474x/a3/be/9b/a3be9b5985700813f70799ee0a71afc0--pembroke-welsh-corgi-animal-funnies.jpg", "https://i0.wp.com/threecorgis.com/wp-content/uploads/2014/09/three_corgis618-1-1.jpg?resize=500%2C667", "https://i.pinimg.com/originals/1c/c2/53/1cc253ede0ea7df2dd879b7cac9a88bf.jpg"]` /]
+
+
+[Loop value:imgs2]
+    [img src:"_iterator" style:`{height:300}` /] 
+[/Loop]
+```
+
+[var name:"imgs2" 
+  value:`["https://i.pinimg.com/474x/a3/be/9b/a3be9b5985700813f70799ee0a71afc0--pembroke-welsh-corgi-animal-funnies.jpg", "https://i0.wp.com/threecorgis.com/wp-content/uploads/2014/09/three_corgis618-1-1.jpg?resize=500%2C667", "https://i.pinimg.com/originals/1c/c2/53/1cc253ede0ea7df2dd879b7cac9a88bf.jpg"]` /]
+
+
+[Loop value:imgs2]
+    [img src:"_iterator" style:`{height:300}` /] // making all the same height
+[/Loop]
+
+### Conditionals
+
+We can also use [conditionals](https://idyll-lang.org/docs/components/default/conditional) like if-then statements in Python and Javascript:
+
+```
+[var name:"HowMany" value:5 /]
+
+[Conditional if:`HowMany <= 3`]
+  [Loop value:`imgs2.slice(0, HowMany)`]
+    [img src:"_iterator" style:`{height:300}` /] // making all the same height
+  [/Loop]
+[/Conditional]
+
+[Conditional if:`HowMany > 3`]
+  I can't show you [Display value:`HowMany.toFixed(0)` /] images - we don't have that many images in our list!
+[/Conditional]
+```
+
+[var name:"HowMany" value:5 /]
+
+[Conditional if:`HowMany <= 3`]
+  [Loop value:`imgs2.slice(0, HowMany)`]
+    [img src:"_iterator" style:`{height:300}` /] // making all the same height
+  [/Loop]
+[/Conditional]
+
+// NOTE: we can use formatting to print out numbers
+
+[Conditional if:`HowMany > 3`]
+  I can't show you [Display value:`HowMany.toFixed(0)` /] images - we don't have that many images in our list!
+[/Conditional]
+
+Check out other [Javascript numbers methods](https://www.w3schools.com/js/js_number_methods.asp) to see more options for how to print out numbers.
+
+
+## User Input
+
+We can take user input in a variety of ways with the [Input Idyll built-in components](https://idyll-lang.org/docs/components).  We'll look at a few.
+
+
+### Checkboxes
+
+We can combine [Idyll checkboxes](https://idyll-lang.org/docs/components/default/boolean) with [conditionals](https://idyll-lang.org/docs/components/default/conditional) to ask things like: Hey there, would you like to see some more corgis? 
+
+[var name:"moreCorg" value:false /]
+
+[Boolean value:moreCorg /] I [Display value:`moreCorg ? "would like to see" : "would not like to see"  `/] more corgis.
+
+
+[var name:"imgs3" 
+  value:`["https://external-preview.redd.it/-17yZH_Rhsl68DHe8A-GWRbZOu_irAeGGEkGKCM82_o.jpg?auto=webp&s=23d90b3c33816ea9d4314d79db5ecdbfab4c01b9", "https://i.ytimg.com/vi/kfCI5O3AUTk/maxresdefault.jpg", "https://i.imgur.com/m0CZRQy.jpg"]` /]
+
+[Conditional if:`moreCorg`]
+  [Loop value:imgs3]
+    [img src:"_iterator" style:`{height:300}` /] // making all the same height
+  [/Loop]
+[/Conditional]
+
+### Range Slider
+
+Like with the [ipywidgets integer slider](https://ipywidgets.readthedocs.io/en/latest/examples/Widget%20List.html#IntSlider) we can connect a slider to what appears on the page.
+
+
+[var name:"imgs4" 
+  value:`["https://external-preview.redd.it/-17yZH_Rhsl68DHe8A-GWRbZOu_irAeGGEkGKCM82_o.jpg?auto=webp&s=23d90b3c33816ea9d4314d79db5ecdbfab4c01b9", "https://i.ytimg.com/vi/kfCI5O3AUTk/maxresdefault.jpg", "https://i.imgur.com/m0CZRQy.jpg", "https://i1.wp.com/threecorgis.com/wp-content/uploads/2014/09/three-corgis-4189.jpg?resize=500%2C667", "https://i.imgur.com/aWpxP5O.jpg", "https://pbs.twimg.com/media/CMF2lpLUMAAYA49.jpg", "https://static1.fjcdn.com/comments/Corgis+with+things+on+their+head+thread+lets+_3412ee73c2c508ee101c40b4b1d6a92a.jpg"]` /]
+
+[var name:"corgRange" value:5 /]
+
+I would like to see [Range value:corgRange min:0 max:7 /] [Display value:`corgRange.toFixed(0)` /] corgis.
+
+[Loop value:`imgs4.slice(0, corgRange)`]
+  [img src:"_iterator" style:`{height:300}` /] // making all the same height
+[/Loop]
+
+### Radio Buttons
+
+In the final user input option that we'll talk about today, we can use the [Radio](https://idyll-lang.org/docs/components/default/radio) button option with [conditionals](https://idyll-lang.org/docs/components/default/conditional) to set up some questions (& answers) for our user:
+
+What is the name of corgi-dachshund mixes?
+
+// We'll chose the right name from a list of three options
+
+// first, set the "default" guess
+[var name:"radioVal" value:"Dashi " /]
+
+// We want to show the user if they got the right answer when they make their choice & click "submit"
+[var name:"showAnswer" value:false /]
+
+// Radio button with options, make sure we don't show anything unless its requested!
+[Radio value:radioVal options:`["Dashi ", "Dorgi ", "Corghund "]` onClick:`showAnswer = false` /]
+
+// ONLY show answers when the user decides for usre
+[Button onClick:`showAnswer = true`]
+  Submit
+[/Button]
+
+// Display a message telling the user if they are correct or not
+[Conditional if:`showAnswer && radioVal === "Dorgi "`]
+  You answered [Display value:`radioVal`/]. This is correct!
+[/Conditional]
+[Conditional if:`showAnswer && radioVal != "Dorgi "`]
+  You answered [Display value:`radioVal`/] which is not correct.  Please review the material at the top of the page.
+[/Conditional]
+
+## Data
+
+So far, we've been using data/image sources available on the web.  We also have the option of storing data within our Idyll directory and accessing it that way.  This is useful if we want to use our own data that we've created.
+
+For example, if we check out the [course webpage for this week](https://uiuc-ischool-dataviz.github.io/spring2020/week12/), we see that there is a [corgis per country over time](https://uiuc-ischool-dataviz.github.io/spring2020/week12/corg/corgs_per_country_over_time_2020.csv) dataset.  We'll talk a bit more about how this dataset was generated next week, but you can check out the [webscraping code](https://uiuc-ischool-dataviz.github.io/spring2020/week12/corg/grabCorgData_subpages.py) and [processing notebook](https://uiuc-ischool-dataviz.github.io/spring2020/week12/corg/calc_corgData.ipynb) for more details if you can't wait.
+
+For now, just download the [corgis per country over time](https://uiuc-ischool-dataviz.github.io/spring2020/week12/corg/corgs_per_country_over_time_columns_2020.csv) dataset and save it in the `data/` subdirectory of your Idyll project.
+
+Now we can load this dataset with:
+
+```
+[data name:"corgsTime" source:"corgs_per_country_over_time_columns_2020.csv" /]
+```
+
+[data name:"corgsTime" source:"corgs_per_country_over_time_columns_2020.csv" /]
+
+We can check out our data really quick with an interactive table:
+
+[Table data:corgsTime /]
+
+[Chart type:"line" data:`corgsTime` domain:`null` range:`null` x:"Years" y:"United States" stroke:"red" /]
+
+You'll note a lot of the formatting here isn't what we'd really like, but this is another motivation to learn about external-installable components next time (like vega-lite & d3).
+
+## Publishing to github.io
+
+Let's talk about it!
+
+NOTE: something of importance is selecting your theme!
