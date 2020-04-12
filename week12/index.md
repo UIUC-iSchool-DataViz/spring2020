@@ -9,6 +9,11 @@ Today we'll cover a brief intro of [Idyll](https://idyll-lang.org/) and web deve
 
 We'll also be getting a lecture from the [Advanced Visualization Lab at NCSA](http://avl.ncsa.illinois.edu/) who will talk about scientific and cinematic visualization.  We'll cover scientific visualization more next week.
 
+## Downloads & Links
+
+### Data
+
+ 1. <a href="corg/corgs_per_country_over_time_2020.csv" download>Corgis per country over time (corgs_per_country_over_time_2020.csv)</a>
 
 ## Optional reading list
 
