@@ -14,6 +14,11 @@ We'll also be getting a lecture from the [Advanced Visualization Lab at NCSA](ht
 ### Data
 
  1. <a href="corg/corgs_per_country_over_time_columns_2020.csv" download>Corgis per country over time (corgs_per_country_over_time_columns_2020.csv)</a>
+ 
+### Links & Code
+
+ 1. We'll be building toward a webpage like [this](https://jnaiman.github.io/) today using [Idyll](https://idyll-lang.org/)'s built-in components.
+ 1. Markdown code [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/index.idyll).
 
 ## Optional reading list
 
