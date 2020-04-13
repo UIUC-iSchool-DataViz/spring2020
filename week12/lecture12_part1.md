@@ -40,6 +40,13 @@ today we'll be continuing on with some of what we did last week -- moving into m
 
 ---
 
+## Survey posted later this week
+
+ 1. Informal ~5 min presentation
+ 1. More formal critique of ~3 other submissions
+
+---
+
 ## Today
 
  * Publishing
