@@ -18,7 +18,8 @@ We'll also be getting a lecture from the [Advanced Visualization Lab at NCSA](ht
 ### Links & Code
 
  1. We'll be building toward a webpage like [this](https://jnaiman.github.io/) today using [Idyll](https://idyll-lang.org/)'s built-in components.
- 1. Markdown code [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/index.idyll).
+ 1. We got to this [Markdown code right here in Class this week](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/inClass/index.idyll).
+ 1. Full Markdown code for this week and next week [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/index.idyll).
 
 ## Optional reading list
 

@@ -1,0 +1,125 @@
+[meta title:"IS590DV, Week12" description:"Week 12 in SP2020, Data Viz" /]
+
+// This is a comment
+
+[Header
+  fullWidth:true
+  title:"IS590DV Idyll Webpage"
+  subtitle:"My super neat project!"
+  author:"Jill P. Naiman"
+  authorLink:"https://uiuc-ischool-dataviz.github.io/spring2020/week12/"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+
+# Introduction
+
+// I've deleted everything that came with the "idyll create command"
+
+## Markdown
+
+I can write things in **bold** or *italics*.
+
+This is a list:
+
+* thing 1
+* thing 2
+
+Or itemized:
+
+1. thing 1
+1. thing 2
+
+
+```
+This could be a large
+
+bit of code
+```
+
+Or a `small bit of code` here.
+
+We can also use Markdown hyperlinks, for example [this is a link to the website for today](https://uiuc-ischool-dataviz.github.io/spring2020/week12/).
+
+## Images
+
+![Name of image](https://i.redd.it/5f0snjdbzr121.jpg)
+
+So this is pretty big, but we can use HTML-like stylings to update the style of this image:
+
+[img src:"https://i.redd.it/5f0snjdbzr121.jpg" style:`{height:'300px'}` /]
+
+So some tricks like the `code brackets` were used here!  (Other HTML div elements are also available).
+
+## Layout
+
+For example I can put side-by-side images with the `Float` layout command,  [Idyll's layout parameters](https://idyll-lang.org/docs/components/default/float):
+
+[Float position:"left"]
+   [img src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png' style:`{height:'300px', padding:'10px'}` /]
+[/Float]
+
+[Float position:"right"]
+   [img src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg' style:`{height:'300px', padding:'10px'}` /]
+[/Float]
+
+
+## Scrolling Overlays
+
+Allows the user to interact with your web document by scrolling with the [Idyll scrolling options](https://idyll-lang.org/docs/components/scrolling-and-refs).
+
+// more info here: https://idyll.pub/post/stack-scroll-0c3da7fb8e45f3ecb720bcf8/ 
+
+// Scroller def
+
+// graphic to scroll over
+
+// a "step" with some text that will appear when scrolling
+
+[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 5}`]
+      [img
+        src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg'
+        style:`{height:'700px'}`  
+       /]
+  [/Graphic]
+  
+  [Step] ## Welsh Corgis are a small type of herding dog that originated in Wales, UK. [/Step]
+  [Step] ## Corgi-Dachshund mixes are called dorgis. [/Step]
+  
+[/Scroller]
+
+We can also updated elements based on user scrolls, for example, update images based on user scrolls:
+
+[var name:"imageLoc" 
+  value:`["https://i.pinimg.com/originals/d5/fa/0b/d5fa0b05e00505717d21c532b043f586.jpg","https://66.media.tumblr.com/ce3a52328ebb8c89e1a5cd7649468216/tumblr_inline_pmof1giIRI1ud0rrx_540.jpg", "https://i.imgur.com/3d1etBA.jpg"]` /]
+  
+// using slicing arrays in javascript
+
+[var name:"myScroller" value:0 /]
+
+[Scroller currentStep:myScroller]
+  [Graphic style:`{padding: 5}`]
+    [Float position:"right"]
+      [img
+        src:`imageLoc.slice(myScroller, myScroller+1)`
+        style:`{height:'300px'}`  
+       /]
+	[/Float]
+  [/Graphic]
+  
+  [Step style:`{width:"50%"}`] 
+    This is a corgi.
+  [/Step]
+  
+  [Step style:`{width:"50%"}`] 
+    This is another corgi. 
+  [/Step]
+  
+  [Step style:`{width:"50%"}`]
+    This is my last corgi.
+  [/Step]
+  
+[/Scroller]
