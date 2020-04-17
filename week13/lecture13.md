@@ -1,6 +1,8 @@
 ---
 title: Lecture 13
 layout: lecture
+visible_lec: true
+visible_n: true
 ---
 
 <!-- .slide: class="titleslide" -->
@@ -9,245 +11,425 @@ layout: lecture
 
 <div style="height: 6.0em;"></div>
 
-## Matthew Turk
-## Fall 2019
+## Jill P. Naiman
+## Spring 2020
 ## Lecture 13
 
 ---
 
-# Housekeeping
+## Warm-Up Activity Part 1
 
- * Having issues with uploading notebooks that will be corrected.
- * Next week: we will be presenting in groups!
- * Order to be announced by end of this week, once all groups are in.
+ 1. What is the visualization trying to show?
+ 1. What are its methods?
+ 1. What are the strengths / weaknesses?
 
----
-
-# Article
-
-An [interesting
-article](https://medium.com/multiple-views-visualization-research-explained/same-data-multiple-perspectives-curse-of-knowledge-in-visual-data-communication-d827c381f936)
-from this Cindy Xiong on Medium discusses the "curse of expertise" in data
-visualization.
+https://xkcd.com/2135/
 
 ---
 
-## Review of D3 Basics
+## Warm-Up Activity Part 2
 
-Last week we covered the very basics of [d3.js](https://d3js.org/), using
-[observablehq.com](https://observablehq.com).
+ 1. What is the visualization trying to show?
+ 1. What are its methods?
+ 1. What are the strengths / weaknesses?
+ 1. Would you know how to make something like this?
 
-Review topics:
-
- * Creating a canvas
- * Adding items to the canvas
- * Positioning items
+http://biologylabs.utah.edu/farmer/index_dinosaur.html
 
 ---
 
-## Creating an SVG canvas
+## Today
 
-```javascript
-const svg = d3.create("svg")
-  .attr("width", 300)
-  .attr("height", 300);
-
-yield svg.node();
-```
+ * Scientific Visualization
+ * (And some JS if we have time)
+ 
+We'll also go through the pathway of GitHub -> uploading your Jupyter notebook again.
 
 ---
 
-# Selecting and binding data
+## Information Visualization
 
-```javascript
+So far: Spatial encoding is chosen by the designer
 
-var dataset = [
-  {x1: 1.0, y1: 3.0, x2: 3.5, y2: 2.0, radius: 10},
-  {x1: 2.5, y1: 2.0, x2: 0.75, y2: 3.5, radius: 5},
-  {x1: 3.1, y1: 0.6, x2: 4.1, y2: 3.4, radius: 25}
-];
+<img src="images/circlesTree.png" width="500"/>
 
-svg.selectAll("circle")
-   .data(dataset)
-   .enter()
-   .attr("cx", d => xScale(d.x1))
-   .attr("cy", d => yScale(d.y1))
-   .attr("r", d => d.radius)
-   .style("fill", "black");
-```
+notes: so far, a lot of our placement of objects has been up to us
 
 ---
 
-## Scaling
+## Scientific Visualization
 
-```javascript
-var xScale = d3.scaleLinear().range([0, 100]).domain([0.0, 1.0]);
-```
+Sci Viz: Spatial encoding is provided in the data
 
-We will cover other scales later today.
+<img src="images/orf2D.png" width="500"/>
+
+notes: but with sci viz, we are usually dealing with spatial data - so we are told by the 
+science where we should be placing things in 3D space
+
+we did this sort of thing in 2D for data on maps, but this gives even more detail on 
+where each data point should be placed
+
 
 ---
 
-## Events
+## Spatial Data
 
-There are many events that we can "listen" for, and respond to.  For instance, the `click` event is a common event to manage.
+ 1. Geometry
+  * Volumetric Fields
 
-The function receives the data (if any), the index of the node, and the nodelist.
+<img src="images/smoke.gif" width="800"/>
 
-```javascript
-d3.selectAll("circle")
-  .on("click", (d, i, n) => {
-    d3.select(n[i]).attr("r", 100)
-  });
-```
+note: there are different kinds of spatial datasets
 
----
+Here is shown some volumetric data - i.e. you are given points of things in 3D space
 
-## Transitions
+shown here is a simulation in Houdini (a special effects software package) showing smoke rising
 
-We can also update items through transitions, which can accept both a `delay` and a `duration`, both specified in milliseconds.
-
-```javascript
-d3.selectAll("circle")
-  .data(dataset)
-  .transition()
-  .duration(2000)
-  .attr("x", d => d.x + 2)
-```
-
-Updating attributes utilizes "tween"-ing functions for interpolation.  Many are
-built in, but you can choose to build your own.
+The left plot shows the simulation data points, the middle plot shows how they are interpolated to a surface and the right shows how they are "rendered" i.e. made into a movie using a smoke "shader" which dictates how light rays will travel through the object
 
 ---
 
-## Observable Notes: Data
+## Spatial Data
 
-There are ways to get data into observable.  The simplest is to use `await` on an asynchronous loading function, like this:
+ 1. Geometry
+   * Polygons
 
-```
-var near_earth = await d3.json("https://data.nasa.gov/resource/2vr3-k9wn.json");
-```
+<img src="images/wheel.gif" width="800"/>
 
-(More ideas at https://github.com/jdorfman/awesome-json-datasets )
+notes: another thing you will see a lot is 3-dimensional surfaces like the one shown here
+
+Instead of specifying data at each point in the 3D volume, we are specifying the surface - i.e. an interconnected list of polygons that makes this shape
+
+(we'll actually play with surfaces later in class and volumes either next week or the last week)
+
 
 ---
 
-## Observable Notes: HTML
+## Spatial Data
 
-You can specify HTML as well, and then modify that in code.  This does not always require that you yield nodes.
+ 1. Geometry
+   * Polygons
+   * Point Clouds
 
-```
-html`<p id="my_hi">hi there</p>`
-```
+<img src="images/cme.gif" width="800"/>
 
-These can be selected by d3 as well.
+notes:
 
-In fact, we can modify *any* item in the DOM, not just SVG elements.  Can we modify this paragraph?
+Sometimes you'll see data shown by points.  Before, we were showing data that "filled up" the space, but here point clouds are almost like infinitely small data points at specific locations in space
 
----
+point clouds can be static, or they can have physics which make them a "particle system".
 
-## Transformations
-
-SVG specifies a number of [possible transformations](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform).  These include rotation, translations, skews and scales.  We can set these through the `.attr` call, but note that this requires a bit of string manipulation.
-
-```javascript
-svg.selectAll("circle").attr("transform",
-    (d, i) => "skewY(" + i*5 + ")");
-```
-
-Note that we're concatenating an integer to a string here, which casts the int
-to a string.  This is a bit non-intuitive.
-
-We can use this to reshape our objects in many different ways -- especially using the index of the data point!
+FYI this is a non-final render of some data from the "Solar Super Storms" movie that the AVL created
 
 ---
 
-## Scales
+## Spatial Data
 
-D3 provides a number of different [scaling types](https://github.com/d3/d3-scale).  We will be discussing, specifically, banded scales and color scales.
+ 2. Volumetric Fields
 
-One thing to note is that d3 also provides handy functions for computing properties of [arrays](https://github.com/d3/d3-array).  For instance:
+<img src="images/redDropShort.gif" width="600"/>
 
- * `d3.min`, `d3.max`, `d3.minIndex` and `d3.maxIndex`, all of which accept both an iterable *and* an "accessor" function.
- * `d3.extent`, which provides the format required by a scale.
- * `d3.sum`, `d3.mean`, `d3.median`, `d3.quantil`, `d3.variance`
+notes:
+How do you represent something like this with data?
 
----
+You need scalars to describe things like material.
 
-## Banded Scales
-
-Banded scales provide discrete categorization of values, often used for categorical data.
-
-
-```javascript
-var band = d3.scaleBand(["low", "medium", "high"], [0.0, 100.0]);
-```
-
-This takes an array of input values for the domain.  Additional changes can be made to the bandwidth, padding, etc. The d3 wiki has a  
-[diagram](https://raw.githubusercontent.com/d3/d3-scale/master/img/band.png) describing this.
+You need vectors to describe things like motion (velocity). 
 
 ---
 
-## Color Scales
+## Spatial Data
 
-We can use `d3.scaleSequential` to generate colormaps for continuous values.  These accept an interpolator function.  d3 provides interpolator functions for many common colormaps.  For instance:
+ 2. Volumetric Fields
+    * Scalar
 
-```javascript
-var csc = d3.scaleSequential(d3.interpolateViridis).domain([1.0, 100.0])
-```
+<img src="images/grids.gif" width="600"/>
 
-We can also use log versions of these, and quantized versions.
+notes:
+This sequence reveals the underlying 3D grids of several scalar fields including:
 
----
+H1 density
 
-## Brushing
+H2 density
 
-Brushing in d3 requires some build-it-yourself effort, but building a brush object itself is straightforward.  You create a brush object with extents, and you call that on your object.  Here, `brushed` is a function to be called when the brush selection changes.
+photogamma
 
-```
+temperature
 
-function brushed() {
-  console.log(d3.event.selection);
-}
+metallicity
 
-var brush = d3.brush()
-              .extent([[0.0, 0.0], [512, 512]])
-              .on("brush", brushed);
-svg.append("g").attr("class", "brush").call(brush);
-```
-
-What could we do with this?
+Basically, you can think of the centers of each cubes specifying where the data points actually are - more densely packed cubes means *higher resolution* data
 
 ---
 
-## Paths
+## Spatial Data
 
-d3 can also generate `path` objects.  Typically these are generated using curve
-generators.
+ 2. Volumetric Fields
+    * Scalar
 
-```javascript
-var line = d3.line().curve(
-            d3.curveCatmullRom.alpha(0.5));
-var myPath = svg.append("path")
-              .attr("d", line(myPoints))
-              .attr("stroke", "black");
+<img src="images/sapasmons.jpg" width="500"/>
 
-```
+notes:
+Fields can be 2D or 3D. Images can be used as 2D data fields.
 
-Interpolation of paths can be tricky, but it is possible.
+AVL used this image from the Magellan satellite to create a "displacement map" for this venusian volcano called "Sapas Mons".
+
+2D fields can also be layered in formats common to GIS, or Hollywood formats like EXR.
 
 ---
 
-## Experiment Time
+## Spatial Data
 
-Let's build a near-earth object explorer.
+ 2. Volumetric Fields
+    * Scalar
+    * Vector
 
- * Sketch out a design in groups
- * Discuss as a class the different designs
- * Build as a class 
+[Windy Weather Map](https://www.windy.com)
+
+<img src="images/maria.png" width="600"/>
+
+notes:
+Windy is an interactive wind velocity map. It's always interesting to look at, but especially during hurricane season. I captured this image as Hurricane Maria flirted with the East coast in Sept 2017.
 
 ---
 
-## Exporting to a webpage
+## Spatial Data
 
-Now how do we export this to a webpage?
+ 2. Volumetric Fields
+    * Scalar
+    * Vector
+
+Its even possible to do this in real time: [Earth map](https://earth.nullschool.net/)
+
+
+
+---
+
+## Spatial Data
+
+ 2. Volumetric Fields
+    * Scalar
+    * Vector
+
+<img src="images/streamlines.gif" width="600"/>
+
+notes:
+In this visualization we're seeing 3D velocity streamlines.
+
+We're ALSO seeing a scalar volume called "vorticity" which is directly derived from the velocity field by taking a mathematical operation called the "curl".
+
+In this case we are plotting *both* scalar (volume glow) and vector (streaming lines) data in the same viz!
+
+Also from solar super storms
+
+---
+
+## Spatial Data
+
+ 2. Volumetric Fields
+    * Uniform or non-uniform
+    * Rectangular or non-rectangular
+
+<img src="images/gridTypes.gif" width="400"/>
+
+notes:
+Adaptive mesh refinement is an especially efficient 3D storage for datatypes that have small areas of high detail.
+
+This is why dealing with scientific data can be a little tricky - it can be hard to make surfaces or volumes out of irregularly gridded data
+
+---
+
+## Spatial Data Types
+
+ 1. Statistical
+    * Star species
+    * Atom prevalence
+ 1. Observational
+    * Telescope images
+    * Microscope images
+    * LIDAR
+ 1. Simulated by computer models
+    * First principles physics
+    * Astronomy, geology, biology
+
+---
+
+## Visualizing Point Data
+
+ * Dots with scale
+
+<img src="images/pointCloud.gif" width="600"/>
+
+notes: some other, less used data types include things like dots with scale
+
+---
+
+## Visualizing Point Data
+
+ * Dots with scale
+ * Sprites
+
+<img src="images/energy.gif" width="600"/>
+
+notes:
+All the moving dots in this video are represented by a gaussian splat image. You can see how they are adjusted to be different size and color (the important things are the purple ones)
+
+FYI this is a little pre-final version of an upcoming movie called "Birth of Planet Earth"
+
+---
+
+## Visualizing Point Data
+
+ * Dots with scale
+ * Sprites
+
+<img src="images/energyLetters.gif" width="600"/>
+
+notes:
+But gaussian blur isn't the only way to put a sprite on a point. This version used text instead. (purple q's instead of sprites)
+
+---
+
+## Visualizing Point Data
+
+ * Dots with scale
+ * Sprites
+ * Meshing
+
+<img src="images/canup.gif" width="600"/>
+
+notes:
+This is a test AVL worked on with an SPH "smooth particle hydrodynamics" dataset where we created a surface across points. The surface was generated at a density threshold - aka, it was an infinitely thin shell shrinkwrapped onto all particles that were above a certain density.
+
+This is a way to turn particles into surfaces or polygons.
+
+We'll play with surfaces later
+
+---
+
+## Visualizing Polygons
+
+ * Vector lines with width, can be filled
+
+<img src="images/platecarree.png" width="600"/>
+
+notes:
+We're already familiar with this data from MAPS week.
+
+---
+
+## Visualizing Polygons
+
+ * Vector lines with width, can be filled
+ * Direct rendering of architectural schematics
+
+<img src="images/lsst.gif" width="600"/>
+
+notes:
+Sometimes you will be given a description of geometric objects that you need to construct.
+
+---
+
+## Visualizing Polygons
+
+ * Vector lines with width, can be filled
+ * Direct rendering of architectural schematics
+ * Direct rendering of 3D scans (pre-meshed)
+
+<img src="images/mammoth.gif" width="600"/>
+
+notes:
+Sometimes you will get something that was originally generated from a point cloud but has already been meshed. Domain experts sometimes have access to better meshing tools, particularly in the realm of 3D scanning.
+
+---
+
+## Visualizing Scalar Fields
+
+ * Slice
+
+<img src="images/mri.png" width="600"/>
+
+notes:
+You might remember from Week 5 when we played with this brain scan data - this is only a single image slice out of a 3D gridded dataset.
+
+Even if you're not showing your final visualization as a slice, this is a good step for understanding and troubleshooting. As we've mentioned before, reducing dimensionality makes things clearer to the human brain.
+
+---
+
+## Visualizing Scalar Fields
+
+ * Slice
+ * Isosurface
+
+<img src="images/isocontours.png" width="400"/>
+
+notes:
+You have probably seen this type of topographic map where lines indicate elevation. These lines are called isocontours. You can combine isocontours to get isosurfaces.
+
+---
+
+## Visualizing Scalar Fields
+
+ * Slice
+ * Isosurface
+
+<img src="images/isosurfaces.png" width="700"/>
+
+notes:
+This is an isosurface of a tornado-forming storm cloud, and another of a supernova that the scientist called "the walnut".
+
+Isosurfaces can make analysis easier.
+
+---
+
+## Visualizing Scalar Fields
+
+ * Slice
+ * Isosurface
+ * 3D Volumetric Rendering
+
+<img src="images/bock.gif" width="600"/>
+
+notes:
+But of course, you can always render the volume as a volume too. This is a volumetric tornado-forming storm cloud by Dave Bock who also works at the NCSA. 
+
+While this looks similar to the volume rendering at the beginning of class its a better representation of reality - this includes a lot more physics, making it a scientific dataset.
+
+---
+
+## Visualizing Vector Fields
+
+ * Arrow glyphs
+
+<img src="images/arrows.gif" width="700"/>
+
+notes:
+vectors are often represented with arrows at specific points
+
+I'm actually not sure what this is showing, but my guess is magnetic field lines, probably in some explosive astro event (like a super novae or something)
+
+---
+
+## Visualizing Vector Fields
+
+ * Arrow glyphs
+ * Streamlines / Streamtubes
+    * Particle Advection!
+
+<img src="images/tornado.gif" width="600"/>
+
+notes:
+But you can also show streamlines, which track vectors across the whole grid. Particle advection is releasing massless particles into a vector field, letting the vectors push them around, and tracing their progress.
+
+This tornado visualization actually shows arrow on the ground AND streamlines in the air.
+
+---
+
+## yt
+
+yt is an open-source, permissively-licensed python package for analyzing and visualizing volumetric data.
+
+[yt-project.org](https://yt-project.org/)
+
+There is a big yt community at the iSchool and NCSA!
+
