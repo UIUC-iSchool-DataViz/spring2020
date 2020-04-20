@@ -38,9 +38,20 @@ http://biologylabs.utah.edu/farmer/index_dinosaur.html
 
 ---
 
-## Bureaucracy
+## Bureaucracy: Survey
 
-Don't forget to fill out the survey!
+About 50/50 so far
+
+---
+
+## Critque Prompt:
+
+ 1. Summarize the visualization (1-2 sentences)
+	* barchart? line plot? interactivity?
+ 1. What is the message or idea that the visualization is trying to get across? (1 sentence)
+ 1. Where does the data come from (1 or multiple sources?) (1-2 sentences)
+ 1. What aspects of the visualization did you like and why (2-3 sentences)
+ 1. What are some suggestions you have for improvements? (1-2 sentences)
 
 ---
 
