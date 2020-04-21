@@ -109,8 +109,8 @@ Acronyms for books:
 | Week 11 | Designing for the web with Python & Javascript, Web dev | 1. <a href="https://medium.com/multiple-views-visualization-research-explained/same-data-multiple-perspectives-curse-of-knowledge-in-visual-data-communication-d827c381f936">Same Data, Multiple Perspectives</a> <br> 2. <a href="https://alpha.iodide.io/">Iodide Docs</a> <br> 3. <a href="https://vega.github.io/vega-lite/docs/">vega-lite docs</a> - in particular: <a href="https://vega.github.io/vega-lite/docs/transform.html">Vega-lite transformations</a> & <a href="https://vega.github.io/vega-lite/docs/selection.html">Vega-lite selections</a> <br> 4. <a href="https://idyll-lang.org/docs"> Idyll Docs</a>
 | Week 12 | More javascript & web dev <br> <br> Guest lecture about scientific & cinematic viz from <a href="http://avl.ncsa.illinois.edu/">AVL</a> | 1. <a href="https://idyll-lang.org/docs"> Idyll Docs</a> - in particular: <a href="https://idyll-lang.org/docs/components">Built in</a>/<a href="https://idyll-lang.org/docs/components/npm">npm installed</a> components
 | Week 13 | Scientific visualization | 1. <a href="https://yt-project.org/">yt docs</a>
-| Week 14 | Wrap up with Idyll, Publishing Viz | 1. <a href="https://idyll-lang.org/docs"> Idyll Docs</a>
-| Week 15 | Group presentations | None
+| Week 14 | Volume rendering for scientific viz, Wrap up with Idyll, Publishing Viz | 1. <a href="https://yt-project.org/">yt docs</a> <br> 2. <a href="https://idyll-lang.org/docs"> Idyll Docs</a>
+| Week 15 | Idyll + d3.js | 1. <a href="https://github.com/d3/d3/wiki">d3.js docs</a>
 
 
 # About Your Instructor
