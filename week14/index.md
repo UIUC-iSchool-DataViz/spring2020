@@ -19,4 +19,5 @@ A fun video [about rendering from Pixar is found here](https://www.youtube.com/w
 ## Optional reading list
 
  1. <a href="https://yt-project.org/">yt docs</a> 
+ 1. <a href="https://yt-project.org/doc/visualizing/volume_rendering.html">yt Volume Rendering Tutorial</a> 
  1. <a href="https://idyll-lang.org/docs"> Idyll Docs</a>
