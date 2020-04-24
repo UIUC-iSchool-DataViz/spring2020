@@ -21,7 +21,8 @@ A fun video [about rendering from Pixar is found here](https://www.youtube.com/w
 ### Links & Code
 
  1. We'll be building toward a webpage like [this](https://jnaiman.github.io/) today using [Idyll](https://idyll-lang.org/)'s built-in components.
- 1. We got to this [Markdown code right here in Class this week](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/inClass/index.idyll).
+<!-- 1. We got to this [Markdown code right here in Class this week](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/inClass/index.idyll). -->
+ 1. Last week, we got to this [Markdown code right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/inClass/index.idyll) and we'll start from there this week.
  1. Full Markdown code for this week and next week [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/index.idyll).
 
 
