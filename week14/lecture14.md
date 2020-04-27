@@ -2,7 +2,7 @@
 title: Lecture 14
 layout: lecture
 include_vega: true
-visible_lec: false
+visible_lec: true
 visible_n: true
 ---
 
