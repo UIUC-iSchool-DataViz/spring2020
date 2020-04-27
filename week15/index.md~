@@ -21,8 +21,7 @@ A fun video [about rendering from Pixar is found here](https://www.youtube.com/w
 
  1. We'll be building toward a webpage like [this](https://jnaiman.github.io/) today using [Idyll](https://idyll-lang.org/)'s built-in components.
  1. Last week, we got to this [Markdown code right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week12/corg/inClass/index.idyll) and we'll start from there this week.
- 1. Full Markdown code for this week and next week [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/index.idyll).
- 1. We'll also build a few histogram components like:
+ 1. Full Markdown code for this week and next week [available right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/index.idyll).1. We'll also build a few histogram components like:
     * starting with [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/histogram-custom-d3-component.js)
     * then [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/histogram-button-custom-d3-component.js)
     * and finally [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/histogram-button-slider-custom-d3-component.js)
