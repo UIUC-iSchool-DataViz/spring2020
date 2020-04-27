@@ -26,6 +26,10 @@ A fun video [about rendering from Pixar is found here](https://www.youtube.com/w
     * then [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/histogram-button-custom-d3-component.js)
     * and finally [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week14/corg/histogram-button-slider-custom-d3-component.js)
 	
+ Where we got to in class this week:
+   * [This index.idyll](index.idyll) file
+   * [This histogram component](histogram-custom-d3-component.js)
+	
 **Note:** see [week 12](../week12/) for the scripts used to generate this dataset.
 
 
