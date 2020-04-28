@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+  <head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>Lecture 15</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<!-- Theme used for syntax highlighting of code -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.min.js"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vega"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed"></script>
+
+
+</style>
+
+  <link rel="stylesheet/less" type="text/css" href="/spring2020/assets/styles.less" />
+  </head>
+
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown
+           data-separator="^\n---\n"
+           data-separator-vertical="^\n----\n">
+          <script type="text/template">
+<!-- .slide: class="titleslide" -->
+
+# Data Visualization
+
+<div style="height: 6.0em;"></div>
+
+## Jill P. Naiman
+## Spring 2020
+## Lecture 15
+
+---
+
+<br>
+<br>
+<br>
+
+## You made it!
+
+notes:
+congrats! you did it!  You made it to the end of the course during a super tough time!
+
+
+---
+
+## This Course
+
+<img src="../week14/images/this_week.png">
+
+notes:
+So, look at all the STUFF we covered!  Look at all that!
+
+---
+
+## Today
+
+ 1. Resources & Where to go from here
+ 1. More Idyll and d3.js stuff
+ 
+notes: 
+I'm just going to mention briefly some resources you might want to check out and then we'll continue on to finish some more Idyll + d3 type things
+
+---
+
+<br>
+<br>
+<br>
+
+# TOPIC 1: Where to go from here
+
+notes:
+different sub-fields of dataviz will lead you down different pathways
+
+---
+
+## Python
+
+ * See whats in dev on the [bqplot gitter lobby](https://gitter.im/bloomberg/bqplot)
+ * More about volume rendering with [ipyvolume](https://ipyvolume.readthedocs.io/en/latest/)
+ * More about sciviz dev with [yt slack](https://yt-project.slack.com/join/shared_invite/enQtMzQ4Nzk1Mjk0ODY4LWNmOTFiNTM4N2ExZWYyY2YwZDUxN2Q1MTgwNDdjZGExMWM0Y2VlNzUzNGExZTZhMWRlNjU3ZjFmZmU3MjdkNDg)
+ 
+--- 
+
+## Javascript
+
+ * [Beginning Javascript course](https://www.codecademy.com/learn/introduction-to-javascript)
+ * See what's in dev on the [Idyll gitter lobby](https://gitter.im/idyll-lang/Lobby) - including updates to vega-lite!
+
+          </script>
+        </section>
+      </div>
+    </div>
+<script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+        dependencies: [
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/marked.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.min.js' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/notes/notes.min.js', async: true },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/math/math.min.js', async: true },
+            { src: 'https://cdn.jsdelivr.net/npm/reveald3/reveald3.js'},
+            { src: '/reveal.js-plugins/chalkboard/chalkboard.js' },
+            { src: '/reveal-paperjs/paper-figures.js', async: true},
+        ],
+		keyboard: {
+			67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+			66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+			46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+			 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+			68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+		},
+        center: false,
+        transition: 'none',
+        backgroundTransition: 'none',
+	slideNumber: true
+
+    });
+</script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js" ></script>
+
+
+  </body>
+</html>
+
