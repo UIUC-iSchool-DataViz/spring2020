@@ -65,10 +65,22 @@ different sub-fields of dataviz will lead you down different pathways
  * See whats in dev on the [bqplot gitter lobby](https://gitter.im/bloomberg/bqplot)
  * More about volume rendering with [ipyvolume](https://ipyvolume.readthedocs.io/en/latest/)
  * More about sciviz dev with [yt slack](https://yt-project.slack.com/join/shared_invite/enQtMzQ4Nzk1Mjk0ODY4LWNmOTFiNTM4N2ExZWYyY2YwZDUxN2Q1MTgwNDdjZGExMWM0Y2VlNzUzNGExZTZhMWRlNjU3ZjFmZmU3MjdkNDg)
- 
---- 
+
+notes:
+these are notes
+
+---
 
 ## Javascript
 
  * [Beginning Javascript course](https://www.codecademy.com/learn/introduction-to-javascript)
  * See what's in dev on the [Idyll gitter lobby](https://gitter.im/idyll-lang/Lobby) - including updates to vega-lite!
+
+---
+
+## Courses
+
+ * [Advanced Data Visualization, iSchool](https://ischool.illinois.edu/degrees-programs/courses/is590adv)
+ * [Museum Informatics](https://ischool.illinois.edu/degrees-programs/courses/is461)
+ * [Data Science Storytelling](https://ischool.illinois.edu/degrees-programs/courses/is590dst)
+ * [More on sciviz and graphics](https://jnaiman.github.io/csci-p-14110/) (Not UIUC, includes intro to programming)
