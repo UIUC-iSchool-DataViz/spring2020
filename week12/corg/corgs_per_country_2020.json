@@ -1,0 +1,970 @@
+[
+  {
+    "country_id": "CHN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "IND",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "USA",
+    "totalCorg": 16130.0
+  },
+  {
+    "country_id": "IDN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BRA",
+    "totalCorg": 1.0
+  },
+  {
+    "country_id": "PAK",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BGD",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NGA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "RUS",
+    "totalCorg": 1834.0
+  },
+  {
+    "country_id": "JPN",
+    "totalCorg": 7.0
+  },
+  {
+    "country_id": "MEX",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PHL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "VNM",
+    "totalCorg": 4.0
+  },
+  {
+    "country_id": "ETH",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "DEU",
+    "totalCorg": 892.0
+  },
+  {
+    "country_id": "EGY",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TUR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "COD",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "IRN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "THA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "FRA",
+    "totalCorg": 597.0
+  },
+  {
+    "country_id": "GBR",
+    "totalCorg": 2649.0
+  },
+  {
+    "country_id": "ITA",
+    "totalCorg": 106.0
+  },
+  {
+    "country_id": "MMR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ZAF",
+    "totalCorg": 28.0
+  },
+  {
+    "country_id": "KOR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "UKR",
+    "totalCorg": 19.0
+  },
+  {
+    "country_id": "COL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SDN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TZA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ARG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ESP",
+    "totalCorg": 5.0
+  },
+  {
+    "country_id": "KEN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "POL",
+    "totalCorg": 859.0
+  },
+  {
+    "country_id": "DZA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CAN",
+    "totalCorg": 391.0
+  },
+  {
+    "country_id": "UGA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MAR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PER",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "IRQ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SAU",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "AFG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NPL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "UZB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "VEN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MYS",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GHA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "YEM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TWN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PRK",
+    "totalCorg": 5.0
+  },
+  {
+    "country_id": "SYR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ROU",
+    "totalCorg": 7.0
+  },
+  {
+    "country_id": "MOZ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "AUS",
+    "totalCorg": 891.0
+  },
+  {
+    "country_id": "LKA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MDG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CIV",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CMR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NLD",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CHL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BFA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NER",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "KAZ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MWI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ECU",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "KHM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SEN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MLI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GTM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "AGO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ZMB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ZWE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CUB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "RWA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GRC",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PRT",
+    "totalCorg": 7.0
+  },
+  {
+    "country_id": "TUN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TCD",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BEL",
+    "totalCorg": 110.0
+  },
+  {
+    "country_id": "GIN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CZE",
+    "totalCorg": 271.0
+  },
+  {
+    "country_id": "SOM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BOL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "HUN",
+    "totalCorg": 8.0
+  },
+  {
+    "country_id": "BDI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "DOM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BLR",
+    "totalCorg": 38.0
+  },
+  {
+    "country_id": "HTI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SWE",
+    "totalCorg": 2008.0
+  },
+  {
+    "country_id": "BEN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "AZE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "AUT",
+    "totalCorg": 29.0
+  },
+  {
+    "country_id": "HND",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CHE",
+    "totalCorg": 30.0
+  },
+  {
+    "country_id": "TJK",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ISR",
+    "totalCorg": 32.0
+  },
+  {
+    "country_id": "SRB",
+    "totalCorg": 2.0
+  },
+  {
+    "country_id": "BGR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "HKG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LAO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LBY",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "JOR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PRY",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TGO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PNG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SLV",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NIC",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ERI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "DNK",
+    "totalCorg": 2176.0
+  },
+  {
+    "country_id": "KGZ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SVK",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "FIN",
+    "totalCorg": 4051.0
+  },
+  {
+    "country_id": "SLE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ARE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TKM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CAF",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SGP",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NOR",
+    "totalCorg": 1077.0
+  },
+  {
+    "country_id": "BIH",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GEO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CRI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "HRV",
+    "totalCorg": 21.0
+  },
+  {
+    "country_id": "MDA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NZL",
+    "totalCorg": 1097.0
+  },
+  {
+    "country_id": "IRL",
+    "totalCorg": 29.0
+  },
+  {
+    "country_id": "COG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LBN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PRI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LBR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ALB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LTU",
+    "totalCorg": 29.0
+  },
+  {
+    "country_id": "URY",
+    "totalCorg": 2.0
+  },
+  {
+    "country_id": "PAN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MRT",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MNG",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "OMN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ARM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "JAM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "KWT",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "PSE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LVA",
+    "totalCorg": 3.0
+  },
+  {
+    "country_id": "NAM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MKD",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BWA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SVN",
+    "totalCorg": 1.0
+  },
+  {
+    "country_id": "LSO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GMB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "KWT",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "149",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GNB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GAB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SWZ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "153",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "EST",
+    "totalCorg": 97.0
+  },
+  {
+    "country_id": "TTO",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "TLS",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "CYP",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "FJI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "QAT",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "160",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GUY",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "DJI",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "163",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BTN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "MNE",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GNQ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SLB",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "168",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "169",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "LUX",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ESH",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SUR",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "173",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "174",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BRN",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BLZ",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "BHS",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ISL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "179",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "180",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "181",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "NCL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "183",
+    "totalCorg": 536.0
+  },
+  {
+    "country_id": "VUT",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "185",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "186",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "187",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "188",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "189",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "190",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "191",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "192",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "193",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "194",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "195",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "196",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "197",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "198",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "199",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "DOM",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "201",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "202",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "203",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "204",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "GRL",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "206",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "207",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "208",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "209",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "210",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "211",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "212",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "213",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "214",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "215",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "216",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "217",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "218",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "219",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "220",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "221",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "222",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "223",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "224",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "225",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "226",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "227",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "228",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "FLK",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "230",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "231",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "232",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "233",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "234",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "235",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "236",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "237",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ATA",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ATF",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "SDS",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "ABV",
+    "totalCorg": 0.0
+  },
+  {
+    "country_id": "OSA",
+    "totalCorg": 649.0
+  }
+]
