@@ -1,0 +1,269 @@
+[meta title:"IS590DV, Week12" description:"Week 12 in SP2020, Data Viz" /]
+
+// This is a comment
+
+[Header
+  fullWidth:true
+  title:"IS590DV Idyll Webpage"
+  subtitle:"My super neat project!"
+  author:"Jill P. Naiman"
+  authorLink:"https://uiuc-ischool-dataviz.github.io/spring2020/week12/"
+  date:`(new Date()).toDateString()`
+  background:"#222222"
+  color:"#ffffff"
+   /]
+
+
+# Introduction
+
+// I've deleted everything that came with the "idyll create command"
+
+## Markdown
+
+I can write things in **bold** or *italics*.
+
+This is a list:
+
+* thing 1
+* thing 2
+
+Or itemized:
+
+1. thing 1
+1. thing 2
+
+
+```
+This could be a large
+
+bit of code
+```
+
+Or a `small bit of code` here.
+
+We can also use Markdown hyperlinks, for example [this is a link to the website for today](https://uiuc-ischool-dataviz.github.io/spring2020/week12/).
+
+## Images
+
+![Name of image](https://i.redd.it/5f0snjdbzr121.jpg)
+
+So this is pretty big, but we can use HTML-like stylings to update the style of this image:
+
+[img src:"https://i.redd.it/5f0snjdbzr121.jpg" style:`{height:'300px'}` /]
+
+So some tricks like the `code brackets` were used here!  (Other HTML div elements are also available).
+
+## Layout
+
+For example I can put side-by-side images with the `Float` layout command,  [Idyll's layout parameters](https://idyll-lang.org/docs/components/default/float):
+
+[Float position:"left"]
+   [img src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week04/data/littleCorgiInHat.png' style:`{height:'300px', padding:'10px'}` /]
+[/Float]
+
+[Float position:"right"]
+   [img src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2809.jpg' style:`{height:'300px', padding:'10px'}` /]
+[/Float]
+
+
+## Scrolling Overlays
+
+Allows the user to interact with your web document by scrolling with the [Idyll scrolling options](https://idyll-lang.org/docs/components/scrolling-and-refs).
+
+// more info here: https://idyll.pub/post/stack-scroll-0c3da7fb8e45f3ecb720bcf8/ 
+
+// Scroller def
+
+// graphic to scroll over
+
+// a "step" with some text that will appear when scrolling
+
+[Scroller currentStep:scrollerIndex]
+  [Graphic style:`{padding: 5}`]
+      [img
+        src:'https://uiuc-ischool-dataviz.github.io/spring2019online/week10/corg/IMG_2814.jpg'
+        style:`{height:'700px'}`  
+       /]
+  [/Graphic]
+  
+  [Step] ## Welsh Corgis are a small type of herding dog that originated in Wales, UK. [/Step]
+  [Step] ## Corgi-Dachshund mixes are called dorgis. [/Step]
+  
+[/Scroller]
+
+We can also updated elements based on user scrolls, for example, update images based on user scrolls:
+
+[var name:"imageLoc" 
+  value:`["https://i.pinimg.com/originals/d5/fa/0b/d5fa0b05e00505717d21c532b043f586.jpg","https://66.media.tumblr.com/ce3a52328ebb8c89e1a5cd7649468216/tumblr_inline_pmof1giIRI1ud0rrx_540.jpg", "https://i.imgur.com/3d1etBA.jpg"]` /]
+  
+// using slicing arrays in javascript
+
+[var name:"myScroller" value:0 /]
+
+[Scroller currentStep:myScroller]
+  [Graphic style:`{padding: 5}`]
+    [Float position:"right"]
+      [img
+        src:`imageLoc.slice(myScroller, myScroller+1)`
+        style:`{height:'300px'}`  
+       /]
+	[/Float]
+  [/Graphic]
+  
+  [Step style:`{width:"50%"}`] 
+    This is a corgi.
+  [/Step]
+  
+  [Step style:`{width:"50%"}`] 
+    This is another corgi. 
+  [/Step]
+  
+  [Step style:`{width:"50%"}`]
+    This is my last corgi.
+  [/Step]
+  
+[/Scroller]
+
+
+## Data
+
+[data name:"corgsTime" source:"corgs_per_country_over_time_columns_2020.csv" /]
+
+[Table data:corgsTime /]
+
+I'll use a built-in chart to make a graph of this data:
+
+[Chart type:"time" data:`corgsTime` domain:`null` range:`null` x:'Years' y:"United States" /]
+
+Chart is a nice quick way to look at data, but we probably want to do something fancier.
+
+## D3 in Idyll
+
+Tricks will be:
+ 1. converting between D3 examples and Idyll nomenclature
+ 1. making sure we are using the correct version of d3 (v4)
+ 
+We actually have a pre-built d3 component:
+
+[var name:"state" value:0 /] // variable in Idyll
+[CustomD3Component className:"d3-component" state:state /] // calling the d3 comp.
+[button onClick:`state++`]
+  Click Me.
+[/button]
+
+### Our own custom d3 component
+
+Adding in a histogram:
+
+// adding the country name as a variable
+[var name:"selectedCountry" value:"United Kingdom" /] 
+
+[HistogramCustomD3Component className:"d3-component"  country:selectedCountry /] 
+
+Select Country:
+ [Select value:selectedCountry options:`["United States", "United Kingdom", "South Africa", "Russia"]` /]
+
+Things we changed:
+ 1. we added a title following [this post here](http://www.d3noob.org/2013/01/adding-title-to-your-d3js-graph.html).
+ 1. We are going to add some interactivity with a `Select` built in component from Idyll.
+
+### A quick map component
+
+[MapCustomD3Component className:"d3-component" /]
+
+# Built in Components
+
+## Flow Control & Conditionals
+
+### For-loops
+
+Let's look at the examples for [for-loops](https://idyll-lang.org/docs/components/default/loop).
+
+// using new images
+
+[var name:"imageList2" 
+  value:`["https://i.pinimg.com/474x/a3/be/9b/a3be9b5985700813f70799ee0a71afc0--pembroke-welsh-corgi-animal-funnies.jpg", "https://i0.wp.com/threecorgis.com/wp-content/uploads/2014/09/three_corgis618-1-1.jpg?resize=500%2C667", "https://i.pinimg.com/originals/1c/c2/53/1cc253ede0ea7df2dd879b7cac9a88bf.jpg"]` /]
+  
+// put in a simple loop to show images
+
+[Loop value:imageList2]
+  [img src:"_iterator" style:`{height:300}` /]
+[/Loop]
+
+### Conditionals
+
+We can use [conditionals](https://idyll-lang.org/docs/components/default/conditional) sort of like if-then statements in Python/Javascript.
+
+// use conditionals to choose how many images pop up
+
+[var name:"HowMany" value:2 /]
+
+[Conditional if:`HowMany <= 3` ]
+  [Loop value:`imageList2.slice(0, HowMany)`]
+   [img src:"_iterator" style:`{height:300}` /]
+  [/Loop]
+[/Conditional]
+
+### User Input
+
+#### Checkboxes
+
+This uses the built-in component of [check boxes](https://idyll-lang.org/docs/components/default/boolean).
+
+[var name:"moreCorg" value:false /] // boolean that we can link to a checkbox
+
+[Boolean value:moreCorg /] I [Display value:`moreCorg ? "would like to see" : "would not like to see"` /] more corgis.
+
+[var name:"imgs3" 
+  value:`["https://external-preview.redd.it/-17yZH_Rhsl68DHe8A-GWRbZOu_irAeGGEkGKCM82_o.jpg?auto=webp&s=23d90b3c33816ea9d4314d79db5ecdbfab4c01b9", "https://i.ytimg.com/vi/kfCI5O3AUTk/maxresdefault.jpg", "https://i.imgur.com/m0CZRQy.jpg"]` /]
+
+[Conditional if:`moreCorg` ]
+  [Loop value:imgs3]
+   [img src:"_iterator" style:`{height:300}` /]
+  [/Loop]
+[/Conditional]
+
+#### Range slider
+
+[var name:"imgs4" 
+  value:`["https://external-preview.redd.it/-17yZH_Rhsl68DHe8A-GWRbZOu_irAeGGEkGKCM82_o.jpg?auto=webp&s=23d90b3c33816ea9d4314d79db5ecdbfab4c01b9", "https://i.ytimg.com/vi/kfCI5O3AUTk/maxresdefault.jpg", "https://i.imgur.com/m0CZRQy.jpg", "https://i1.wp.com/threecorgis.com/wp-content/uploads/2014/09/three-corgis-4189.jpg?resize=500%2C667", "https://i.imgur.com/aWpxP5O.jpg", "https://pbs.twimg.com/media/CMF2lpLUMAAYA49.jpg", "https://barkpost.com/wp-content/uploads/2015/01/corgiarya1.jpg"]` /]
+
+This uses the built-in [range slider component](https://idyll-lang.org/docs/components/default/range).
+
+[var name:"corgNumRange" value:5 /]
+
+I would like to see [Range value:corgNumRange min:0 max:7 /] [Display value:`corgNumRange.toFixed(0)` /] corgis.
+
+[Loop value:`imgs4.slice(0, corgNumRange)` ]
+ [img src:"_iterator" style:`{height:300}` /]
+[/Loop]
+
+#### Radio Buttons
+
+You make little quizzes for your users using [radio buttons](https://idyll-lang.org/docs/components/default/radio) & conditionals.
+
+What is the name of corgi-dachshund mixes?
+
+// we'll list of a few options
+
+// first select our "default guess"
+[var name:"radioVal" value:"Dashi" /]
+
+// want to show the user if they've gotten the right answer
+[var name:"showAnswer" value:false /]
+
+[Radio value:radioVal options:`["Dashi", "Dorgi", "Corghund"]` onClick:`showAnswer = false` /]
+
+// ONLY show answers if user is satisfied with submission
+[Button onClick:`showAnswer = true`]
+ Submit
+[/Button]
+
+// display a message telling the user if they have the correct answer
+[Conditional if:`showAnswer && radioVal == "Dorgi"`]
+  You answered [Display value:`radioVal` /]. This is correct!
+[/Conditional]
+[Conditional if:`showAnswer && radioVal != "Dorgi"`]
+  You answered [Display value:`radioVal` /]. This is not correct, please review the material at the top of the page.
+[/Conditional]
+

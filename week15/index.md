@@ -25,9 +25,10 @@ A few more things in Idyll, course wrap up.
     * and finally [this one](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week15/corg/histogram-button-slider-custom-d3-component.js)
  1. We'll also look at building a map visualization like [this one right here](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week15/corg/map-custom-d3-component.js) which uses [this updated styles.css file](https://github.com/UIUC-iSchool-DataViz/spring2020/blob/master/week15/corg/styles.css)
 	
- <!-- Where we got to in class this week: -->
- <!--   * [This index.idyll](index.idyll) file -->
- <!--  * [This histogram component](histogram-custom-d3-component.js) -->
+ Where we got to in class this week:
+  * [This index.idyll](corg/inClass/index.idyll) file 
+  * [This histogram component](corg/inClass/histogram-custom-d3-component.js) 
+  * We briefly covered [this map component](corg/inClass/map-custom-d3-component.js) 
 	
 **Note:** see [week 12](../week12/) for the scripts used to generate this dataset.
 
